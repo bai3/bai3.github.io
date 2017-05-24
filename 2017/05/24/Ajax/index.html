@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="bai3">
 <meta property="og:description" content="Ajax教程 AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。 AJAX 不是新的编程语言，而是一种使用现有标准的新方法。 AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。 AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。">
 <meta property="og:image" content="http://yoursite.com/2017/05/24/Ajax/ajax.png">
-<meta property="og:updated_time" content="2017-05-24T10:34:19.735Z">
+<meta property="og:updated_time" content="2017-05-24T12:55:05.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax">
 <meta name="twitter:description" content="Ajax教程 AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。 AJAX 不是新的编程语言，而是一种使用现有标准的新方法。 AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。 AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。">
@@ -379,17 +379,23 @@
 <li>AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。</li>
 <li>AJAX 不是新的编程语言，而是一种使用现有标准的新方法。</li>
 <li>AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。</li>
-<li>AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。</li>
+<li>AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。<a id="more"></a>
+</li>
 </ul>
-<a id="more"></a>
 <h2 id="Ajax应用"><a href="#Ajax应用" class="headerlink" title="Ajax应用"></a>Ajax应用</h2><ul>
-<li>运用XHTML+CSS来表达资讯；</li>
-<li>运用JavaScript操作DOM（Document Object Model）来执行动态效果；</li>
-<li>运用XML和XSLT操作资料;</li>
-<li>运用XMLHttpRequest或新的Fetch API与网页服务器进行异步资料交换；</li>
-<li>注意：AJAX与Flash、Silverlight和Java Applet等RIA技术是有区分的。</li>
+<li><p>运用XHTML+CSS来表达资讯；</p>
+</li>
+<li><p>运用JavaScript操作DOM（Document Object Model）来执行动态效果；</p>
+</li>
+<li><p>运用XML和XSLT操作资料;</p>
+</li>
+<li><p>运用XMLHttpRequest或新的Fetch API与网页服务器进行异步资料交换；</p>
+</li>
+<li><p>注意：AJAX与Flash、Silverlight和Java Applet等RIA技术是有区分的。</p>
+</li>
 </ul>
-<h2 id="Ajax工作原理"><a href="#Ajax工作原理" class="headerlink" title="Ajax工作原理"></a>Ajax工作原理</h2><p><img src="/2017/05/24/Ajax/ajax.png" alt="ajax"></p>
+<p>##Ajax工作原理</p>
+<p><img src="/2017/05/24/Ajax/ajax.png" alt="ajax"></p>
 <h2 id="Ajax创建对象"><a href="#Ajax创建对象" class="headerlink" title="Ajax创建对象"></a>Ajax创建对象</h2><blockquote>
 <p>XMLHttpRequest是Ajax的基础</p>
 </blockquote>
@@ -429,8 +435,101 @@
 <li>向服务器发送大量数据（POST没有数据量限制）</li>
 <li>发送包含未知字符的用户输入时，POST比GET更稳定也更可靠</li>
 </ul>
+<h3 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h3><p>一个简单的GET请求</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"/try/ajax/demo_get.php"</span>,<span class="literal">true</span>);</div><div class="line">xmlhttp.send();</div></pre></td></tr></table></figure>
+<p>可是上面的例子你可能得到的是缓存的结果，为了避免这种情况，向URL添加一个唯一的ID</p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"/try/ajax/demo_get.php?t="</span>+<span class="built_in">Math</span>.random(),<span class="literal">true</span>);</div><div class="line">xmlhttp.send();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Math.random()是数学随机数的意思</p>
+</blockquote>
+<h3 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h3><p>例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"/try/ajax/demo_post.php"</span>,<span class="literal">true</span>);</div><div class="line">xmlhttp.send();</div></pre></td></tr></table></figure>
+<p>POST也可以像HTML表单那样POST数据，请使用setRequestHeader()来添加HTTP头。然后在send()方法中规定你希望发送的数据</p>
+<p>实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"/try/ajax/demo_post2.php"</span>,<span class="literal">true</span>);</div><div class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</div><div class="line">xmlhttp.send(<span class="string">"fname=Henry&amp;lname=Ford"</span>);</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>way</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setRequestHeader(header,value)</td>
+<td>向请求添加HTTP头。- header：规定头的名称- value：规定头的值</td>
+</tr>
+</tbody>
+</table>
 <h3 id="url-服务器上的文件"><a href="#url-服务器上的文件" class="headerlink" title="url-服务器上的文件"></a>url-服务器上的文件</h3><p>open()方法的url参数是服务器上文件的地址</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"ajax_test.html"</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<h3 id="异步-True或False？"><a href="#异步-True或False？" class="headerlink" title="异步 True或False？"></a>异步 True或False？</h3><p>通过AJAX，JavaScript无需等待服务器的响应，而是：</p>
+<ul>
+<li>在等待服务器响应时执行其他的脚本</li>
+<li>当响应就绪后响应进行处理<br>###Async=true</li>
+</ul>
+<p>当使用async=true的时候，规定在响应处于onreadystatechange事件中的就绪状态时执行的函数</p>
+<p>###Async=false<br>如果需要async=false，请将open()方法中的第三个参数改为false。</p>
+<blockquote>
+<p>我们不推荐使用async=false，但对于一些小型的请求也是可以的。</p>
+<p>请记住，JavaScript会等到服务器响应就绪才继续执行。如果服务器繁忙或者缓慢，应用程序会挂机或停止</p>
+</blockquote>
+<h2 id="Ajax-服务器-响应"><a href="#Ajax-服务器-响应" class="headerlink" title="Ajax-服务器 响应"></a>Ajax-服务器 响应</h2><h3 id="服务器响应"><a href="#服务器响应" class="headerlink" title="服务器响应"></a>服务器响应</h3><p>如需获得来自服务器的响应，请使用XMLHttpRequest对象的responseText或responseXML属性。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>responseText</td>
+<td>获得字符串形式的响应数据</td>
+</tr>
+<tr>
+<td>responseXML</td>
+<td>获得XML形式的响应数据</td>
+</tr>
+</tbody>
+</table>
+<p>responseText的实例响应不是XML</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.resposeText;</div></pre></td></tr></table></figure>
+<p>响应是XML，则采用respondText属性，实例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">xmlDoc=xmlhttp.responseXML;</div><div class="line">txt=<span class="string">""</span>;</div><div class="line">x=xmlDoc.getElementsByTagName(<span class="string">"ARTIST"</span>);</div><div class="line"><span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;x.length;i++)</div><div class="line">&#123;</div><div class="line">    txt=txt + x[i].childNodes[<span class="number">0</span>].nodeValue + <span class="string">"&lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=txt;</div></pre></td></tr></table></figure>
+<h2 id="Ajax-onreadystatechange事件"><a href="#Ajax-onreadystatechange事件" class="headerlink" title="Ajax - onreadystatechange事件"></a>Ajax - onreadystatechange事件</h2><p>当请求被发送到服务器时，我们需要执行一些基于响应的任务</p>
+<p>每单readyState改变时，就会触发onreadystatechange事件.</p>
+<p>readyState 属性存在XMLHttpRequest的状态信息。</p>
+<p>下面是XMLHttpRequest 对象的三个重要属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onreadystatechange</td>
+<td>存储函数（或函数名），每readyState属性改变时，就会调用该函数</td>
+</tr>
+<tr>
+<td>readyState</td>
+<td>存在XMLHttpRequest的状态，从0到4发生变化。0：请求未初始化1：服务器连接已建立 2：请求已接受 3：请求处理中 4：请求已完成，且响应已就绪</td>
+</tr>
+<tr>
+<td>status</td>
+<td>200：“OK”      404：没有找到页面</td>
+</tr>
+</tbody>
+</table>
+<p>在onreadystatechange时间中，我们规定当服务器响应已做好被处理的准备时所执行的任务</p>
+<p>当readyState等于4且状态为200时，表示响应已就绪。</p>
+<p>具体例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(xmlhttp.readyState==<span class="number">4</span>&amp;&amp;xmlhttp.status==<span class="number">200</span>)</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="使用回调函数"><a href="#使用回调函数" class="headerlink" title="使用回调函数"></a>使用回调函数</h3><p>如果你的网站上有多个AJAX任务，那么你应该创建XMLHTTPRequest对象编写出一个标准的函数，并为每个AJAX任务调用该函数。</p>
+
       
     </div>
 
@@ -483,6 +582,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/24/README/" rel="prev" title="图解HTTP">
+                图解HTTP <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -554,7 +657,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -565,7 +668,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -576,7 +679,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -649,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax教程"><span class="nav-number">1.</span> <span class="nav-text">Ajax教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax应用"><span class="nav-number">1.1.</span> <span class="nav-text">Ajax应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax工作原理"><span class="nav-number">1.2.</span> <span class="nav-text">Ajax工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax创建对象"><span class="nav-number">1.3.</span> <span class="nav-text">Ajax创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHTTPRequest-对象"><span class="nav-number">1.3.1.</span> <span class="nav-text">XMLHTTPRequest 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建XMLHTTPRequest"><span class="nav-number">1.3.2.</span> <span class="nav-text">创建XMLHTTPRequest</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax-向服务器发送请求"><span class="nav-number">1.4.</span> <span class="nav-text">Ajax 向服务器发送请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向服务器发送请求"><span class="nav-number">1.4.1.</span> <span class="nav-text">向服务器发送请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GET和POST的区别"><span class="nav-number">1.4.2.</span> <span class="nav-text">GET和POST的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url-服务器上的文件"><span class="nav-number">1.4.3.</span> <span class="nav-text">url-服务器上的文件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax教程"><span class="nav-number">1.</span> <span class="nav-text">Ajax教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax应用"><span class="nav-number">1.1.</span> <span class="nav-text">Ajax应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax创建对象"><span class="nav-number">1.2.</span> <span class="nav-text">Ajax创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHTTPRequest-对象"><span class="nav-number">1.2.1.</span> <span class="nav-text">XMLHTTPRequest 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建XMLHTTPRequest"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建XMLHTTPRequest</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax-向服务器发送请求"><span class="nav-number">1.3.</span> <span class="nav-text">Ajax 向服务器发送请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向服务器发送请求"><span class="nav-number">1.3.1.</span> <span class="nav-text">向服务器发送请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GET和POST的区别"><span class="nav-number">1.3.2.</span> <span class="nav-text">GET和POST的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GET请求"><span class="nav-number">1.3.3.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST请求"><span class="nav-number">1.3.4.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url-服务器上的文件"><span class="nav-number">1.3.5.</span> <span class="nav-text">url-服务器上的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步-True或False？"><span class="nav-number">1.3.6.</span> <span class="nav-text">异步 True或False？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax-服务器-响应"><span class="nav-number">1.4.</span> <span class="nav-text">Ajax-服务器 响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器响应"><span class="nav-number">1.4.1.</span> <span class="nav-text">服务器响应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax-onreadystatechange事件"><span class="nav-number">1.5.</span> <span class="nav-text">Ajax - onreadystatechange事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用回调函数"><span class="nav-number">1.5.1.</span> <span class="nav-text">使用回调函数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -680,16 +783,8 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
 
 
         
