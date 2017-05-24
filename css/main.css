@@ -997,7 +997,7 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 60px;
+  font-size: 80px;
   font-weight: normal;
   font-family: 'Indie Flower', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -1696,7 +1696,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bf4932;
+  background: #d98857;
 }
 .links-of-blogroll {
   font-size: 13px;
