@@ -316,7 +316,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/resume/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/Ajax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="白三">
@@ -335,7 +335,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/23/resume/" itemprop="url">resume</a></h1>
+                <a class="post-title-link" href="/2017/05/24/Ajax/" itemprop="url">Ajax</a></h1>
         
 
         <div class="post-meta">
@@ -347,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T19:24:37+08:00">
-                2017-05-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-24T13:50:33+08:00">
+                2017-05-24
               </time>
             
 
@@ -384,9 +384,173 @@
       
         
           
-            <p>hello.This is my blog in here.<br>here is my resume.<br>you can know more about me with that.</p>
-<p><img src="https://github.com/bai3/resume/blob/master/0001.jpg" alt="0001"></p>
-<p><img src="https://github.com/bai3/resume/blob/master/0002.jpg" alt="0002"></p>
+            <h1 id="Ajax教程"><a href="#Ajax教程" class="headerlink" title="Ajax教程"></a>Ajax教程</h1><ul>
+<li>AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。</li>
+<li>AJAX 不是新的编程语言，而是一种使用现有标准的新方法。</li>
+<li>AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。</li>
+<li>AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。</li>
+</ul>
+<h2 id="Ajax应用"><a href="#Ajax应用" class="headerlink" title="Ajax应用"></a>Ajax应用</h2><ul>
+<li>运用XHTML+CSS来表达资讯；</li>
+<li>运用JavaScript操作DOM（Document Object Model）来执行动态效果；</li>
+<li>运用XML和XSLT操作资料;</li>
+<li>运用XMLHttpRequest或新的Fetch API与网页服务器进行异步资料交换；</li>
+<li>注意：AJAX与Flash、Silverlight和Java Applet等RIA技术是有区分的。</li>
+</ul>
+<h2 id="Ajax工作原理"><a href="#Ajax工作原理" class="headerlink" title="Ajax工作原理"></a>Ajax工作原理</h2><p><img src="/2017/05/24/Ajax/ajax.png" alt="ajax"></p>
+<h2 id="Ajax创建对象"><a href="#Ajax创建对象" class="headerlink" title="Ajax创建对象"></a>Ajax创建对象</h2><blockquote>
+<p>XMLHttpRequest是Ajax的基础</p>
+</blockquote>
+<h3 id="XMLHTTPRequest-对象"><a href="#XMLHTTPRequest-对象" class="headerlink" title="XMLHTTPRequest 对象"></a>XMLHTTPRequest 对象</h3><p>XMLHTTPRequest用于在后台与服务器交换数据。这意味着可以再不重新加载整个网页情况下，对网页的某部分进行更新。</p>
+<h3 id="创建XMLHTTPRequest"><a href="#创建XMLHTTPRequest" class="headerlink" title="创建XMLHTTPRequest"></a>创建XMLHTTPRequest</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">variable = <span class="keyword">new</span>　XMLHTTPRequest();</div></pre></td></tr></table></figure>
+<p>老版本的IE浏览器使用ActiveX对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">variable = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div></pre></td></tr></table></figure>
+<p>为了应对所有浏览器，故采用下列写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xmlhttp;</div><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</div><div class="line">&#123;</div><div class="line">    <span class="comment">//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码</span></div><div class="line">    xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// IE6, IE5 浏览器执行代码</span></div><div class="line">    xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Ajax-向服务器发送请求"><a href="#Ajax-向服务器发送请求" class="headerlink" title="Ajax 向服务器发送请求"></a>Ajax 向服务器发送请求</h2><blockquote>
+<p>XMLHttPRequest对象用于和服务器交换数据</p>
+</blockquote>
+<h3 id="向服务器发送请求"><a href="#向服务器发送请求" class="headerlink" title="向服务器发送请求"></a>向服务器发送请求</h3><p>如需将强求发送服务器，我们使用XMLHttpRequest对象的open()和send()方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"ajax_info.txt"</span>,<span class="literal">true</span>);</div><div class="line">xmlhttp.send();</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open（method,url,async)</td>
+<td>规定请求的类型、URL以及是否异步处理请求</td>
+</tr>
+<tr>
+<td>send(string)</td>
+<td>将请求发送到服务器 !仅用于POST请求</td>
+</tr>
+</tbody>
+</table>
+<h3 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h3><p>与POST相比，GET更简单也更快</p>
+<p>然而，在以下情况中，请使用POST请求</p>
+<ul>
+<li>无法使用缓存文件（更新服务器的文件或数据）</li>
+<li>向服务器发送大量数据（POST没有数据量限制）</li>
+<li>发送包含未知字符的用户输入时，POST比GET更稳定也更可靠</li>
+</ul>
+<h3 id="url-服务器上的文件"><a href="#url-服务器上的文件" class="headerlink" title="url-服务器上的文件"></a>url-服务器上的文件</h3><p>open()方法的url参数是服务器上文件的地址</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"ajax_test.html"</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/resume/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bai3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/24/resume/" itemprop="url">resume</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-24T13:46:18+08:00">
+                2017-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/2017/05/24/resume/0001.jpg" alt="0001"></p>
+<p><img src="/2017/05/24/resume/0002.jpg" alt="0002"></p>
 
           
         
@@ -466,7 +630,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -479,7 +643,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
