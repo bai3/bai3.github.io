@@ -102,10 +102,13 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/25/JS高程复习/index.html">
 <meta property="og:site_name" content="bai3">
 <meta property="og:description" content="&amp;ensp; 之前在学JS基础的时候已经刷过一次，只不过上次很多东西没错，最近忙于暑期实习，所以特意又将这本书再刷一遍，在仔细作一遍笔记，把之前遗落的知识点重新学习一下。主要记一点面试的知识点。 17/5/25">
-<meta property="og:updated_time" content="2017-05-25T12:52:21.651Z">
+<meta property="og:image" content="http://yoursite.com/2017/05/25/JS高程复习/imag1.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/25/JS高程复习/imag2.PNG">
+<meta property="og:updated_time" content="2017-05-25T14:14:13.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高程复习">
 <meta name="twitter:description" content="&amp;ensp; 之前在学JS基础的时候已经刷过一次，只不过上次很多东西没错，最近忙于暑期实习，所以特意又将这本书再刷一遍，在仔细作一遍笔记，把之前遗落的知识点重新学习一下。主要记一点面试的知识点。 17/5/25">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/25/JS高程复习/imag1.jpg">
 
 
 
@@ -366,7 +369,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-05-25T20:52:21+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-05-25T22:14:13+08:00">
                 2017-05-25
               </time>
             
@@ -423,7 +426,7 @@
 <p>17/5/25</p>
 <hr>
 <a id="more"></a>
-<h1 id="第一章-JavaScript简介"><a href="#第一章-JavaScript简介" class="headerlink" title="第一章 JavaScript简介"></a>第一章 JavaScript简介</h1><h2 id="1-2-JavaScript实现"><a href="#1-2-JavaScript实现" class="headerlink" title="1.2 JavaScript实现"></a>1.2 JavaScript实现</h2><p>一个完整的JavaScript实现包括三个不同的部分组成</p>
+<h1 id="第一章-JavaScript简介"><a href="#第一章-JavaScript简介" class="headerlink" title="第一章 JavaScript简介"></a>第一章 JavaScript简介</h1><h2 id="JavaScript实现"><a href="#JavaScript实现" class="headerlink" title="JavaScript实现"></a>JavaScript实现</h2><p>一个完整的JavaScript实现包括三个不同的部分组成</p>
 <ul>
 <li>核心(ECMAScript)</li>
 <li>文档对象模型(DOM)</li>
@@ -436,19 +439,19 @@
 <p>DOM简单理解就是HTML内容</p>
 </blockquote>
 <p>#第二章 在HTML中使用JavaScript</p>
-<h2 id="2-1-元素"><a href="#2-1-元素" class="headerlink" title="2.1 元素"></a>2.1 <script>元素</h2><h3 id="2-1-1-标签的位置"><a href="#2-1-1-标签的位置" class="headerlink" title="2.1.1 标签的位置"></a>2.1.1 标签的位置</h3><blockquote>
-<p>html文件是自上而下的执行方式，但引入的css和javascript的顺序有所不同，css引入执行加载时，程序仍然往下执行，而执行到<script>脚本是则中断线程，待该script脚本执行结束之后程序才继续往下执行。所以，一般将script放在body之后是因为避免长时间执行script脚本而延迟阻塞。而有一些页面的效果的实现，是需要预先动态的加载一些js脚本，所以这些脚本应该放在<body>之前。<strong>其次，不能将需要访问dom元素的js放在body之前，因为此时还没有开始生成dom，所以在body之前的访问dom元素的js会出错，或者无效</strong>。就是因为这个，在dom没生成好时我就给它添加了方法，才导致这样</p>
+<h2 id="lt-script-gt-元素"><a href="#lt-script-gt-元素" class="headerlink" title="&lt;\script&gt;元素"></a>&lt;\script&gt;元素</h2><h3 id="标签的位置"><a href="#标签的位置" class="headerlink" title="标签的位置"></a>标签的位置</h3><blockquote>
+<p>html文件是自上而下的执行方式，但引入的css和javascript的顺序有所不同，css引入执行加载时，程序仍然往下执行，而执行到&lt;\script&gt;脚本是则中断线程，待该script脚本执行结束之后程序才继续往下执行。所以，一般将script放在body之后是因为避免长时间执行script脚本而延迟阻塞。而有一些页面的效果的实现，是需要预先动态的加载一些js脚本，所以这些脚本应该放在&lt;\body&gt;之前。<strong>其次，不能将需要访问dom元素的js放在body之前，因为此时还没有开始生成dom，所以在body之前的访问dom元素的js会出错，或者无效</strong>。就是因为这个，在dom没生成好时我就给它添加了方法，才导致这样</p>
 </blockquote>
-<h3 id="2-1-2-延迟脚本"><a href="#2-1-2-延迟脚本" class="headerlink" title="2.1.2 延迟脚本"></a>2.1.2 延迟脚本</h3><p>defer只能适用外部脚本文件</p>
-<p>defer属性的用于是表明脚本在执行的时候不会影响页面的构造。也就是说，脚本会被延迟到整个页面都解析完毕后在运行。因此在<script>元素中设置defer属性，想当于告诉浏览器立即下载，但延迟执行。</p>
-<h3 id="2-1-3-异步脚本"><a href="#2-1-3-异步脚本" class="headerlink" title="2.1.3 异步脚本"></a>2.1.3 异步脚本</h3><p>HTML5为<script>开始设置一个async属性，这个属性与defer属性相似，都用于改变处理脚本的行为。同样只是适用脚本文件。</p>
+<h3 id="延迟脚本"><a href="#延迟脚本" class="headerlink" title="延迟脚本"></a>延迟脚本</h3><p>defer只能适用外部脚本文件</p>
+<p>defer属性的用于是表明脚本在执行的时候不会影响页面的构造。也就是说，脚本会被延迟到整个页面都解析完毕后在运行。因此在&lt;\script&gt;元素中设置defer属性，想当于告诉浏览器立即下载，但延迟执行。</p>
+<h3 id="异步脚本"><a href="#异步脚本" class="headerlink" title="异步脚本"></a>异步脚本</h3><p>HTML5为&lt;\script&gt;开始设置一个async属性，这个属性与defer属性相似，都用于改变处理脚本的行为。同样只是适用脚本文件。</p>
 <p>defer与async的差异</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"myscript.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"myscript.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script defer src=<span class="string">"myscript.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>下面是stackoverflow上的回答，可以参考一下：</p>
 <ol>
 <li>Without <code>async</code> or <code>defer</code>, browser will run your script immediately, before rendering the elements that’s below your script tag.</li>
 <li>With <code>async</code> (asynchronous), browser will continue to load the HTML page and render it while the browser load and execute the script at the same time.</li>
-<li>With <code>defer</code>, browser will run your script when the page finished parsing. (not necessary finishing downloading all image files. This is good.)<br><img src="JS高程复习\imag1.jpg" alt="imag1"></li>
+<li>With <code>defer</code>, browser will run your script when the page finished parsing. (not necessary finishing downloading all image files. This is good.)<br><img src="/2017/05/25/JS高程复习/imag1.jpg" alt="imag1"></li>
 </ol>
 <p><strong>蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的；绿色线代表 HTML 解析。</strong></p>
 <p>高程中解释：</p>
@@ -456,17 +459,18 @@
 <p>使用defer属性可以让脚本在文档中完全呈现之后再执行，<strong>延迟脚本总是按照指定他们的顺序执行</strong>。</p>
 <p>使用async属性可以表示当前脚本不必等待其他脚本，也不必阻塞文档呈现。不能保证异步脚本按照他们在页面中出现的顺序。</p>
 </blockquote>
-<h1 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h1><h2 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h2><h3 id="3-1-1"><a href="#3-1-1" class="headerlink" title="3.1.1"></a>3.1.1</h3><p>ECMAScript是明确区分大小写的</p>
-<h2 id="3-3-变量"><a href="#3-3-变量" class="headerlink" title="3.3 变量"></a>3.3 变量</h2><blockquote>
+<h1 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>### </p>
+<p>ECMAScript是明确区分大小写的</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><blockquote>
 <p>虽然省略var操作符可以定义全局变量，但这也不是我们推荐的做法。因为在局部作用域中定义的全局变量很难维护，而且如果有意地省略var操作符，也会由于相应变量不会马上就有定义而导致不必要的混乱。给未经声明的变量赋值在严格模式下回导致抛出ReferenceError错误。</p>
 </blockquote>
-<h2 id="3-4-数据类型"><a href="#3-4-数据类型" class="headerlink" title="3.4 数据类型"></a>3.4 数据类型</h2><p>ES有5种基本数据类型:Undefined、Null、Boolean、Number和String，还有一种复杂数据类型Object。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>ES有5种基本数据类型:Undefined、Null、Boolean、Number和String，还有一种复杂数据类型Object。</p>
 <blockquote>
 <p>对未初始化的变量执行typeof操作符会返回undefined值，而对未声明的变量执行typeof操作符同样也会返回undefined值。</p>
 </blockquote>
-<h2 id="3-5-操作符"><a href="#3-5-操作符" class="headerlink" title="3.5 操作符"></a>3.5 操作符</h2><h3 id="3-5-5-加性操作符"><a href="#3-5-5-加性操作符" class="headerlink" title="3.5.5 加性操作符"></a>3.5.5 加性操作符</h3><p>如果两个操作数都是字符串，则将第二个操作数与第一个操作数拼接起来。</p>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><h3 id="加性操作符"><a href="#加性操作符" class="headerlink" title="加性操作符"></a>加性操作符</h3><p>如果两个操作数都是字符串，则将第二个操作数与第一个操作数拼接起来。</p>
 <p>如果只有一个操作数是字符串，则将另一个操作数转换成字符串，然后再将两个字符串拼接起来。</p>
-<h3 id="3-5-7-相等操作符"><a href="#3-5-7-相等操作符" class="headerlink" title="3.5.7 相等操作符"></a>3.5.7 相等操作符</h3><p>W3的说明：</p>
+<h3 id="相等操作符"><a href="#相等操作符" class="headerlink" title="相等操作符"></a>相等操作符</h3><p>W3的说明：</p>
 <table>
 <thead>
 <tr>
@@ -493,8 +497,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="JS高程复习\imag2.PNG" alt="imag2"></p>
-</script></h2>
+<p><img src="/2017/05/25/JS高程复习/imag2.PNG" alt="imag2"></p>
+
       
     </div>
 
@@ -717,65 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-JavaScript简介"><span class="nav-number">1.</span> <span class="nav-text">第一章 JavaScript简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-JavaScript实现"><span class="nav-number">1.1.</span> <span class="nav-text">1.2 JavaScript实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-元素"><span class="nav-number">1.2.</span> <span class="nav-text">2.1 元素</h2><h3 id="2-1-1-标签的位置"><a href="#2-1-1-标签的位置" class="headerlink" title="2.1.1 标签的位置"></a>2.1.1 标签的位置</h3><blockquote>
-<p>html文件是自上而下的执行方式，但引入的css和javascript的顺序有所不同，css引入执行加载时，程序仍然往下执行，而执行到<script>脚本是则中断线程，待该script脚本执行结束之后程序才继续往下执行。所以，一般将script放在body之后是因为避免长时间执行script脚本而延迟阻塞。而有一些页面的效果的实现，是需要预先动态的加载一些js脚本，所以这些脚本应该放在<body>之前。<strong>其次，不能将需要访问dom元素的js放在body之前，因为此时还没有开始生成dom，所以在body之前的访问dom元素的js会出错，或者无效</strong>。就是因为这个，在dom没生成好时我就给它添加了方法，才导致这样</p>
-</blockquote>
-<h3 id="2-1-2-延迟脚本"><a href="#2-1-2-延迟脚本" class="headerlink" title="2.1.2 延迟脚本"></a>2.1.2 延迟脚本</h3><p>defer只能适用外部脚本文件</p>
-<p>defer属性的用于是表明脚本在执行的时候不会影响页面的构造。也就是说，脚本会被延迟到整个页面都解析完毕后在运行。因此在<script>元素中设置defer属性，想当于告诉浏览器立即下载，但延迟执行。</p>
-<h3 id="2-1-3-异步脚本"><a href="#2-1-3-异步脚本" class="headerlink" title="2.1.3 异步脚本"></a>2.1.3 异步脚本</h3><p>HTML5为<script>开始设置一个async属性，这个属性与defer属性相似，都用于改变处理脚本的行为。同样只是适用脚本文件。</p>
-<p>defer与async的差异</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"myscript.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"myscript.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script defer src=<span class="string">"myscript.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>下面是stackoverflow上的回答，可以参考一下：</p>
-<ol>
-<li>Without <code>async</code> or <code>defer</code>, browser will run your script immediately, before rendering the elements that’s below your script tag.</li>
-<li>With <code>async</code> (asynchronous), browser will continue to load the HTML page and render it while the browser load and execute the script at the same time.</li>
-<li>With <code>defer</code>, browser will run your script when the page finished parsing. (not necessary finishing downloading all image files. This is good.)<br><img src="JS高程复习\imag1.jpg" alt="imag1"></li>
-</ol>
-<p><strong>蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的；绿色线代表 HTML 解析。</strong></p>
-<p>高程中解释：</p>
-<blockquote>
-<p>使用defer属性可以让脚本在文档中完全呈现之后再执行，<strong>延迟脚本总是按照指定他们的顺序执行</strong>。</p>
-<p>使用async属性可以表示当前脚本不必等待其他脚本，也不必阻塞文档呈现。不能保证异步脚本按照他们在页面中出现的顺序。</p>
-</blockquote>
-<h1 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h1><h2 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h2><h3 id="3-1-1"><a href="#3-1-1" class="headerlink" title="3.1.1"></a>3.1.1</h3><p>ECMAScript是明确区分大小写的</p>
-<h2 id="3-3-变量"><a href="#3-3-变量" class="headerlink" title="3.3 变量"></a>3.3 变量</h2><blockquote>
-<p>虽然省略var操作符可以定义全局变量，但这也不是我们推荐的做法。因为在局部作用域中定义的全局变量很难维护，而且如果有意地省略var操作符，也会由于相应变量不会马上就有定义而导致不必要的混乱。给未经声明的变量赋值在严格模式下回导致抛出ReferenceError错误。</p>
-</blockquote>
-<h2 id="3-4-数据类型"><a href="#3-4-数据类型" class="headerlink" title="3.4 数据类型"></a>3.4 数据类型</h2><p>ES有5种基本数据类型:Undefined、Null、Boolean、Number和String，还有一种复杂数据类型Object。</p>
-<blockquote>
-<p>对未初始化的变量执行typeof操作符会返回undefined值，而对未声明的变量执行typeof操作符同样也会返回undefined值。</p>
-</blockquote>
-<h2 id="3-5-操作符"><a href="#3-5-操作符" class="headerlink" title="3.5 操作符"></a>3.5 操作符</h2><h3 id="3-5-5-加性操作符"><a href="#3-5-5-加性操作符" class="headerlink" title="3.5.5 加性操作符"></a>3.5.5 加性操作符</h3><p>如果两个操作数都是字符串，则将第二个操作数与第一个操作数拼接起来。</p>
-<p>如果只有一个操作数是字符串，则将另一个操作数转换成字符串，然后再将两个字符串拼接起来。</p>
-<h3 id="3-5-7-相等操作符"><a href="#3-5-7-相等操作符" class="headerlink" title="3.5.7 相等操作符"></a>3.5.7 相等操作符</h3><p>W3的说明：</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>equal to</td>
-</tr>
-<tr>
-<td>===</td>
-<td>equal value andequal type</td>
-</tr>
-<tr>
-<td>！=</td>
-<td>not equal</td>
-</tr>
-<tr>
-<td>！==</td>
-<td>not equal value or not equal type</td>
-</tr>
-</tbody>
-</table>
-<p><img src="JS高程复习\imag2.PNG" alt="imag2"></p>
-</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-JavaScript简介"><span class="nav-number">1.</span> <span class="nav-text">第一章 JavaScript简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript实现"><span class="nav-number">1.1.</span> <span class="nav-text">JavaScript实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-script-gt-元素"><span class="nav-number">1.2.</span> <span class="nav-text"><\script>元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标签的位置"><span class="nav-number">1.2.1.</span> <span class="nav-text">标签的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟脚本"><span class="nav-number">1.2.2.</span> <span class="nav-text">延迟脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步脚本"><span class="nav-number">1.2.3.</span> <span class="nav-text">异步脚本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-基本概念"><span class="nav-number">2.</span> <span class="nav-text">第三章 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">2.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">2.4.</span> <span class="nav-text">操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加性操作符"><span class="nav-number">2.4.1.</span> <span class="nav-text">加性操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相等操作符"><span class="nav-number">2.4.2.</span> <span class="nav-text">相等操作符</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
