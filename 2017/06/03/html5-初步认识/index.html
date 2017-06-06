@@ -1,0 +1,1726 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Indie Flower:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML5," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="HTML5简介什么是HTML5？ HTML5是下一代HTML标准 HTML，HTML4.01的上一个版本诞生于1999年。自从那以后，WEB世界已经经历了巨变、 HTML5仍处于完善中，然而，大部分现代浏览器已经具备了某些HTML5支持">
+<meta name="keywords" content="HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5 初步认识">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/html5-初步认识/index.html">
+<meta property="og:site_name" content="bai3">
+<meta property="og:description" content="HTML5简介什么是HTML5？ HTML5是下一代HTML标准 HTML，HTML4.01的上一个版本诞生于1999年。自从那以后，WEB世界已经经历了巨变、 HTML5仍处于完善中，然而，大部分现代浏览器已经具备了某些HTML5支持">
+<meta property="og:updated_time" content="2017-06-06T12:37:08.400Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5 初步认识">
+<meta name="twitter:description" content="HTML5简介什么是HTML5？ HTML5是下一代HTML标准 HTML，HTML4.01的上一个版本诞生于1999年。自从那以后，WEB世界已经经历了巨变、 HTML5仍处于完善中，然而，大部分现代浏览器已经具备了某些HTML5支持">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/03/html5-初步认识/"/>
+
+
+
+
+
+  <title>html5 初步认识 | bai3</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '白三',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_Hans/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">bai3</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/html5-初步认识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白三">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bai3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html5 初步认识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-03T19:18:14+08:00">
+                2017-06-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-06-06T20:37:08+08:00">
+                2017-06-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML5简介"><a href="#HTML5简介" class="headerlink" title="HTML5简介"></a>HTML5简介</h1><h2 id="什么是HTML5？"><a href="#什么是HTML5？" class="headerlink" title="什么是HTML5？"></a>什么是HTML5？</h2><ul>
+<li>HTML5是下一代HTML标准</li>
+<li>HTML，HTML4.01的上一个版本诞生于1999年。自从那以后，WEB世界已经经历了巨变、</li>
+<li>HTML5仍处于完善中，然而，大部分现代浏览器已经具备了某些HTML5支持<a id="more"></a></li>
+</ul>
+<h2 id="HTML5是如何起步的"><a href="#HTML5是如何起步的" class="headerlink" title="HTML5是如何起步的"></a>HTML5是如何起步的</h2><p>HTML5的一些有趣的特性:</p>
+<ul>
+<li>用于绘画的canvas元素</li>
+<li>用于媒介回访的video和audio元素</li>
+<li>对本地离线存储的更好的支持</li>
+<li>新的特殊内容元素,不如article、footer、header、nav、section</li>
+<li>新的表单控件，比如calendar、date、time、email、url、search</li>
+</ul>
+<h2 id="HTML5-lt-DOCTYPE-gt"><a href="#HTML5-lt-DOCTYPE-gt" class="headerlink" title="HTML5 &lt; !DOCTYPE&gt;"></a>HTML5 &lt; !DOCTYPE&gt;</h2><p>&lt;!doctype&gt;声明必须位于HTML5文档中的第一行，使用非常简单</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div></pre></td></tr></table></figure>
+<h2 id="HTML5的改进"><a href="#HTML5的改进" class="headerlink" title="HTML5的改进"></a>HTML5的改进</h2><ul>
+<li>新元素</li>
+<li>新属性</li>
+<li>完全支持CSS3</li>
+<li>Video和Audio</li>
+<li>2D/3D制图</li>
+<li>本地存储</li>
+<li>本地SQL数据</li>
+<li>Web应用</li>
+</ul>
+<h2 id="HTML5-多媒体"><a href="#HTML5-多媒体" class="headerlink" title="HTML5 多媒体"></a>HTML5 多媒体</h2><p>使用HTML5你可以简单的在网页中播放视频（video）与音频（audio）。</p>
+<ul>
+<li>HTML5 &lt;video&gt;</li>
+<li>HTML5 &lt;audio&gt;</li>
+</ul>
+<h2 id="HTML5-应用"><a href="#HTML5-应用" class="headerlink" title="HTML5 应用"></a>HTML5 应用</h2><p>使用HTML5你可以简单地开发应用</p>
+<ul>
+<li>本地数据存储</li>
+<li>访问本地文件</li>
+<li>本地SQL数据</li>
+<li>缓存引用</li>
+<li>JavaScript工作者</li>
+<li>XHTMLHttpRequest2</li>
+</ul>
+<h2 id="HTML5-使用CSS3"><a href="#HTML5-使用CSS3" class="headerlink" title="HTML5 使用CSS3"></a>HTML5 使用CSS3</h2><ul>
+<li>新选择器</li>
+<li>新属性</li>
+<li>动画</li>
+<li>2D/3D转换</li>
+<li>圆角</li>
+<li>阴影效果</li>
+<li>可下载的字体</li>
+</ul>
+<h2 id="语义元素"><a href="#语义元素" class="headerlink" title="语义元素"></a>语义元素</h2><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;article&gt;</td>
+<td>定义页面独立的内容区域</td>
+</tr>
+<tr>
+<td>&lt;aside&gt;</td>
+<td>定义页面的侧边栏内容</td>
+</tr>
+<tr>
+<td>&lt;bdi&gt;</td>
+<td>允许你设置一段文本，使其脱离其父元素的文本方法设置</td>
+</tr>
+<tr>
+<td>&lt;command&gt;</td>
+<td>定义命令按钮，比如单选按钮、复选框或按钮</td>
+</tr>
+<tr>
+<td>&lt;dialog&gt;</td>
+<td>定义对话框，比如提示框</td>
+</tr>
+<tr>
+<td>&lt;summary&gt;</td>
+<td>标签包含details元素的标题</td>
+</tr>
+<tr>
+<td>&lt;figure&gt;</td>
+<td>规定独立的流内容（图像、图表、照片、代码等）</td>
+</tr>
+<tr>
+<td>&lt;figcaption&gt;</td>
+<td>规定&lt;figure&gt;元素的标题</td>
+</tr>
+<tr>
+<td>&lt;footer&gt;</td>
+<td>规定section或document的页脚</td>
+</tr>
+<tr>
+<td>&lt;header&gt;</td>
+<td>规定了文档的头部区域</td>
+</tr>
+<tr>
+<td>&lt;mark&gt;</td>
+<td>定义带有记号的文本</td>
+</tr>
+<tr>
+<td>&lt;meter&gt;</td>
+<td>定义度量衡。仅用于已知最大和最小值的度量</td>
+</tr>
+<tr>
+<td>&lt;nav&gt;</td>
+<td>定义导航链接的部分</td>
+</tr>
+<tr>
+<td>&lt;progress&gt;</td>
+<td>定义任何类型的任务的进度</td>
+</tr>
+<tr>
+<td>&lt;ruby&gt;</td>
+<td>定义ruby注释</td>
+</tr>
+<tr>
+<td>&lt;rt&gt;</td>
+<td>定义字符的解释或发音</td>
+</tr>
+<tr>
+<td>&lt;section&gt;</td>
+<td>定义文档中的节</td>
+</tr>
+<tr>
+<td>&lt;time&gt;</td>
+<td>定义日期或时间</td>
+</tr>
+<tr>
+<td>&lt;wbr&gt;</td>
+<td>规定在文本中的何处适合添加换行符</td>
+</tr>
+</tbody>
+</table>
+<h2 id="HTML5表单"><a href="#HTML5表单" class="headerlink" title="HTML5表单"></a>HTML5表单</h2><p>新表单元素，新属性，新输入类型，自动验证</p>
+<h2 id="将HTML5元素定义为块元素"><a href="#将HTML5元素定义为块元素" class="headerlink" title="将HTML5元素定义为块元素"></a>将HTML5元素定义为块元素</h2><p>HTML5定义8个新的HTML语义元素。所有这些元素都是块级元素</p>
+<p>为了能让旧版本的浏览器正确显示这些元素，你可以设置CSS的display属性值为block</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">header,section,footer,aside,nav,main,article,figure&#123;</div><div class="line">  display:block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="HTML5新元素"><a href="#HTML5新元素" class="headerlink" title="HTML5新元素"></a>HTML5新元素</h1><h2 id="lt-canvas-gt-新元素"><a href="#lt-canvas-gt-新元素" class="headerlink" title="&lt;canvas&gt;新元素"></a>&lt;canvas&gt;新元素</h2><p>标签定义图形，比如图表和其他图像。该标签基于JavaScript的绘图API</p>
+<h2 id="新多媒体元素"><a href="#新多媒体元素" class="headerlink" title="新多媒体元素"></a>新多媒体元素</h2><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;audio&gt;</td>
+<td>定义音频内容</td>
+</tr>
+<tr>
+<td>&lt;video&gt;</td>
+<td>定义视频</td>
+</tr>
+<tr>
+<td>&lt;source&gt;</td>
+<td>定义多媒体资源&lt;video&gt;和&lt;audio&gt;</td>
+</tr>
+<tr>
+<td>&lt;embed&gt;</td>
+<td>定义嵌入的内容，比如插件</td>
+</tr>
+<tr>
+<td>&lt;track&gt;</td>
+<td>位诸如&lt;video&gt;和&lt;audio&gt;元素之类的媒介规定外部文本轨道</td>
+</tr>
+</tbody>
+</table>
+<h2 id="新表单元素"><a href="#新表单元素" class="headerlink" title="新表单元素"></a>新表单元素</h2><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;datalist&gt;</td>
+<td>定义选项列表。请与input元素配合使用该元素，来定义input可能的值</td>
+</tr>
+<tr>
+<td>&lt;keygen&gt;</td>
+<td>规定用于表单的密钥对生成器字段</td>
+</tr>
+<tr>
+<td>&lt;output&gt;</td>
+<td>定义不同类型的输出，比如脚本的输出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="已经移除的元素"><a href="#已经移除的元素" class="headerlink" title="已经移除的元素"></a>已经移除的元素</h2><ul>
+<li>&lt;acronym&gt;</li>
+<li>&lt;applet&gt;</li>
+<li>&lt;basefont&gt;</li>
+<li>&lt;big&gt;</li>
+<li>&lt;center&gt;</li>
+<li>&lt;dir&gt;</li>
+<li>&lt;font&gt;</li>
+<li>&lt;frame&gt;</li>
+<li>&lt;frameset&gt;</li>
+<li>&lt;noframes&gt;</li>
+<li>&lt;strike&gt;</li>
+<li>&lt;tt&gt;</li>
+</ul>
+<h1 id="HTML5-Canvas"><a href="#HTML5-Canvas" class="headerlink" title="HTML5 Canvas"></a>HTML5 Canvas</h1><blockquote>
+<p>&lt;canvas&gt;标签定义图形，比如图表和其他图像，你必须使用脚本来绘制图形</p>
+</blockquote>
+<h2 id="创建一个画布（Canvas）"><a href="#创建一个画布（Canvas）" class="headerlink" title="创建一个画布（Canvas）"></a>创建一个画布（Canvas）</h2><p>简单实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure>
+<p><strong>注意：标签通常需要制定一个id属性（脚本中经常）,width和height属性定义的画布的大小</strong></p>
+<h2 id="使用JavaScript来绘制图像"><a href="#使用JavaScript来绘制图像" class="headerlink" title="使用JavaScript来绘制图像"></a>使用JavaScript来绘制图像</h2><p>canvas元素本身是没有绘图能力的。所有的绘制工作必须在JavaScript内部完成。</p>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var c=document.getElementById(&quot;myCanvas&quot;);</div><div class="line">var ctx=c.getContext(&quot;2d&quot;);</div><div class="line">ctx.fillStyle=&quot;#FF0000&quot;；</div><div class="line">ctx.fillRect(0,0,150,75);</div></pre></td></tr></table></figure>
+<p>分析</p>
+<p>首先，找到&lt;canvas&gt;元素</p>
+<p>然后创建context对象</p>
+<p>getContext(“2d”)对象是内建的HTML5对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</p>
+<p>设置fillStyle属性可以是CSS颜色，渐变、或图案。fillStyle默认设置是#000000(黑色)</p>
+<p>fillRect(x,y,width,height)方法定义了矩形当前的填充方式</p>
+<h2 id="Canvas-坐标"><a href="#Canvas-坐标" class="headerlink" title="Canvas 坐标"></a>Canvas 坐标</h2><p>canvas的左上角坐标为（0,0）</p>
+<p>上面的fillRect方法拥有参数(0,0,150,75).</p>
+<p>意思是：在画布上绘制150×75的矩形，从左上角(0,0)开始。</p>
+<h2 id="Canvas-路径"><a href="#Canvas-路径" class="headerlink" title="Canvas-路径"></a>Canvas-路径</h2><p>在Canvas上画直线，可以使用以下两种方法：</p>
+<ul>
+<li>moveTo(x,y)定义线条开始坐标</li>
+<li>lineTo(x,y)定义线条结束坐标</li>
+</ul>
+<p><strong>绘制线条我们必须使用“ink”方法，就像stroke()方法来绘制线条</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var c=document.getElementById(&quot;myCanvas&quot;);</div><div class="line">var ctx=c.getContext(&quot;2d&quot;);</div><div class="line">ctx.moveTo(0,0);</div><div class="line">ctx.lineTo(200,100);</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
+<p>在canvas绘制圆形</p>
+<ul>
+<li>arc(x,y,r,start,stop)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var c=document.getElementById(&quot;myCanvas&quot;);</div><div class="line">var ctx=c.getContext(&quot;2d&quot;);</div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(95,50,40,0,2*Math.PI);</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
+<h2 id="Canvas-文本"><a href="#Canvas-文本" class="headerlink" title="Canvas-文本"></a>Canvas-文本</h2><p>使用canvas绘制文本，重要的属性和方法如下：</p>
+<ul>
+<li>font-定义字体</li>
+<li>fillText(text,x,y)-在canvas上绘制实心的文本</li>
+<li>strokeText(text,x,y)- 在canvas上绘制空心的文本</li>
+</ul>
+<h2 id="Canvas-渐变"><a href="#Canvas-渐变" class="headerlink" title="Canvas-渐变"></a>Canvas-渐变</h2><p>渐变可以填充周期矩形，圆形，线条，文本等等，各种形状可以自己定义不同的颜色。</p>
+<p>以下有两种不同的方式来设置Canvas渐变： </p>
+<ul>
+<li>createLinearGradient(x,y,x1,y1)-创建线条渐变</li>
+<li>createRadialGradient(x,y,r,x1,y1,r1)-创建一个径向/圆渐变</li>
+</ul>
+<p>当我们使用渐变对象，必须使用两种或两种以上的停止颜色。</p>
+<p>addColorStop()方法指定颜色停止，参数使用坐标来描述，可以使0至1</p>
+<p>使用渐变，设置fillStyle或strokeStyle的值为渐变，然后绘制形状，如矩形，文本，或一条直线。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var c=document.getElementById(&quot;myCanvas&quot;);</div><div class="line">var context=c.getContext(&quot;2d&quot;);</div><div class="line">var grd=context.createLinearGradient(0, 0, 200, 0);</div><div class="line">grd.addColorStop(0, &apos;red&apos;);</div><div class="line">grd.addColorStop(1, &apos;blue&apos;);</div><div class="line">context.fillStyle=grd;</div><div class="line">context.fillRect(10,10,150,80);</div></pre></td></tr></table></figure>
+<h2 id="Canvas-图像"><a href="#Canvas-图像" class="headerlink" title="Canvas-图像"></a>Canvas-图像</h2><p>把一幅图像放置到画布上，使用以下方法：</p>
+<ul>
+<li>drawImage（image,x,y)</li>
+</ul>
+<h1 id="HTML5-内联SVG"><a href="#HTML5-内联SVG" class="headerlink" title="HTML5 内联SVG"></a>HTML5 内联SVG</h1><h2 id="什么是SVG"><a href="#什么是SVG" class="headerlink" title="什么是SVG"></a>什么是SVG</h2><ul>
+<li>SVG指可伸缩矢量图形</li>
+<li>SVG用于定义用于网络的基于矢量的图形</li>
+<li>SVG使用XML格式定义图形</li>
+<li>SVG图像在放大或改变尺寸的情况下其图形质量不会有损失</li>
+<li>SVG是万维网联盟的标准</li>
+</ul>
+<h2 id="SVG的优势"><a href="#SVG的优势" class="headerlink" title="SVG的优势"></a>SVG的优势</h2><p>与其他图像格式相比，使用SVG的优势：</p>
+<ul>
+<li>SVG图像可以通过文本编辑器来创建和修改</li>
+<li>SVG图像可被搜索、索引、脚本化或压缩</li>
+<li>SVG是可伸缩的</li>
+<li>SVG图像可在任何的分辨率下被高质量地打印</li>
+<li>SVG可在图像质量不下降的情况下被放大</li>
+</ul>
+<h2 id="SVG与Canvas的区别"><a href="#SVG与Canvas的区别" class="headerlink" title="SVG与Canvas的区别"></a>SVG与Canvas的区别</h2><ul>
+<li>SVG是一种使用XML描述2D图形的语言。</li>
+<li>Canvas通过JavaScript来绘制2D图形</li>
+<li>SVG基于XML，这意味着SVG DOM中的每个元素都是可用的。你可以为某个元素附加JavaScript事件处理器</li>
+<li>在SVG中每个被绘制的图形均被视为对象。如果SVG对象的属性发火说呢过变化，那么浏览器能够自动重现图形</li>
+<li>Canvas是逐像素进行渲染的。在canvas中，一旦图形被绘制完成，它就不会继续得到浏览器关注。如果其位置发生变化，那么整个场景也需要重新绘制，包括任何或已被图形覆盖的对象</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Canvas</th>
+<th>SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖分辨率</td>
+<td>不依赖分辨率</td>
+</tr>
+<tr>
+<td>不支持事件处理器</td>
+<td>支持事件处理器</td>
+</tr>
+<tr>
+<td>弱的文本渲染能力</td>
+<td>最适合带有大型渲染区域的应用程序（比如谷歌地图）</td>
+</tr>
+<tr>
+<td>能够以.png或。jpg格式保存结果图形</td>
+<td>复杂度高会减慢渲染速度</td>
+</tr>
+<tr>
+<td>最适合图像密集型的游戏，其中的许多对象会被频繁重绘</td>
+<td>不适合游戏应用</td>
+</tr>
+</tbody>
+</table>
+<h1 id="HTML5-MathML"><a href="#HTML5-MathML" class="headerlink" title="HTML5 MathML"></a>HTML5 MathML</h1><p>HTML5可以再文档中时MathML元素，对应的标签是\<math></math></p>
+<p>MathML是数学标记语言，是一种基于XML的标准，用来在互联网上书写数学符号和公式的置标语言</p>
+<p><strong>Chrome浏览器不能用，火狐可以</strong></p>
+<h1 id="HTML5-拖放"><a href="#HTML5-拖放" class="headerlink" title="HTML5 拖放"></a>HTML5 拖放</h1><p>拖放(Drag和Drop)是HTML5标准的组成部分</p>
+<h2 id="拖放"><a href="#拖放" class="headerlink" title="拖放"></a>拖放</h2><p>拖放是一种常见的特性，即抓取对象以后拖到另一个位置</p>
+<p>在HTML5中，拖放是标准的一部分，任何元素都能够拖放。</p>
+<p>实例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </div><div class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">#div1 &#123;width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function allowDrop(ev)</div><div class="line">&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">&#125;</div><div class="line"> </div><div class="line">function drag(ev)</div><div class="line">&#123;</div><div class="line">    ev.dataTransfer.setData(&quot;Text&quot;,ev.target.id);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">function drop(ev)</div><div class="line">&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">    var data=ev.dataTransfer.getData(&quot;Text&quot;);</div><div class="line">    ev.target.appendChild(document.getElementById(data));</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;拖动 RUNOOB.COM 图片到矩形框中:&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;div id=&quot;div1&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;img id=&quot;drag1&quot; src=&quot;/images/logo.png&quot; draggable=&quot;true&quot; ondragstart=&quot;drag(event)&quot; width=&quot;336&quot; height=&quot;69&quot;&gt;</div><div class="line"> </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>解析：</p>
+<h2 id="设置元素为可拖放"><a href="#设置元素为可拖放" class="headerlink" title="设置元素为可拖放"></a>设置元素为可拖放</h2><p>首先，为了使元素可拖动，把draggable属性设置为true：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img draggable=&quot;true&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="拖动什么-ondragstart和setDate"><a href="#拖动什么-ondragstart和setDate" class="headerlink" title="拖动什么-ondragstart和setDate()"></a>拖动什么-ondragstart和setDate()</h2><p>然后，规定元素被拖动时，会发生什么。</p>
+<p>在上面例子上，ondragstart属性调用一个函数，drag(event),规定了被拖动的数据。dataTransfer.setDate()方法设置被拖数据的数据类型和值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function drag(ev)&#123;</div><div class="line">  ev.dataTransfer.setData(&quot;Text&quot;,ev.target.id);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个例子中，数据类型是“Text”,值是可拖动元素的id(“drag1”)</p>
+<h2 id="放在何处-ondragover"><a href="#放在何处-ondragover" class="headerlink" title="放在何处- ondragover"></a>放在何处- ondragover</h2><p>ondragover事件规定在何处放置被拖动的数据，</p>
+<p>默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。</p>
+<p>这要通过调用ondragover事件的event.preventDefault()方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">event.preventDefault()</div></pre></td></tr></table></figure>
+<h2 id="进行放置-ondrop"><a href="#进行放置-ondrop" class="headerlink" title="进行放置- ondrop"></a>进行放置- ondrop</h2><p>当放置被拖数据时，会发生drop事件</p>
+<p>在上面例子中，ondrop属性调用一个函数，drop(event):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function drop(ev)&#123;</div><div class="line">  ev.preventDefault();</div><div class="line">  var data=ev.dataTransfer.getData(&quot;Text&quot;);</div><div class="line">  ev.target.appendChild(document.getElementById(data));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>调用preventDefault()来避免浏览器对数据的默认处理</li>
+<li>通过dataTransfer.getData(“Text”)方法获得被拖数据。该方法将返回在setData()方法中设置为相同类型的任何数据。</li>
+<li>被拖数据是被拖元素的id(“drag1”)</li>
+<li>把被拖元素追加到放置元素中</li>
+</ul>
+<h1 id="HTML5-Geolocation-地理定位"><a href="#HTML5-Geolocation-地理定位" class="headerlink" title="HTML5 Geolocation(地理定位)"></a>HTML5 Geolocation(地理定位)</h1><p>HTML5 Geolocation用于定位用户的位置。</p>
+<h2 id="HTML5-使用地理定位"><a href="#HTML5-使用地理定位" class="headerlink" title="HTML5-使用地理定位"></a>HTML5-使用地理定位</h2><p>使用getCurrentPosition()方法来获取用户的位置</p>
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var x=document.getElementById(&quot;demo&quot;);</div><div class="line">function getLocation()&#123;</div><div class="line">  if(navigator.geolocation)&#123;</div><div class="line">    navigator.geolocation.getCurrentPosition(showPosition);</div><div class="line">  &#125;</div><div class="line">  else&#123;</div><div class="line">    x.innnerHTML=&quot;该浏览器不支持获取地理位置&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">function showPosition(position)&#123;</div><div class="line">  x.innerHTML=&quot;维度：&quot;+position.coords.latitude+&quot;&lt;br&gt;经度：&quot;+position.coords.longitude;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>检测是否支持地理定位</li>
+<li>如果支持，则运行getCurrentPosition()方法，如果不支持，则向用户显示一段消息。</li>
+<li>如果getCurrentPosition()运行成功，则向参数showPosition中规定的函数返回一个coordinates对象。</li>
+<li>showPosition()函数获得并显示经度和纬度</li>
+</ul>
+<p>上面例子是一个非常基础的地理位置定位脚本，不含有错误处理</p>
+<h2 id="处理错误和拒绝"><a href="#处理错误和拒绝" class="headerlink" title="处理错误和拒绝"></a>处理错误和拒绝</h2><p>getCurrentPosition()方法第二个参数用于处理错误，：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function showError(error)</div><div class="line">&#123;</div><div class="line">  switch(error.code)</div><div class="line">    &#123;</div><div class="line">      case error.PERMISSION_DENIED：</div><div class="line">        x.innerHTML=&quot;用户拒绝获取地理位置的请求。&quot;</div><div class="line">        break;</div><div class="line">      case error.POSITION_UNAVAILABLE:</div><div class="line">        x.innerHTML=&quot;位置信息不可用的。&quot;</div><div class="line">        break;</div><div class="line">      case error.TIMEOUT:</div><div class="line">        x.innerHTML=&quot;请求用户地理位置超时&quot;</div><div class="line">        break;</div><div class="line">      case error.INKNOWN_ERROR:</div><div class="line">        x.innerHTML=&quot;未知错误&quot;</div><div class="line">        break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="HTML5-Video"><a href="#HTML5-Video" class="headerlink" title="HTML5 Video"></a>HTML5 Video</h1><p>HTML5 提供了播放音频文件的标准。</p>
+<h2 id="HTML5-Audio-如何工作"><a href="#HTML5-Audio-如何工作" class="headerlink" title="HTML5 Audio - 如何工作"></a>HTML5 Audio - 如何工作</h2><p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;audio controls&gt;</div><div class="line">    &lt;source src=&quot;horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;</div><div class="line">    &lt;source src=&quot;horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</div><div class="line">  你的浏览器不支持audio元素</div><div class="line">&lt;/audio&gt;</div></pre></td></tr></table></figure>
+<p>control属性供添加播放、暂停和音量控件</p>
+<p>在&lt;audio&gt;与&lt;/audio&gt;之间你需要插入浏览器不支持的&lt;audio&gt;元素的提示文本</p>
+<p>HTML5 Audio 标签</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;audio&gt;</td>
+<td>定义了声音内容</td>
+</tr>
+<tr>
+<td>&lt;source&gt;</td>
+<td>规定了多媒体资源，可以是多个，在&lt;video&gt;与&lt;audio&gt;之间使用</td>
+</tr>
+</tbody>
+</table>
+<h1 id="HTML5-input类型"><a href="#HTML5-input类型" class="headerlink" title="HTML5 input类型"></a>HTML5 input类型</h1><ul>
+<li>color</li>
+<li>date</li>
+<li>datetime</li>
+<li>datetime-local</li>
+<li>email</li>
+<li>month</li>
+<li>number</li>
+<li>range</li>
+<li>search</li>
+<li>tel</li>
+<li>time</li>
+<li>url</li>
+<li>week</li>
+</ul>
+<h1 id="HTML5-表单元素"><a href="#HTML5-表单元素" class="headerlink" title="HTML5 表单元素"></a>HTML5 表单元素</h1><p>HTML5新的表单元素</p>
+<ul>
+<li>&lt;datalist&gt;</li>
+<li>&lt;keygen&gt;</li>
+<li>&lt;output&gt;</li>
+</ul>
+<h2 id="HTML5-lt-datelist-gt-元素"><a href="#HTML5-lt-datelist-gt-元素" class="headerlink" title="HTML5&lt;datelist&gt;元素"></a>HTML5&lt;datelist&gt;元素</h2><p>&lt;datelist&gt;元素规定输入域的选项列表。</p>
+<p>&lt;datelist&gt;属性规定form或input域应该拥有自动完成功能。当用户在自动完成于域中开始输入时，浏览器应该在该域中显示填写的选项：</p>
+<p>使用&lt;input&gt;元素的列表属性与&lt;datalist&gt;元素绑定</p>
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;input list=&quot;browsers&quot;&gt;</div><div class="line">&lt;datalist id=&quot;browsers&quot;&gt;</div><div class="line">  &lt;option value=&quot;Internet Explorer&quot;&gt;</div><div class="line">  &lt;option value=&quot;Firefox&quot;&gt;</div><div class="line">  &lt;option value=&quot;Chrome&quot;&gt;</div><div class="line">  &lt;option value=&quot;Opera&quot;&gt;</div><div class="line">  &lt;option value=&quot;Safari&quot;&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure>
+<h2 id="HTML5-lt-keygen-gt-元素"><a href="#HTML5-lt-keygen-gt-元素" class="headerlink" title="HTML5&lt;keygen&gt;元素"></a>HTML5&lt;keygen&gt;元素</h2><p>&lt;keygen&gt;元素的作用是提供一种验证用户的可靠方法。</p>
+<p>规定用于表单的密钥对生成器字段</p>
+<h2 id="HTML5-lt-output-gt-元素"><a href="#HTML5-lt-output-gt-元素" class="headerlink" title="HTML5&lt;output&gt;元素"></a>HTML5&lt;output&gt;元素</h2><p>&lt;output&gt;元素用于不同类型的输出，比如计算或脚本输出</p>
+<h1 id="HTML5-表单属性"><a href="#HTML5-表单属性" class="headerlink" title="HTML5 表单属性"></a>HTML5 表单属性</h1><p>HTML5的&lt;form&gt;和&lt;input&gt;标签添加了几个新属性。</p>
+<p>&lt;form&gt;新属性</p>
+<ul>
+<li>autocomplete</li>
+<li>novalidate</li>
+</ul>
+<p>&lt;input&gt;新属性</p>
+<ul>
+<li>autocomplete</li>
+<li>autofocus</li>
+<li>form</li>
+<li>formaction</li>
+<li>formenctype</li>
+<li>formmethod</li>
+<li>formnovalidate</li>
+<li>formtarget</li>
+<li>height与width</li>
+<li>list</li>
+<li>min与max</li>
+<li>multiple</li>
+<li>pattern（regexp）</li>
+<li>placeholder</li>
+<li>required</li>
+<li>step</li>
+</ul>
+<h2 id="form-input-autocomplete属性"><a href="#form-input-autocomplete属性" class="headerlink" title="form/input autocomplete属性"></a>form/input autocomplete属性</h2><p>autocomplete属性规定form或input域应该拥有自动完成功能。</p>
+<p>当用户在自动完成域中开始输入时，浏览器应该在该域中显示填写的选项。</p>
+<p><strong>autocomplete适用于&lt;form&gt;标签，以及以下类型的&lt;input&gt;标签：text，search，url，telephone，email。passsword，datepickers，range以及color</strong></p>
+<h2 id="novalidate属性"><a href="#novalidate属性" class="headerlink" title="novalidate属性"></a>novalidate属性</h2><p>novalidate属性石一个boolean属性</p>
+<p>novalidate属性规定在提交表单时不应该验证form或input域</p>
+<h2 id="autofocus属性"><a href="#autofocus属性" class="headerlink" title="autofocus属性"></a>autofocus属性</h2><p>autofocus属性是一个boolean属性。</p>
+<p>autofocus属性规定在页面加载时，域自动地获得焦点</p>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">First name:&lt;input type=&quot;text&quot; name=&quot;fname&quot; autofocus&gt;</div></pre></td></tr></table></figure>
+<h2 id="form属性"><a href="#form属性" class="headerlink" title="form属性"></a>form属性</h2><p>form属性规定输入域所属的一个或多个表单</p>
+<h2 id="formaction属性"><a href="#formaction属性" class="headerlink" title="formaction属性"></a>formaction属性</h2><p>The formaction属性用于描述表单提交的URL地址</p>
+<p>The formaction属性会覆盖\<form>元素中的action属性</form></p>
+<h2 id="formenctype属性"><a href="#formenctype属性" class="headerlink" title="formenctype属性"></a>formenctype属性</h2><p>formenctype属性描述了表单提交到服务器的数据编码(只对form表单中method=“post”表单)</p>
+<h2 id="formmethod属性"><a href="#formmethod属性" class="headerlink" title="formmethod属性"></a>formmethod属性</h2><p>formmethod属性定义了表单提交的方式</p>
+<p>formmethod属性覆盖&lt;form&gt;元素的method属性</p>
+<p><strong>该属性可以与type=“submit”和type=“image”配合</strong></p>
+<h2 id="formnovalidate属性"><a href="#formnovalidate属性" class="headerlink" title="formnovalidate属性"></a>formnovalidate属性</h2><p>novalidate属性石一个boolean属性</p>
+<p>novalidate属性描述了&lt;input&gt;元素在表单提交时无需被验证。</p>
+<p>formnovalidate属性会覆盖&lt;form&gt;元素的novalidate属性</p>
+<p><strong>注意：formnovalidate属性与type=“submit”一起使用</strong></p>
+<h2 id="formtarget属性"><a href="#formtarget属性" class="headerlink" title="formtarget属性"></a>formtarget属性</h2><p>formtarget属性指定一个名称或一个关键字来指明表单提交数据接收后的展示。</p>
+<p>formtarget属性会覆盖&lt;form&gt;元素的target属性</p>
+<h2 id="height和width属性"><a href="#height和width属性" class="headerlink" title="height和width属性"></a>height和width属性</h2><p>height和width属性规定用于image类型的&lt;input&gt;标签的图像高度和宽度</p>
+<h2 id="list属性"><a href="#list属性" class="headerlink" title="list属性"></a>list属性</h2><p>list属性规定输入域的datalist。datalist是输入域的选项列表</p>
+<h2 id="min和max属性"><a href="#min和max属性" class="headerlink" title="min和max属性"></a>min和max属性</h2><p>min、max和step属性用于包含数字或日期的input类型规定限定</p>
+<h2 id="pattern属性"><a href="#pattern属性" class="headerlink" title="pattern属性"></a>pattern属性</h2><p>pattern属性描述了一个正则表达式用于验证\<input>元素的值</p>
+<p>placeholder属性</p>
+<p>placeholder属性提供了一宗提示，描述输入域所期待的值</p>
+<h2 id="required属性"><a href="#required属性" class="headerlink" title="required属性"></a>required属性</h2><p>required属性是一个boolean属性</p>
+<p>required属性规定必须在提交之前填写输入域（不能为空）</p>
+<h2 id="step属性"><a href="#step属性" class="headerlink" title="step属性"></a>step属性</h2><p>step属性为输入域规定合法的数字间隔。</p>
+<h1 id="HTML5的语义元素"><a href="#HTML5的语义元素" class="headerlink" title="HTML5的语义元素"></a>HTML5的语义元素</h1><p>什么是语义元素？</p>
+<p>一个语义元素能够清楚的描述其意义给浏览器和开发者。</p>
+<ul>
+<li><p>section元素</p>
+<p>section标签定义文档中的节。比如章节、页眉、页脚或文档中其他部分</p>
+</li>
+<li><p>article元素</p>
+<p>article标签定义独立的内容</p>
+</li>
+<li><p>nav元素</p>
+<p>nav标签定义导航链接的部分</p>
+</li>
+<li><p>aside元素</p>
+<p>aside标签定义页面主区域之外的内容(比如侧边栏)</p>
+</li>
+<li><p>header元素</p>
+<p>header元素描述了文档的头部区域</p>
+<p>header元素注意用于定义内容的介绍展示区域</p>
+</li>
+<li><p>footer元素</p>
+<p>footer元素描述了文档的底部区域</p>
+</li>
+</ul>
+<h1 id="HTML5-Web存储"><a href="#HTML5-Web存储" class="headerlink" title="HTML5 Web存储"></a>HTML5 Web存储</h1><h2 id="什么是HTML5-Web存储"><a href="#什么是HTML5-Web存储" class="headerlink" title="什么是HTML5 Web存储"></a>什么是HTML5 Web存储</h2><p>使用HTML5可以在本地存储用户的浏览数据</p>
+<h2 id="localStorage和sessionStorage"><a href="#localStorage和sessionStorage" class="headerlink" title="localStorage和sessionStorage"></a>localStorage和sessionStorage</h2><p>客户端存储数据的两个对象为：</p>
+<ul>
+<li>localStorage -没有时间限制的数据存储</li>
+<li>sessionStorage -针对一个session的数据存储</li>
+</ul>
+<h2 id="localStorage对象"><a href="#localStorage对象" class="headerlink" title="localStorage对象"></a>localStorage对象</h2><p>localStorage对象存储的数据没有时间限制。</p>
+<h2 id="sessionStorage对象"><a href="#sessionStorage对象" class="headerlink" title="sessionStorage对象"></a>sessionStorage对象</h2><p>sessionStorage方法针对一个session进行数据存储。当用户关闭浏览器窗口后，数据会被删除</p>
+<h1 id="HTML5-应用程序缓存"><a href="#HTML5-应用程序缓存" class="headerlink" title="HTML5 应用程序缓存"></a>HTML5 应用程序缓存</h1><blockquote>
+<p>使用HTML5，通过创建cache manifest文件，可以轻松创建web应用的离线版本。</p>
+</blockquote>
+<p>什么是应用程序缓存(Application Cache)</p>
+<p>HTML5 引入了应用程序缓存，这意味着web应用可以进行缓存，并可在没有因特网连接时进行访问。应用程序缓存为应用带来三个优势：</p>
+<ul>
+<li>离线浏览 用户可在应用离线时使用它们</li>
+<li>速度 已缓存资源加载会很快</li>
+<li>减少服务器负载 浏览器将只从服务器下载更新过或更改过的资源。</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"demo.appcache"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  文档内容</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Cache-Manifest基础"><a href="#Cache-Manifest基础" class="headerlink" title="Cache Manifest基础"></a>Cache Manifest基础</h2><p>如需启用应用程序缓存，请在文档的&lt;html&gt;标签中包含manifest 属性；</p>
+<p>每个指定了manifest的页面在用户对其访问时都会被缓存。如果未指定manifest属性，则页面不会被缓存。</p>
+<p>manifest文件的建议的文件扩展名是：”.appcache”。</p>
+<h2 id="Manifest-文件"><a href="#Manifest-文件" class="headerlink" title="Manifest 文件"></a>Manifest 文件</h2><p>mainfest文件是简单的文本文件，它告知浏览器被缓存的内容(以及不缓存的内容)。</p>
+<p>manifest文件可分为三个部分：</p>
+<ul>
+<li>CACHE MANIFEST -在此标题下列出的文件将在首次下载后进行缓存</li>
+<li>NETWORK -在此标题下列出的文件需要与服务器的连接，且不会被缓存</li>
+<li>FALLBACK -在此标题列出的文件规定在当前页面无法访问时的回退页面(比如404页面)</li>
+</ul>
+<h3 id="CACHE-MANIFEST"><a href="#CACHE-MANIFEST" class="headerlink" title="CACHE MANIFEST"></a>CACHE MANIFEST</h3><p>基本格式</p>
+<blockquote>
+<p>CHAHE MANIFEST</p>
+<p>/theme.css</p>
+<p>/logo.gif</p>
+<p>/main.js</p>
+</blockquote>
+<p>上面的manifest文件列出三个资源：一个CSS文件，一个GIF图像，以及一个JavaScript文件。当manifest文件加载后，浏览器会从网站的根目录下载这三个文件。然后，无论用户何时与因特网断开连接，这些资源依然是可用的。</p>
+<h2 id="NETWORK"><a href="#NETWORK" class="headerlink" title="NETWORK"></a>NETWORK</h2><p>下面的NETWORK小节规定文件”login.php”永远不会被缓存，且离线时不可用的：</p>
+<blockquote>
+<p>NETWORK:</p>
+<p>login.php</p>
+</blockquote>
+<p>可以使用星号来指定所有资源/文件都需要因特网连接：</p>
+<blockquote>
+<p>NETWORK:</p>
+<p>*</p>
+</blockquote>
+<h3 id="FALLBACK"><a href="#FALLBACK" class="headerlink" title="FALLBACK"></a>FALLBACK</h3><p>下面的FALLBACK小节规定如果无法建立因特网连接，则用”offline.html“替代/html5/目录中的所有文件：</p>
+<blockquote>
+<p>FALLBACK：</p>
+<p>/html/offline.html</p>
+</blockquote>
+<p><strong>注意：第一个URL是资源，第二个是替补。</strong></p>
+<h2 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h2><p>一旦应用被缓存，它就会保持缓存知道发生下列情况：</p>
+<ul>
+<li>用户情况浏览器缓存</li>
+<li>manifest文件被修改</li>
+<li>有程序来更新应用缓存</li>
+</ul>
+<h1 id="HTML5-Web-Workers"><a href="#HTML5-Web-Workers" class="headerlink" title="HTML5 Web Workers"></a>HTML5 Web Workers</h1><p>web worker是运行在后台的JavaScript，不会影响页面的性能。</p>
+<h2 id="计数器的创建工程："><a href="#计数器的创建工程：" class="headerlink" title="计数器的创建工程："></a>计数器的创建工程：</h2><h3 id="创建web-worker文件"><a href="#创建web-worker文件" class="headerlink" title="创建web worker文件"></a>创建web worker文件</h3><p>首先，在一个外部JavaScript中创建我们的web worker。</p>
+<p>在这里我们创建计数脚本，该脚本存储于”demo_worker.js”文件中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeCount</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	i=i+<span class="number">1</span>;</div><div class="line">  	postMessage(i);</div><div class="line">  	setTimeout(<span class="string">"timeCount()"</span>,<span class="number">500</span>);</div><div class="line">&#125;</div><div class="line">timeCount();</div></pre></td></tr></table></figure>
+<p>postMessage()方法用于向HTML页面传回一段消息</p>
+<h3 id="创建Web-Worker对象"><a href="#创建Web-Worker对象" class="headerlink" title="创建Web Worker对象"></a>创建Web Worker对象</h3><p>我们已经有web worker文件，现在我们需要从HTML页面调用它。</p>
+<p>下面的代码检测是否存在worker，如果不存在，它会创建一个新的web worker对象，然后运行”demo_worker.js”中的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span>(W)==<span class="string">"undefined"</span>)</div><div class="line">  &#123;</div><div class="line">    w=<span class="keyword">new</span> Work(<span class="string">"demo_worker.js"</span>)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>然后我们就可以从web worker发生和接收消息了。</p>
+<p>向web worker添加一个”onmesssage”事件监听器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">w.onmessage=<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML=event.data;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="终止Web-Worker"><a href="#终止Web-Worker" class="headerlink" title="终止Web Worker"></a>终止Web Worker</h3><p>当我们创建web worker对象后，它会继续监听消息知道其被终止为止。如需终止web worker，并释放浏览器/计算机资源，请使用terminate()方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">w.terminate();</div></pre></td></tr></table></figure>
+<h2 id="Web-Worker和DOM"><a href="#Web-Worker和DOM" class="headerlink" title="Web Worker和DOM"></a>Web Worker和DOM</h2><p>由于web worker位于外部文件中，它们无法访问下例JavaScript对象：</p>
+<ul>
+<li>window对象</li>
+<li>document对象</li>
+<li>parent对象</li>
+</ul>
+<h1 id="HTML5-服务器发送事件"><a href="#HTML5-服务器发送事件" class="headerlink" title="HTML5 服务器发送事件"></a>HTML5 服务器发送事件</h1><p>HTML5服务器发送事件允许网页获得来自服务器的更新</p>
+<h2 id="Server-Sent事件-单向消息传递"><a href="#Server-Sent事件-单向消息传递" class="headerlink" title="Server-Sent事件 -单向消息传递"></a>Server-Sent事件 -单向消息传递</h2><p>Server-Sent事件指的是网页自动获取来自服务器的更新</p>
+<h2 id="接收Server-Sent事件通知"><a href="#接收Server-Sent事件通知" class="headerlink" title="接收Server -Sent事件通知"></a>接收Server -Sent事件通知</h2><p>EventSource对象用于接收服务器发送事件通知：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> source=<span class="keyword">new</span> EventSource(<span class="string">"demo_see.php"</span>);</div><div class="line">source.onmessage=<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span></div><div class="line">&#123;</div><div class="line"> 	<span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML+=<span class="string">"&lt;br&gt;"</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="EventSource对象"><a href="#EventSource对象" class="headerlink" title="EventSource对象"></a>EventSource对象</h2><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onopen</td>
+<td>当通往服务器的连接被打开</td>
+</tr>
+<tr>
+<td>onmessaged</td>
+<td>当接收到消息</td>
+</tr>
+<tr>
+<td>onerror</td>
+<td>当发生错误</td>
+</tr>
+</tbody>
+</table>
+<h1 id="HTML5-WebSocket"><a href="#HTML5-WebSocket" class="headerlink" title="HTML5 WebSocket"></a>HTML5 WebSocket</h1><blockquote>
+<p>这个等下次认真搞一遍</p>
+</blockquote>
+<p>WebSocket是HTML5开始提供的一种在单个TCP连接上进行全双工通讯的协议。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/25/json/" rel="next" title="《JSON必知必会》读书笔记">
+                <i class="fa fa-chevron-left"></i> 《JSON必知必会》读书笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="白三" />
+          <p class="site-author-name" itemprop="name">白三</p>
+           
+              <p class="site-description motion-element" itemprop="description">为什么这么努力，因为有想要的生活</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bai3" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5883663748?refer_flag=1001030201_" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:bzxdwyyx@163.com" target="_blank" title="mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  mail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100010733615099" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5简介"><span class="nav-number">1.</span> <span class="nav-text">HTML5简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是HTML5？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是HTML5？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5是如何起步的"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5是如何起步的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-lt-DOCTYPE-gt"><span class="nav-number">1.3.</span> <span class="nav-text">HTML5 < !DOCTYPE></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5的改进"><span class="nav-number">1.4.</span> <span class="nav-text">HTML5的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-多媒体"><span class="nav-number">1.5.</span> <span class="nav-text">HTML5 多媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-应用"><span class="nav-number">1.6.</span> <span class="nav-text">HTML5 应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-使用CSS3"><span class="nav-number">1.7.</span> <span class="nav-text">HTML5 使用CSS3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语义元素"><span class="nav-number">1.8.</span> <span class="nav-text">语义元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5表单"><span class="nav-number">1.9.</span> <span class="nav-text">HTML5表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将HTML5元素定义为块元素"><span class="nav-number">1.10.</span> <span class="nav-text">将HTML5元素定义为块元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5新元素"><span class="nav-number">2.</span> <span class="nav-text">HTML5新元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-canvas-gt-新元素"><span class="nav-number">2.1.</span> <span class="nav-text"><canvas>新元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新多媒体元素"><span class="nav-number">2.2.</span> <span class="nav-text">新多媒体元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新表单元素"><span class="nav-number">2.3.</span> <span class="nav-text">新表单元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已经移除的元素"><span class="nav-number">2.4.</span> <span class="nav-text">已经移除的元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-Canvas"><span class="nav-number">3.</span> <span class="nav-text">HTML5 Canvas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个画布（Canvas）"><span class="nav-number">3.1.</span> <span class="nav-text">创建一个画布（Canvas）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用JavaScript来绘制图像"><span class="nav-number">3.2.</span> <span class="nav-text">使用JavaScript来绘制图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-坐标"><span class="nav-number">3.3.</span> <span class="nav-text">Canvas 坐标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-路径"><span class="nav-number">3.4.</span> <span class="nav-text">Canvas-路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-文本"><span class="nav-number">3.5.</span> <span class="nav-text">Canvas-文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-渐变"><span class="nav-number">3.6.</span> <span class="nav-text">Canvas-渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-图像"><span class="nav-number">3.7.</span> <span class="nav-text">Canvas-图像</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-内联SVG"><span class="nav-number">4.</span> <span class="nav-text">HTML5 内联SVG</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是SVG"><span class="nav-number">4.1.</span> <span class="nav-text">什么是SVG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG的优势"><span class="nav-number">4.2.</span> <span class="nav-text">SVG的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG与Canvas的区别"><span class="nav-number">4.3.</span> <span class="nav-text">SVG与Canvas的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-MathML"><span class="nav-number">5.</span> <span class="nav-text">HTML5 MathML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-拖放"><span class="nav-number">6.</span> <span class="nav-text">HTML5 拖放</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拖放"><span class="nav-number">6.1.</span> <span class="nav-text">拖放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置元素为可拖放"><span class="nav-number">6.2.</span> <span class="nav-text">设置元素为可拖放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拖动什么-ondragstart和setDate"><span class="nav-number">6.3.</span> <span class="nav-text">拖动什么-ondragstart和setDate()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#放在何处-ondragover"><span class="nav-number">6.4.</span> <span class="nav-text">放在何处- ondragover</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行放置-ondrop"><span class="nav-number">6.5.</span> <span class="nav-text">进行放置- ondrop</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-Geolocation-地理定位"><span class="nav-number">7.</span> <span class="nav-text">HTML5 Geolocation(地理定位)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-使用地理定位"><span class="nav-number">7.1.</span> <span class="nav-text">HTML5-使用地理定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理错误和拒绝"><span class="nav-number">7.2.</span> <span class="nav-text">处理错误和拒绝</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-Video"><span class="nav-number">8.</span> <span class="nav-text">HTML5 Video</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-Audio-如何工作"><span class="nav-number">8.1.</span> <span class="nav-text">HTML5 Audio - 如何工作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-input类型"><span class="nav-number">9.</span> <span class="nav-text">HTML5 input类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-表单元素"><span class="nav-number">10.</span> <span class="nav-text">HTML5 表单元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-lt-datelist-gt-元素"><span class="nav-number">10.1.</span> <span class="nav-text">HTML5<datelist>元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-lt-keygen-gt-元素"><span class="nav-number">10.2.</span> <span class="nav-text">HTML5<keygen>元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-lt-output-gt-元素"><span class="nav-number">10.3.</span> <span class="nav-text">HTML5<output>元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-表单属性"><span class="nav-number">11.</span> <span class="nav-text">HTML5 表单属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#form-input-autocomplete属性"><span class="nav-number">11.1.</span> <span class="nav-text">form/input autocomplete属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#novalidate属性"><span class="nav-number">11.2.</span> <span class="nav-text">novalidate属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#autofocus属性"><span class="nav-number">11.3.</span> <span class="nav-text">autofocus属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form属性"><span class="nav-number">11.4.</span> <span class="nav-text">form属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formaction属性"><span class="nav-number">11.5.</span> <span class="nav-text">formaction属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formenctype属性"><span class="nav-number">11.6.</span> <span class="nav-text">formenctype属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formmethod属性"><span class="nav-number">11.7.</span> <span class="nav-text">formmethod属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formnovalidate属性"><span class="nav-number">11.8.</span> <span class="nav-text">formnovalidate属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formtarget属性"><span class="nav-number">11.9.</span> <span class="nav-text">formtarget属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#height和width属性"><span class="nav-number">11.10.</span> <span class="nav-text">height和width属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list属性"><span class="nav-number">11.11.</span> <span class="nav-text">list属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#min和max属性"><span class="nav-number">11.12.</span> <span class="nav-text">min和max属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pattern属性"><span class="nav-number">11.13.</span> <span class="nav-text">pattern属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#required属性"><span class="nav-number">11.14.</span> <span class="nav-text">required属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step属性"><span class="nav-number">11.15.</span> <span class="nav-text">step属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5的语义元素"><span class="nav-number">12.</span> <span class="nav-text">HTML5的语义元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-Web存储"><span class="nav-number">13.</span> <span class="nav-text">HTML5 Web存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是HTML5-Web存储"><span class="nav-number">13.1.</span> <span class="nav-text">什么是HTML5 Web存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#localStorage和sessionStorage"><span class="nav-number">13.2.</span> <span class="nav-text">localStorage和sessionStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#localStorage对象"><span class="nav-number">13.3.</span> <span class="nav-text">localStorage对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sessionStorage对象"><span class="nav-number">13.4.</span> <span class="nav-text">sessionStorage对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-应用程序缓存"><span class="nav-number">14.</span> <span class="nav-text">HTML5 应用程序缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache-Manifest基础"><span class="nav-number">14.1.</span> <span class="nav-text">Cache Manifest基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manifest-文件"><span class="nav-number">14.2.</span> <span class="nav-text">Manifest 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CACHE-MANIFEST"><span class="nav-number">14.2.1.</span> <span class="nav-text">CACHE MANIFEST</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NETWORK"><span class="nav-number">14.3.</span> <span class="nav-text">NETWORK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FALLBACK"><span class="nav-number">14.3.1.</span> <span class="nav-text">FALLBACK</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新缓存"><span class="nav-number">14.4.</span> <span class="nav-text">更新缓存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-Web-Workers"><span class="nav-number">15.</span> <span class="nav-text">HTML5 Web Workers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计数器的创建工程："><span class="nav-number">15.1.</span> <span class="nav-text">计数器的创建工程：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建web-worker文件"><span class="nav-number">15.1.1.</span> <span class="nav-text">创建web worker文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Web-Worker对象"><span class="nav-number">15.1.2.</span> <span class="nav-text">创建Web Worker对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终止Web-Worker"><span class="nav-number">15.1.3.</span> <span class="nav-text">终止Web Worker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Worker和DOM"><span class="nav-number">15.2.</span> <span class="nav-text">Web Worker和DOM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-服务器发送事件"><span class="nav-number">16.</span> <span class="nav-text">HTML5 服务器发送事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Server-Sent事件-单向消息传递"><span class="nav-number">16.1.</span> <span class="nav-text">Server-Sent事件 -单向消息传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接收Server-Sent事件通知"><span class="nav-number">16.2.</span> <span class="nav-text">接收Server -Sent事件通知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EventSource对象"><span class="nav-number">16.3.</span> <span class="nav-text">EventSource对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-WebSocket"><span class="nav-number">17.</span> <span class="nav-text">HTML5 WebSocket</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">白三</span>
+</div>
+
+
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
