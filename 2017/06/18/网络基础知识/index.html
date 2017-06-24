@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/06/18/网络基础知识/截图20170619122155.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/18/网络基础知识/截图20170619124351.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/18/网络基础知识/截图20170619142851.png">
-<meta property="og:updated_time" content="2017-06-19T10:05:32.247Z">
+<meta property="og:updated_time" content="2017-06-23T08:39:33.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络基础知识">
 <meta name="twitter:description" content="记录一下:因为上上个学期不好好学习，导致我的信息技术考试考了55分，结果今年又要重修，所以在距离考试还有5天的时间，我得认真复习，因为以后可能就走这个行业，所以还是做好笔记认认真真复习一遍。">
@@ -370,8 +370,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-06-19T18:05:32+08:00">
-                2017-06-19
+              <time title="更新于" itemprop="dateModified" datetime="2017-06-23T16:39:33+08:00">
+                2017-06-23
               </time>
             
           </span>
@@ -524,7 +524,7 @@
 <li>定义：网络地址位全为1+主机地址全为0</li>
 <li>网络地址=IP地址&amp;子网掩码</li>
 <li>表示：<ul>
-<li>/n n为网络地址位长度</li>
+<li>/n n为网络地址位长度 </li>
 <li>/8→255.0.0.0 /9→255.128.0.0</li>
 </ul>
 </li>
@@ -592,13 +592,13 @@
 </ul>
 <p>过程</p>
 <ul>
-<li>第一次握手：建立连接时，客户端发送syn包到服务器，并进入SYN_SENT状态，等待服务器确认。</li>
-<li>第二次握手：服务器收到syn包，必须确认客户的SYN包，同时自己也发送一个SYN包，即SYN+ACK包，此时服务器进入SYN_RECV状态。</li>
-<li>第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK，此包发送完毕后，客户端和服务器进入TCP连接成功状态，完成三次握手。</li>
+<li>第一次握手：建立连接时，客户端发送syn数据段到服务器，并等待服务器确认。</li>
+<li>第二次握手：服务器收到syn数据段，从而建立于客户端的会话，为了确认收到客户的SYN包，同时自己也发送一个SYN数据段，即SYN+ACK，</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK数据段，向服务器发送包含ACK数据段，此数据段发送完毕后，客户端和服务器进入TCP连接成功状态，完成三次握手。</li>
 </ul>
 <p>会话：</p>
 <p>两种状态：创建会话(采用三次握手)，终止(发送FIN消息)</p>
-<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="会话层功能"><a href="#会话层功能" class="headerlink" title="会话层功能"></a>会话层功能</h3><p>在两个节点之间建立端连接，为端系统的应用程序之间提供了对话控制机制。此服务包括建立连接时以全双工还是以半双工的方式进行设置。</p>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="会话层功能"><a href="#会话层功能" class="headerlink" title="会话层功能"></a>会话层功能</h3><p> 在两个节点之间建立端连接，为端系统的应用程序之间提供了对话控制机制。此服务包括建立连接时以全双工还是以半双工的方式进行设置。</p>
 <p>简单地说就是：对话控制，建立同步</p>
 <h3 id="表示层功能"><a href="#表示层功能" class="headerlink" title="表示层功能"></a>表示层功能</h3><p>主要用于处理两个通信系统中交换信息的表示方式。为上层用户解决用户信息的语法问题。它包括数据格式交换、数据加密与解密、数据压缩与恢复等</p>
 <p>简单地说就是：翻译、加密、压缩</p>
@@ -665,7 +665,7 @@
 </table>
 <h1 id="思科考试重点："><a href="#思科考试重点：" class="headerlink" title="思科考试重点："></a>思科考试重点：</h1><p>填空题：</p>
 <ol>
-<li>在以太网中，ip的作用是<strong>识别</strong>和<strong>定位</strong></li>
+<li>在以太网中，ip的作用是<strong>识别</strong>和<strong>定位</strong>。</li>
 <li>TCP通过使用<strong>流量控制</strong>和<strong>滑动窗口</strong>来提供阻塞控制</li>
 <li>对于在不同网段的两台主机，在数据的传输过程中，从源主机发送后，到目的主机接收前，数据所经过的OSI模型的最高层是<strong>网络层</strong></li>
 <li><strong>ipconfig</strong>  查找网关IP地址，<strong>tracert</strong>追踪用于返回数据包在网络中传输时，沿途经过的跳列表，即追踪从源主机到目的主机所经过的路由器地址，<strong>nslookup</strong>  手动查询域名服务器指令</li>
@@ -695,38 +695,45 @@
 </ul>
 <p>ping不通目的主机各层可能发生的错误</p>
 <ul>
-<li>物理层故障：线缆短路，接口故障，速率、双工状态不</li>
+<li>物理层故障：线缆短路，接口故障，速率、双工状态不一致</li>
 <li>数据链路层：数据帧的封装格式不同</li>
 <li>网路层：没有安装相应协议，没有设置正确IP地址。</li>
 </ul>
 <p>网页无法连接各层可能发生的错误</p>
 <ul>
 <li>物理层故障：网线松动，接口故障</li>
-<li>数据链路层：设设备配置错误，设备没有安装驱动程序，例如网卡驱动</li>
+<li>数据链路层：设备配置错误，设备没有安装驱动程序，例如网卡驱动</li>
 <li>网络层：IP地址是否配置正确，子网掩码是否正确，网关是否正确，DNS或DHCO设置是否正确</li>
 <li>传输层：防火墙设置错误，应用程序的TCP或UDP端口是否被打开</li>
 <li>会话层、表示层、应用层：应用软件故障。</li>
 </ul>
 <p>题目：请以OSI七层模型为例，说明在网络通信过程中，如何保证数据的可靠性</p>
 <ul>
-<li>数据链路层 ：帧检测序列FCS</li>
 <li>传输层 ：滑动窗口，序列号，确认</li>
+<li>数据链路层 ：帧检测序列FCS</li>
 <li>应用层：校验文件类型</li>
 </ul>
 <p>题目：210.34.160.0/24网段分成两个字网，由于客户端(client)子网掩码设置错误,都设成255.255.255.0，造成两个子网不能正常通信，请解释</p>
 <ol>
 <li>子网掩码的作用</li>
 </ol>
-<p>子网划分，子网掩码与主机IP相与，获得主机所对应的网络地址</p>
+<p>定义地址的网络和主机部分，子网划分</p>
 <ol>
 <li>不能通信的原因（从ARP的角度）</li>
 </ol>
-<p>由于两主机认变在同一个网段，所以实施ARP的时候，对方没办法影响</p>
+<p>当发送接收双方主机在一个网段时，当一个主机向另一台主机发送通讯时，认为两者在同一网段，这时会进行不断请求，而消息将会发送到错误的目的地，导致无法通讯</p>
 <p>题目：请解释数据到传输层后，物理层前，这些层对数据封装</p>
 <ul>
 <li>传输层分割数据，成段</li>
 <li>网络层：加上相应的IP报头</li>
 <li>数据链路层加上报尾形成帧</li>
+</ul>
+<p>题目·数据在各个阶段的PDU</p>
+<ul>
+<li>物理层：比特流 bit</li>
+<li>数据链路层：帧frame</li>
+<li>网络层：数据包packet</li>
+<li>传输层：数据段segment  </li>
 </ul>
 
       
@@ -781,6 +788,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/24/Git学习指南/" rel="prev" title="Git学习指南1-2">
+                Git学习指南1-2 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -852,7 +863,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -874,7 +885,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
