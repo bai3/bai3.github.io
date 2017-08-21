@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。1234567//截流函数        self.throttle = function (method, context) &amp;#123;            clearTimeout(method.tId);            method.tId = setTimeout(function ()">
+<meta name="description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="载流函数的使用">
 <meta property="og:url" content="http://yoursite.com/2017/08/21/载流函数的使用/index.html">
 <meta property="og:site_name" content="bai3">
-<meta property="og:description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。1234567//截流函数        self.throttle = function (method, context) &amp;#123;            clearTimeout(method.tId);            method.tId = setTimeout(function ()">
-<meta property="og:updated_time" content="2017-08-21T02:01:59.042Z">
+<meta property="og:description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。">
+<meta property="og:updated_time" content="2017-08-21T02:06:31.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="载流函数的使用">
-<meta name="twitter:description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。1234567//截流函数        self.throttle = function (method, context) &amp;#123;            clearTimeout(method.tId);            method.tId = setTimeout(function ()">
+<meta name="twitter:description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。">
 
 
 
@@ -366,7 +366,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-21T10:01:59+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-21T10:06:31+08:00">
                 2017-08-21
               </time>
             
@@ -419,7 +419,8 @@
       
 
       
-        <h1 id="JavaScript节流函数-载流函数-Throttle解析"><a href="#JavaScript节流函数-载流函数-Throttle解析" class="headerlink" title="JavaScript节流函数(载流函数)Throttle解析"></a>JavaScript节流函数(载流函数)Throttle解析</h1><h4 id="自己项目中一般载流函数的写法。"><a href="#自己项目中一般载流函数的写法。" class="headerlink" title="自己项目中一般载流函数的写法。"></a>自己项目中一般载流函数的写法。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//截流函数</span></div><div class="line">        self.throttle = <span class="function"><span class="keyword">function</span> (<span class="params">method, context</span>) </span>&#123;</div><div class="line">            clearTimeout(method.tId);</div><div class="line">            method.tId = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                method.call(context);</div><div class="line">            &#125;, <span class="number">400</span>);</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
+        <h1 id="JavaScript节流函数-载流函数-Throttle解析"><a href="#JavaScript节流函数-载流函数-Throttle解析" class="headerlink" title="JavaScript节流函数(载流函数)Throttle解析"></a>JavaScript节流函数(载流函数)Throttle解析</h1><h4 id="自己项目中一般载流函数的写法。"><a href="#自己项目中一般载流函数的写法。" class="headerlink" title="自己项目中一般载流函数的写法。"></a>自己项目中一般载流函数的写法。</h4><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//截流函数</span></div><div class="line">        self.throttle = <span class="function"><span class="keyword">function</span> (<span class="params">method, context</span>) </span>&#123;</div><div class="line">            clearTimeout(method.tId);</div><div class="line">            method.tId = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                method.call(context);</div><div class="line">            &#125;, <span class="number">400</span>);</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
 <h4 id="载流函数的作用"><a href="#载流函数的作用" class="headerlink" title="载流函数的作用"></a>载流函数的作用</h4><p>在浏览器DOM事件中，有一些事件会随着用户的操作不间断的触发。</p>
 <p>有时候如果事件处理方法比较庞大，DOM操作比较复杂，还不断的促发此类事件就会造成性能上的损失，导致用户体验较低(UI反应慢，浏览器卡死)，所以通常我们会给相应事件添加延迟执行的逻辑。</p>
 <h4 id="网上copy的代码"><a href="#网上copy的代码" class="headerlink" title="网上copy的代码"></a>网上copy的代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> timer = <span class="literal">null</span>;</div><div class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    clearTimeout(timer);</div><div class="line">    timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        testFn();</div><div class="line">    &#125;, <span class="number">100</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>

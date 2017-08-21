@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[载流函数的使用]]></title>
     <url>%2F2017%2F08%2F21%2F%E8%BD%BD%E6%B5%81%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。1234567//截流函数 self.throttle = function (method, context) &#123; clearTimeout(method.tId); method.tId = setTimeout(function () &#123; method.call(context); &#125;, 400); &#125;; 载流函数的作用在浏览器DOM事件中，有一些事件会随着用户的操作不间断的触发。 有时候如果事件处理方法比较庞大，DOM操作比较复杂，还不断的促发此类事件就会造成性能上的损失，导致用户体验较低(UI反应慢，浏览器卡死)，所以通常我们会给相应事件添加延迟执行的逻辑。 网上copy的代码1234567var timer = null;window.onresize = function () &#123; clearTimeout(timer); timer = setTimeout(function() &#123; testFn(); &#125;, 100);&#125;; 感觉跟我项目用的差不多(我的书写主要是照着前一位学长写的) 产生的问题如果js代码中还有别的功能也叫timer就产生冲突，可以采用闭包来解决 123456789101112131415var throttle = function (fn, delay) &#123; var timer = null; return function () &#123; clearTimeout(timer); timer = setTimeout(function() &#123; fn(); &#125;, delay); &#125;&#125;;var f = throttle(testFn, 200);window.onresize = function () &#123; f();&#125;;]]></content>
+    <content type="text"><![CDATA[JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。 1234567//截流函数 self.throttle = function (method, context) &#123; clearTimeout(method.tId); method.tId = setTimeout(function () &#123; method.call(context); &#125;, 400); &#125;; 载流函数的作用在浏览器DOM事件中，有一些事件会随着用户的操作不间断的触发。 有时候如果事件处理方法比较庞大，DOM操作比较复杂，还不断的促发此类事件就会造成性能上的损失，导致用户体验较低(UI反应慢，浏览器卡死)，所以通常我们会给相应事件添加延迟执行的逻辑。 网上copy的代码1234567var timer = null;window.onresize = function () &#123; clearTimeout(timer); timer = setTimeout(function() &#123; testFn(); &#125;, 100);&#125;; 感觉跟我项目用的差不多(我的书写主要是照着前一位学长写的) 产生的问题如果js代码中还有别的功能也叫timer就产生冲突，可以采用闭包来解决 123456789101112131415var throttle = function (fn, delay) &#123; var timer = null; return function () &#123; clearTimeout(timer); timer = setTimeout(function() &#123; fn(); &#125;, delay); &#125;&#125;;var f = throttle(testFn, 200);window.onresize = function () &#123; f();&#125;;]]></content>
       <categories>
         <category>note</category>
       </categories>
@@ -65,8 +65,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>CSS3</tag>
         <tag>CSS</tag>
+        <tag>CSS3</tag>
       </tags>
   </entry>
   <entry>
