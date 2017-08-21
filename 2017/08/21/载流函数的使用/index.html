@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,json," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="将之前写在onenote的关于json的简要知识点改写成md。">
-<meta name="keywords" content="js,json">
+<meta name="description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。1234567//截流函数        self.throttle = function (method, context) &amp;#123;            clearTimeout(method.tId);            method.tId = setTimeout(function ()">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《JSON必知必会》读书笔记">
-<meta property="og:url" content="http://yoursite.com/2017/05/25/json/index.html">
+<meta property="og:title" content="载流函数的使用">
+<meta property="og:url" content="http://yoursite.com/2017/08/21/载流函数的使用/index.html">
 <meta property="og:site_name" content="bai3">
-<meta property="og:description" content="将之前写在onenote的关于json的简要知识点改写成md。">
-<meta property="og:updated_time" content="2017-05-25T14:03:58.279Z">
+<meta property="og:description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。1234567//截流函数        self.throttle = function (method, context) &amp;#123;            clearTimeout(method.tId);            method.tId = setTimeout(function ()">
+<meta property="og:updated_time" content="2017-08-21T02:01:59.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《JSON必知必会》读书笔记">
-<meta name="twitter:description" content="将之前写在onenote的关于json的简要知识点改写成md。">
+<meta name="twitter:title" content="载流函数的使用">
+<meta name="twitter:description" content="JavaScript节流函数(载流函数)Throttle解析自己项目中一般载流函数的写法。1234567//截流函数        self.throttle = function (method, context) &amp;#123;            clearTimeout(method.tId);            method.tId = setTimeout(function ()">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/25/json/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/21/载流函数的使用/"/>
 
 
 
 
 
-  <title>《JSON必知必会》读书笔记 | bai3</title>
+  <title>载流函数的使用 | bai3</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -321,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/json/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/21/载流函数的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="白三">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《JSON必知必会》读书笔记</h1>
+          <h1 class="post-title" itemprop="name headline">载流函数的使用</h1>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T20:49:54+08:00">
-                2017-05-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T10:00:23+08:00">
+                2017-08-21
               </time>
             
 
@@ -366,8 +366,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-05-25T22:03:58+08:00">
-                2017-05-25
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-21T10:01:59+08:00">
+                2017-08-21
               </time>
             
           </span>
@@ -419,86 +419,13 @@
       
 
       
-        <p><center>将之前写在onenote的关于json的简要知识点改写成md。<center></center></center></p>
-<a id="more"></a>
-<hr>
-<h2 id="第一章-什么是JSON"><a href="#第一章-什么是JSON" class="headerlink" title="第一章 什么是JSON"></a>第一章 什么是JSON</h2><ul>
-<li>JSON指的是JavaScript对象表示法（JavaScript Object Notation）</li>
-<li>JSON是轻量级的文本数据交换格式</li>
-<li>JSON独立于语言</li>
-<li>JSON具有自我描述性，更易理解<blockquote>
-<p>JSON使用JavaScript语法来描述数据对象，但是JSON独立于语言和平台。JSON解析器和JSON库之处许多不同的编程语言。目前非常多的动态（PHP、JSP、.NET）编程语言都支持JSON。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="第二章-JSON的语法"><a href="#第二章-JSON的语法" class="headerlink" title="第二章 JSON的语法"></a>第二章 JSON的语法</h2><p><strong>JSON中的名称—值对的名称如果被系统作为对象装入内存的话，将会成为”属性“，不同于名称，值并不是总是需要被双引号包裹。当值是字符串时，必须使用双引号。而在JSON中，数字、布尔值、数组、对象、null等其他类型，这些都不应该被双引号包裹。</strong></p>
-<p>例如：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  title："this is my title"</div><div class="line">&#125;//不合法</div><div class="line">&#123;</div><div class="line">  'title':'this is my title'</div><div class="line">&#125;//同样不合法</div><div class="line">&#123;</div><div class="line">  "title":"this is my title"</div><div class="line">&#125;//合法的书写</div><div class="line">&#123;</div><div class="line">  "value":12</div><div class="line">  "result":true</div><div class="line">&#125;//这些都不加双引号</div></pre></td></tr></table></figure>
-<p><strong>JSON的名称始终被双引号包裹</strong></p>
-<p><strong>JSON文件使用.json扩展名</strong></p>
-<h2 id="第三章-JSON的数据结构"><a href="#第三章-JSON的数据结构" class="headerlink" title="第三章  JSON的数据结构"></a>第三章  JSON的数据结构</h2><p>JSON的数据类型：</p>
-<ul>
-<li>对象</li>
-<li>字符串</li>
-<li>数字</li>
-<li>布尔值</li>
-<li>null</li>
-<li>数组</li>
-</ul>
-<p>基本嵌套格式</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"person"</span>:&#123;</div><div class="line">    <span class="attr">"name"</span>:<span class="string">"Lindasy Bassett"</span>,</div><div class="line">    <span class="attr">"heightInInches"</span>:<span class="number">66</span>,</div><div class="line">    <span class="attr">"head"</span>:&#123;</div><div class="line">      <span class="attr">"hair"</span>:&#123;</div><div class="line">        <span class="attr">"color"</span>:<span class="string">"light blood"</span>,</div><div class="line">        <span class="attr">"length"</span>:<span class="string">"short"</span>,</div><div class="line">        <span class="attr">"style"</span>:<span class="string">"A-line"</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">"eyes"</span>:<span class="string">"green"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注意事项：</p>
-<ul>
-<li>遇到双引号、反斜线、\/（正斜线）、\b、\f、\t、\n、\r都需要进行转义（加\）</li>
-<li>在JSON中布尔值仅能用true和false表示，任何其他形式的写法都会报错（所有字母必须要小写）。</li>
-<li>对象和数组很关键的一个区别就是，对象是名称-值对构成的列表或者集合，数组是值构成的列表或者集合。</li>
-<li>对象和数组另一个关键的区别是，数组中所有的值应具有相同的的数据类型。  </li>
-</ul>
-<h2 id="第四章-JSON-Schema"><a href="#第四章-JSON-Schema" class="headerlink" title="第四章  JSON Schema"></a>第四章  JSON Schema</h2><p>基础概念</p>
-<blockquote>
-<p>jsonschema是描述你的JSON数据格式；JSON模式（应用程序/模式+ JSON）有多种用途，其中之一就是实例验证。验证过程可以是交互式或非交互式的。例如，应用程序可以使用JSON模式来构建用户界面使互动的内容生成除了用户输入检查或验证各种来源获取的数据。</p>
-</blockquote>
-<p>基本格式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "schema":"http://json-schame.org/draft-04/shema",</div><div class="line">  "title":"Cat",//文件标题</div><div class="line">  "properties":&#123;</div><div class="line">    "name":&#123;</div><div class="line">      "type":"string"</div><div class="line">    &#125;,</div><div class="line">    "age":&#123;</div><div class="line">      "tyep":"number",</div><div class="line">      "description":"Your cat's age in year"</div><div class="line">    &#125;,</div><div class="line">    "declawd":&#123;</div><div class="line">      "type":"boolean"</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong> “required”，值为一个数组，数组中含必填的字段。如果你的JSON Schema中不含”required“名称–值对，那么将不必有必填项。</strong></p>
-<p>总结：</p>
-<ol>
-<li><p>JSON Schema是数据交换中的一种虚拟的”合同“</p>
-</li>
-<li><p>JSON验证器负责验证语法错误，JSON Schema负责提供一致性检验</p>
-</li>
-<li><p>JSON Schema可以解决下列有关一致性检验的问题。</p>
-<p>——值的数据类型是否正确？</p>
-<p>​          可以具体规定一个值是数字、字符串等类型</p>
-<p>——是否包含所需要的数据</p>
-<p>可以具体规定哪些数据是需要的，哪些是不需要的</p>
-<p>——值的形式是否是我需要的？</p>
-<p>可以指定范围、最小值、最大值。</p>
-</li>
-</ol>
-<h2 id="第六章-JavaScript中的XMLHTTPRequest与Web-API"><a href="#第六章-JavaScript中的XMLHTTPRequest与Web-API" class="headerlink" title="第六章  JavaScript中的XMLHTTPRequest与Web API"></a>第六章  JavaScript中的XMLHTTPRequest与Web API</h2><p>基本格式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xml=<span class="keyword">new</span> XMLHTTPRequest();</div><div class="line"><span class="keyword">var</span> url=<span class="string">"#"</span>;</div><div class="line">xml.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(xml.readyState===<span class="number">4</span> &amp;&amp; xml.state===<span class="number">200</span>)&#123;</div><div class="line">    <span class="keyword">var</span> myObject = <span class="built_in">JSON</span>.parse(xml.responseText);</div><div class="line">  	<span class="keyword">var</span> myJSON = <span class="built_in">JSON</span>.stringify(myObject);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">xml.open(<span class="string">"GET"</span>,url,<span class="literal">true</span>);</div><div class="line">xml.send();</div></pre></td></tr></table></figure>
-<ul>
-<li>JSON.parse:反序列化操作，JSON解析成JavaScript对象</li>
-<li>JSON.stringify:序列化操作，将JavaScript对象解析成JSON</li>
-<li>JavaScript中的XMLHttpRequest负责在客户端发起请求，而web API负责在服务端返回响应</li>
-</ul>
-<p>XMLHTTPRequest主要属性含义</p>
-<ul>
-<li><p>onreadystatechange</p>
-<p>可以在代码中给它赋值为一个函数</p>
-</li>
-<li><p>readyState</p>
-<p>返回一个0~4的值，用来表示状态码</p>
-</li>
-<li><p>status</p>
-<p>返回Http状态码（如200请求表示成功）</p>
-</li>
-<li><p>responseText</p>
-<p>当请求成功时，该属性会包含作为文本的响应体</p>
-<p>​</p>
-</li>
-</ul>
+        <h1 id="JavaScript节流函数-载流函数-Throttle解析"><a href="#JavaScript节流函数-载流函数-Throttle解析" class="headerlink" title="JavaScript节流函数(载流函数)Throttle解析"></a>JavaScript节流函数(载流函数)Throttle解析</h1><h4 id="自己项目中一般载流函数的写法。"><a href="#自己项目中一般载流函数的写法。" class="headerlink" title="自己项目中一般载流函数的写法。"></a>自己项目中一般载流函数的写法。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//截流函数</span></div><div class="line">        self.throttle = <span class="function"><span class="keyword">function</span> (<span class="params">method, context</span>) </span>&#123;</div><div class="line">            clearTimeout(method.tId);</div><div class="line">            method.tId = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                method.call(context);</div><div class="line">            &#125;, <span class="number">400</span>);</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
+<h4 id="载流函数的作用"><a href="#载流函数的作用" class="headerlink" title="载流函数的作用"></a>载流函数的作用</h4><p>在浏览器DOM事件中，有一些事件会随着用户的操作不间断的触发。</p>
+<p>有时候如果事件处理方法比较庞大，DOM操作比较复杂，还不断的促发此类事件就会造成性能上的损失，导致用户体验较低(UI反应慢，浏览器卡死)，所以通常我们会给相应事件添加延迟执行的逻辑。</p>
+<h4 id="网上copy的代码"><a href="#网上copy的代码" class="headerlink" title="网上copy的代码"></a>网上copy的代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> timer = <span class="literal">null</span>;</div><div class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    clearTimeout(timer);</div><div class="line">    timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        testFn();</div><div class="line">    &#125;, <span class="number">100</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>感觉跟我项目用的差不多(我的书写主要是照着前一位学长写的)</p>
+<h4 id="产生的问题"><a href="#产生的问题" class="headerlink" title="产生的问题"></a>产生的问题</h4><p>如果js代码中还有别的功能也叫timer就产生冲突，可以采用闭包来解决</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> throttle = <span class="function"><span class="keyword">function</span> (<span class="params">fn, delay</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> timer = <span class="literal">null</span>;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        clearTimeout(timer);</div><div class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            fn();</div><div class="line">        &#125;, delay);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f = throttle(testFn, <span class="number">200</span>);</div><div class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    f();</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -528,9 +455,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
-          
-            <a href="/tags/json/" rel="tag"># json</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -543,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/25/JS高程复习/" rel="next" title="JS高程复习">
-                <i class="fa fa-chevron-left"></i> JS高程复习
+              <a href="/2017/06/25/百度2017春招笔试编程题/" rel="next" title="百度2017春招笔试编程题">
+                <i class="fa fa-chevron-left"></i> 百度2017春招笔试编程题
               </a>
             
           </div>
@@ -552,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/03/html5-初步认识/" rel="prev" title="html5 初步认识">
-                html5 初步认识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -722,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-什么是JSON"><span class="nav-number">1.</span> <span class="nav-text">第一章 什么是JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-JSON的语法"><span class="nav-number">2.</span> <span class="nav-text">第二章 JSON的语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-JSON的数据结构"><span class="nav-number">3.</span> <span class="nav-text">第三章  JSON的数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-JSON-Schema"><span class="nav-number">4.</span> <span class="nav-text">第四章  JSON Schema</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-JavaScript中的XMLHTTPRequest与Web-API"><span class="nav-number">5.</span> <span class="nav-text">第六章  JavaScript中的XMLHTTPRequest与Web API</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript节流函数-载流函数-Throttle解析"><span class="nav-number">1.</span> <span class="nav-text">JavaScript节流函数(载流函数)Throttle解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自己项目中一般载流函数的写法。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">自己项目中一般载流函数的写法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#载流函数的作用"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">载流函数的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网上copy的代码"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">网上copy的代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#产生的问题"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">产生的问题</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

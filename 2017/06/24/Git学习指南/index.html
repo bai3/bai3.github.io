@@ -98,15 +98,15 @@
 <meta name="description" content="看了一本《Git学习指南》的书，所以写了这个note，多多学习Git操作，也好装B，以前只会简单几个操作。">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git学习指南1-2">
+<meta property="og:title" content="Git学习指南">
 <meta property="og:url" content="http://yoursite.com/2017/06/24/Git学习指南/index.html">
 <meta property="og:site_name" content="bai3">
 <meta property="og:description" content="看了一本《Git学习指南》的书，所以写了这个note，多多学习Git操作，也好装B，以前只会简单几个操作。">
 <meta property="og:image" content="http://yoursite.com/2017/06/24/Git学习指南/QQ图片20170624131238.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/24/Git学习指南/QQ图片20170624131328.png">
-<meta property="og:updated_time" content="2017-06-24T06:52:30.356Z">
+<meta property="og:updated_time" content="2017-06-25T12:08:31.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git学习指南1-2">
+<meta name="twitter:title" content="Git学习指南">
 <meta name="twitter:description" content="看了一本《Git学习指南》的书，所以写了这个note，多多学习Git操作，也好装B，以前只会简单几个操作。">
 <meta name="twitter:image" content="http://yoursite.com/2017/06/24/Git学习指南/QQ图片20170624131238.png">
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>Git学习指南1-2 | bai3</title>
+  <title>Git学习指南 | bai3</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -341,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git学习指南1-2</h1>
+          <h1 class="post-title" itemprop="name headline">Git学习指南</h1>
         
 
         <div class="post-meta">
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-06-24T14:52:30+08:00">
-                2017-06-24
+              <time title="更新于" itemprop="dateModified" datetime="2017-06-25T20:08:31+08:00">
+                2017-06-25
               </time>
             
           </span>
@@ -502,8 +502,65 @@
 <p>git pull命令可以从原版本库中取回新的修改，将它们与克隆体中的的本地修改进行对比，并在工作区中合并两边的修改，创建一次新的提交。这个过程就是所谓的合并。</p>
 <h3 id="创建共享版本库"><a href="#创建共享版本库" class="headerlink" title="创建共享版本库"></a>创建共享版本库</h3><p>除了可以用pull命令从其他版本库取回相关提交外，我们也可以用push命令将提交传送给其他版本库。</p>
 <h3 id="Pull命令：取回修改"><a href="#Pull命令：取回修改" class="headerlink" title="Pull命令：取回修改"></a>Pull命令：取回修改</h3><h3 id="推送和拉回"><a href="#推送和拉回" class="headerlink" title="推送和拉回"></a>推送和拉回</h3><p>push和pull命令可用于在本地和远程版本库之间共享版本提交。</p>
-<p># </p>
-
+<h1 id="提交究竟是什么"><a href="#提交究竟是什么" class="headerlink" title="提交究竟是什么"></a>提交究竟是什么</h1><p>提交的时候不仅提交被修的文件，它包含该项目的所有文件,针对每次提交，Git都会为其计算一个由40个字符组成的唯一编码,我们称之为提交散列值。只要知道这个散列值，我们就可以将项目中的文件从版本库中恢复到该提交被创建的那个时间点上。在Git中，恢复到某一版本通常被称之为检出(checked)操作。</p>
+<h2 id="add命令与commit命令"><a href="#add命令与commit命令" class="headerlink" title="add命令与commit命令"></a>add命令与commit命令</h2><p>我们可以分add命令和commit命令着两步来创建一次提交</p>
+<ul>
+<li>注册修改</li>
+</ul>
+<p>我们可以用add命令来进行注册，将所有的修改纳入下次提交。在这里，你可以使用-all参数，这表示我们会将所有修改都纳入在内</p>
+<blockquote>
+<p>git add –all</p>
+</blockquote>
+<ul>
+<li>创建提交</li>
+</ul>
+<p>现在可以创建一次新的提交</p>
+<blockquote>
+<p>git commit</p>
+</blockquote>
+<h2 id="在谈提交散列值"><a href="#在谈提交散列值" class="headerlink" title="在谈提交散列值"></a>在谈提交散列值</h2><p>Git选择散列值的理由</p>
+<ul>
+<li>这样的提交散列值可以在本地生成。我们无需与其他计算机或中央服务器进行通信，就可以随时随地创建新的提交。</li>
+<li>提交散列值中的信息要比单纯一个软件版本的名称要多得多。</li>
+</ul>
+<h2 id="提交历史"><a href="#提交历史" class="headerlink" title="提交历史"></a>提交历史</h2><p>版本库中所包含的并不仅仅是一个个独立的提交，它同时也存储了这些提交之间的关系。没当我们修改了软件并确认提交时，Git就会记下这个提交之前的版本，</p>
+<h2 id="提交之间的差异的比较"><a href="#提交之间的差异的比较" class="headerlink" title="提交之间的差异的比较"></a>提交之间的差异的比较</h2><p>通过diff命令，我们可以比较出两次提交之间的差异。</p>
+<h2 id="同一项目的多部不同历史"><a href="#同一项目的多部不同历史" class="headerlink" title="同一项目的多部不同历史"></a>同一项目的多部不同历史</h2><p>我们可以通过log命令来显示提交历史</p>
+<h3 id="部分输出：-n"><a href="#部分输出：-n" class="headerlink" title="部分输出：-n"></a>部分输出：-n</h3><p>该选项通常用于限制输出，例如显示最后三次提交</p>
+<blockquote>
+<p>git log -n 3</p>
+</blockquote>
+<h3 id="格式化输出：–format、–oneline"><a href="#格式化输出：–format、–oneline" class="headerlink" title="格式化输出：–format、–oneline"></a>格式化输出：–format、–oneline</h3><p>对于日志的输出格式，我们可以用–format选项来控制。–oneline选项所显示的概述信息</p>
+<h3 id="统计修改信息：–stat、–shortstat"><a href="#统计修改信息：–stat、–shortstat" class="headerlink" title="统计修改信息：–stat、–shortstat"></a>统计修改信息：–stat、–shortstat</h3><p>统计类选项也是很有用的：–stat可用来显示被修改的那些文件。–dirstat则可以用来显示那些包含被修改文件的目录。而–shortstat则用来显示项目中有多少文件被修改，以及新增或删除了多少文件</p>
+<h3 id="日志选项：–graph"><a href="#日志选项：–graph" class="headerlink" title="日志选项：–graph"></a>日志选项：–graph</h3><p>我们也可以通过–graph选项来显示各提交之间的关系</p>
+<h1 id="多次提交"><a href="#多次提交" class="headerlink" title="多次提交"></a>多次提交</h1><p>提交的产生通常分为两个步骤。首先，我们要用add命令将所有相关的修改纳入到一个缓存区中。这个缓存区通常被叫做暂存区或索引。接着我们才能用commit命令将暂存区中的修改传送到版本库中。</p>
+<h2 id="status命令"><a href="#status命令" class="headerlink" title="status命令"></a>status命令</h2><p>通过status命令，我们可以查看到当前工作区中所发生的修改。以及其中的哪些修改已经被注册到了暂存区中，以作为下次提交的内容。</p>
+<ul>
+<li>changes to be committed:被提交的修改，这部分将列出那些将在下次提交中被纳入版本库中的、被修改的文件。</li>
+<li>changed but not updated:不会被更新的修改，这部分将列出那些已被修改，但尚未被注册到下次提交中的文件</li>
+<li>untracked files:未被跟踪的文件，这部分将列出所有的新增文件</li>
+</ul>
+<h2 id="怎样的修改不该被提交"><a href="#怎样的修改不该被提交" class="headerlink" title="怎样的修改不该被提交"></a>怎样的修改不该被提交</h2><ul>
+<li>为调试而做的实验性修改</li>
+<li>意外添加的修改</li>
+<li>尚未准备好的修改</li>
+<li>自动生成文件中所发生的修改</li>
+</ul>
+<h3 id="从暂存区撤回修改"><a href="#从暂存区撤回修改" class="headerlink" title="从暂存区撤回修改"></a>从暂存区撤回修改</h3><p>reset命令可用来重置暂存区。其中第一个参数为HEAD，表示的是我们将其重置为当前HEAD版本。第二个参数则用来指定要被重置的文件或目录</p>
+<h2 id="用-gitignore忽略非版本控制文件"><a href="#用-gitignore忽略非版本控制文件" class="headerlink" title="用.gitignore忽略非版本控制文件"></a>用.gitignore忽略非版本控制文件</h2><p>创建一个名为.gitignore文件，文件内的文件就会被忽略</p>
+<h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><p>情况：如果我们在某些事情进行到中间的时候，突然发现自己需要快速修复某个问题。这个时候，我们通常会希望立即去做相关的修改，但同时先不提交之前一直在做的事情。在这个情况下，我们可以用stash命令先将这些修改保存在本地，日后再处理。</p>
+<p>我们通过stash命令将工作区和暂存区中的修改保存在一个被我们称之为储藏栈的缓存区中</p>
+<p>我们可以用stash pop命令将栈中所储藏的修改恢复到工作区中</p>
+<h1 id="版本库"><a href="#版本库" class="headerlink" title="版本库"></a>版本库</h1><ul>
+<li>对象数据库：所有提交中的文件、目录以及相关的元数据将被存储在该数据库</li>
+<li>SHA1散列值：我们可以通过一个SHA1散列值从对象数据库中捡取相关对象。SHA1散列值是一种针对文件内容的加密校验植</li>
+<li>相同数据只存储一次：内容相同的对象拥有相同的SHA1散列值，并且只存储一次</li>
+<li>相同的数据会被压缩：对于内容相似的数据，Git会针对其被修改的部分采取增量存储的方法</li>
+<li>Blob对象：文件的内容将会被存储在相应的blob对象中</li>
+<li>Tree对象：目录会被存储在相应tree对象中。一个tree对象中通常会包含一份文件名列表，包含这些文件名和存储在blob或tree对象中内容的SHA1散列值</li>
+<li>重命名检测：文件的重命名和移动操作在提交之前无需报备。Git可以自动根据文件内容的相似度来识别操作</li>
+</ul>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1>
       
     </div>
 
@@ -554,6 +611,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/25/百度2017春招笔试编程题/" rel="prev" title="百度2017春招笔试编程题">
+                百度2017春招笔试编程题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -625,7 +686,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -636,7 +697,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -647,7 +708,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -720,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式版本控制、有何过人之处"><span class="nav-number">1.1.</span> <span class="nav-text">分布式版本控制、有何过人之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本库，分布式工作的基础所在"><span class="nav-number">1.2.</span> <span class="nav-text">版本库，分布式工作的基础所在</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入门"><span class="nav-number">2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备Git环境"><span class="nav-number">2.1.</span> <span class="nav-text">准备Git环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个Git项目"><span class="nav-number">2.2.</span> <span class="nav-text">第一个Git项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首次提交"><span class="nav-number">2.2.2.</span> <span class="nav-text">首次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查状态"><span class="nav-number">2.2.3.</span> <span class="nav-text">检查状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交修改"><span class="nav-number">2.2.4.</span> <span class="nav-text">提交修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示历史"><span class="nav-number">2.2.5.</span> <span class="nav-text">显示历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-的协作功能"><span class="nav-number">2.3.</span> <span class="nav-text">Git 的协作功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆版本库"><span class="nav-number">2.3.1.</span> <span class="nav-text">克隆版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建共享版本库"><span class="nav-number">2.3.2.</span> <span class="nav-text">创建共享版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull命令：取回修改"><span class="nav-number">2.3.3.</span> <span class="nav-text">Pull命令：取回修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送和拉回"><span class="nav-number">2.3.4.</span> <span class="nav-text">推送和拉回</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式版本控制、有何过人之处"><span class="nav-number">1.1.</span> <span class="nav-text">分布式版本控制、有何过人之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本库，分布式工作的基础所在"><span class="nav-number">1.2.</span> <span class="nav-text">版本库，分布式工作的基础所在</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入门"><span class="nav-number">2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备Git环境"><span class="nav-number">2.1.</span> <span class="nav-text">准备Git环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个Git项目"><span class="nav-number">2.2.</span> <span class="nav-text">第一个Git项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首次提交"><span class="nav-number">2.2.2.</span> <span class="nav-text">首次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查状态"><span class="nav-number">2.2.3.</span> <span class="nav-text">检查状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交修改"><span class="nav-number">2.2.4.</span> <span class="nav-text">提交修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示历史"><span class="nav-number">2.2.5.</span> <span class="nav-text">显示历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-的协作功能"><span class="nav-number">2.3.</span> <span class="nav-text">Git 的协作功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆版本库"><span class="nav-number">2.3.1.</span> <span class="nav-text">克隆版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建共享版本库"><span class="nav-number">2.3.2.</span> <span class="nav-text">创建共享版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull命令：取回修改"><span class="nav-number">2.3.3.</span> <span class="nav-text">Pull命令：取回修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送和拉回"><span class="nav-number">2.3.4.</span> <span class="nav-text">推送和拉回</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交究竟是什么"><span class="nav-number">3.</span> <span class="nav-text">提交究竟是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#add命令与commit命令"><span class="nav-number">3.1.</span> <span class="nav-text">add命令与commit命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在谈提交散列值"><span class="nav-number">3.2.</span> <span class="nav-text">在谈提交散列值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交历史"><span class="nav-number">3.3.</span> <span class="nav-text">提交历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交之间的差异的比较"><span class="nav-number">3.4.</span> <span class="nav-text">提交之间的差异的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同一项目的多部不同历史"><span class="nav-number">3.5.</span> <span class="nav-text">同一项目的多部不同历史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部分输出：-n"><span class="nav-number">3.5.1.</span> <span class="nav-text">部分输出：-n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化输出：–format、–oneline"><span class="nav-number">3.5.2.</span> <span class="nav-text">格式化输出：–format、–oneline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计修改信息：–stat、–shortstat"><span class="nav-number">3.5.3.</span> <span class="nav-text">统计修改信息：–stat、–shortstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志选项：–graph"><span class="nav-number">3.5.4.</span> <span class="nav-text">日志选项：–graph</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多次提交"><span class="nav-number">4.</span> <span class="nav-text">多次提交</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#status命令"><span class="nav-number">4.1.</span> <span class="nav-text">status命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样的修改不该被提交"><span class="nav-number">4.2.</span> <span class="nav-text">怎样的修改不该被提交</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从暂存区撤回修改"><span class="nav-number">4.2.1.</span> <span class="nav-text">从暂存区撤回修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-gitignore忽略非版本控制文件"><span class="nav-number">4.3.</span> <span class="nav-text">用.gitignore忽略非版本控制文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储"><span class="nav-number">4.4.</span> <span class="nav-text">存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本库"><span class="nav-number">5.</span> <span class="nav-text">版本库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">6.</span> <span class="nav-text">分支</span></a></li></ol></div>
             
 
           </div>
