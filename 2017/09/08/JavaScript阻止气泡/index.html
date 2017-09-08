@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Welcome to bai3'blog" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -95,16 +95,17 @@
 
 
 
-<meta name="description" content="为什么这么努力，因为有想要的生活">
+<meta name="description" content="#主要分析一下return false和stopPropagetion的区别 event.stopPropagetion 抄录 w3   定义和用法 不在派发事件，终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播，调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。  语法 12&amp;gt;  event.stopPropagation()&amp;gt;    &amp;gt;">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript阻止气泡">
 <meta property="og:url" content="http://yoursite.com/2017/09/08/JavaScript阻止气泡/index.html">
 <meta property="og:site_name" content="bai3">
-<meta property="og:description" content="为什么这么努力，因为有想要的生活">
-<meta property="og:updated_time" content="2017-09-08T07:12:59.934Z">
+<meta property="og:description" content="#主要分析一下return false和stopPropagetion的区别 event.stopPropagetion 抄录 w3   定义和用法 不在派发事件，终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播，调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。  语法 12&amp;gt;  event.stopPropagation()&amp;gt;    &amp;gt;">
+<meta property="og:updated_time" content="2017-09-08T09:37:12.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript阻止气泡">
-<meta name="twitter:description" content="为什么这么努力，因为有想要的生活">
+<meta name="twitter:description" content="#主要分析一下return false和stopPropagetion的区别 event.stopPropagetion 抄录 w3   定义和用法 不在派发事件，终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播，调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。  语法 12&amp;gt;  event.stopPropagation()&amp;gt;    &amp;gt;">
 
 
 
@@ -365,12 +366,34 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-08T15:12:59+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-08T17:37:12+08:00">
                 2017-09-08
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -396,7 +419,54 @@
       
 
       
-        
+        <p>#主要分析一下return false和stopPropagetion的区别</p>
+<h2 id="event-stopPropagetion"><a href="#event-stopPropagetion" class="headerlink" title="event.stopPropagetion"></a>event.stopPropagetion</h2><blockquote>
+<p>抄录 w3 </p>
+<ul>
+<li><p>定义和用法</p>
+<p>不在派发事件，终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播，调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;  event.stopPropagation()</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ul>
+<li><p>说明</p>
+<p>该方法就停止事件的传播，阻止它被分派到其他Document节点。在事件传播的任何阶段都可以调用它的。注意，虽然该方法不能阻止同一个Document节点上的其他事件句柄被调用，但是他可以阻止把事件分派到其他节点。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="return-false"><a href="#return-false" class="headerlink" title="return false"></a>return false</h2><p>先回顾一下事件冒泡知识。</p>
+<p>大部分事件都是现在初始DOM触发，然后再通过DOM树往上，在每一级父元素上触发。事件不会再兄弟节点或者子节点上冒泡(当事件向下冒泡时，我们叫事件捕获)。</p>
+<p>每次调用return false 的时候，实际上做了三件事件:</p>
+<ul>
+<li>event.preventDefault();</li>
+<li>event.stopPropagation();</li>
+<li>停止回调函数执行并立即返回。</li>
+</ul>
+<p>三件事件中用来阻止浏览器继续执行默认行为只有preventDefault，**除非你想要停止事件冒泡，否则使用return false 会为代码埋下很大隐患。</p>
+<h2 id="具体比较"><a href="#具体比较" class="headerlink" title="具体比较"></a>具体比较</h2><ul>
+<li><p>event.stopPropagation()</p>
+<p>这个阻止事件的冒泡方法，不让事件向Document上蔓延，但是默认事件仍然会只想，例如当你调用这个方法的时候，如果点击一个链接，这个链接仍然会被打开。</p>
+</li>
+<li><p>event.preventDefault()</p>
+<p>这是阻止默认事件的方法，调用这个方法，链接不会被打开。但是会发生冒泡，冒泡会传递到上一层的父元素。</p>
+</li>
+<li><p>return false</p>
+<p>会同时阻止事件冒泡也会阻止默认事件。、</p>
+</li>
+</ul>
+<p>网上的一些例子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> = <span class="string">"box1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"www.baidu.com"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>js代码:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不阻止事件冒泡和默认事件</span></div><div class="line">$(<span class="string">'.box1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"1"</span>)<span class="comment">//不阻止事件冒泡会打印，页面跳转</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//阻止冒泡</span></div><div class="line">$(<span class="string">'.box a'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  event.stopPropagation();<span class="comment">//不会打印1，但是页面会跳转</span></div><div class="line">&#125;);</div><div class="line">$(<span class="string">'.box'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"1"</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.box a'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line"><span class="comment">//阻止默认事件</span></div><div class="line">  event.preventDefault();<span class="comment">//页面不会跳转，但是会打印出1</span></div><div class="line">&#125;)；</div><div class="line">$(<span class="string">'.box'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"1"</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.box1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"1"</span>)</div><div class="line">&#125;);</div><div class="line"><span class="comment">//阻止冒泡</span></div><div class="line">$(<span class="string">'.bix1 a'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">   	event.stopPropagation();</div><div class="line">    <span class="comment">//阻止默认事件</span></div><div class="line">  	event.preventDefault();<span class="comment">//页面不会跳转，也不会打印出1</span></div><div class="line">  <span class="comment">//等同于 return false</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -422,6 +492,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
       
 
       
@@ -487,8 +563,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -588,6 +673,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#event-stopPropagetion"><span class="nav-number">1.</span> <span class="nav-text">event.stopPropagetion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-false"><span class="nav-number">2.</span> <span class="nav-text">return false</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体比较"><span class="nav-number">3.</span> <span class="nav-text">具体比较</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

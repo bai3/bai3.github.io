@@ -368,12 +368,34 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-08T15:12:59+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-08T17:37:12+08:00">
                 2017-09-08
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -401,8 +423,24 @@
       
         
           
-          
-          
+          #主要分析一下return false和stopPropagetion的区别
+event.stopPropagetion
+抄录 w3 
+
+定义和用法
+不在派发事件，终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播，调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。
+
+语法
+12&gt;  event.stopPropagation()&gt;
+
+
+
+&gt;
+
+
+说明
+该方法就停止事件的传播，阻止它被分派到其他Document节点。在事件传播的任何阶段都可以调用它的。注意，虽然该方法不能阻止同一个Document节点上的其他事件句柄被调用，但是他可以阻止把事件
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/08/JavaScript阻止气泡/#more" rel="contents">
@@ -798,7 +836,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-08T15:33:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-08T15:49:02+08:00">
                 2017-09-08
               </time>
             
