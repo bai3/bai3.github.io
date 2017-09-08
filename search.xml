@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[JavaScript阻止气泡]]></title>
     <url>%2F2017%2F09%2F08%2FJavaScript%E9%98%BB%E6%AD%A2%E6%B0%94%E6%B3%A1%2F</url>
-    <content type="text"><![CDATA[#主要分析一下return false和stopPropagetion的区别 event.stopPropagetion 抄录 w3 定义和用法 不在派发事件，终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播，调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。 语法 12&gt; event.stopPropagation()&gt; &gt; 说明 该方法就停止事件的传播，阻止它被分派到其他Document节点。在事件传播的任何阶段都可以调用它的。注意，虽然该方法不能阻止同一个Document节点上的其他事件句柄被调用，但是他可以阻止把事件分派到其他节点。 return false先回顾一下事件冒泡知识。 大部分事件都是现在初始DOM触发，然后再通过DOM树往上，在每一级父元素上触发。事件不会再兄弟节点或者子节点上冒泡(当事件向下冒泡时，我们叫事件捕获)。 每次调用return false 的时候，实际上做了三件事件: event.preventDefault(); event.stopPropagation(); 停止回调函数执行并立即返回。 三件事件中用来阻止浏览器继续执行默认行为只有preventDefault，**除非你想要停止事件冒泡，否则使用return false 会为代码埋下很大隐患。 具体比较 event.stopPropagation() 这个阻止事件的冒泡方法，不让事件向Document上蔓延，但是默认事件仍然会只想，例如当你调用这个方法的时候，如果点击一个链接，这个链接仍然会被打开。 event.preventDefault() 这是阻止默认事件的方法，调用这个方法，链接不会被打开。但是会发生冒泡，冒泡会传递到上一层的父元素。 return false 会同时阻止事件冒泡也会阻止默认事件。、 网上的一些例子 123&lt;div class = "box1"&gt; &lt;a href = "www.baidu.com"&gt;&lt;/a&gt;&lt;/div&gt; js代码: 1234//不阻止事件冒泡和默认事件$('.box1').click(function()&#123; console.log("1")//不阻止事件冒泡会打印，页面跳转&#125;) 1234567//阻止冒泡$('.box a').click(function(event)&#123; event.stopPropagation();//不会打印1，但是页面会跳转&#125;);$('.box').click(function()&#123; console.log("1");&#125;) 1234567$('.box a').click(function(event)&#123;//阻止默认事件 event.preventDefault();//页面不会跳转，但是会打印出1&#125;)；$('.box').click(function()&#123; console.log("1");&#125;) 12345678910$('.box1').click(function()&#123; console.log("1")&#125;);//阻止冒泡$('.bix1 a').click(function(event)&#123; event.stopPropagation(); //阻止默认事件 event.preventDefault();//页面不会跳转，也不会打印出1 //等同于 return false&#125;)]]></content>
+    <content type="text"><![CDATA[主要分析一下return false和stopPropagetion的区别 event.stopPropagetion 抄录 w3 定义和用法 不在派发事件，终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播，调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。 语法 12&gt; event.stopPropagation()&gt; &gt; 说明 该方法就停止事件的传播，阻止它被分派到其他Document节点。在事件传播的任何阶段都可以调用它的。注意，虽然该方法不能阻止同一个Document节点上的其他事件句柄被调用，但是他可以阻止把事件分派到其他节点。 return false先回顾一下事件冒泡知识。 大部分事件都是现在初始DOM触发，然后再通过DOM树往上，在每一级父元素上触发。事件不会再兄弟节点或者子节点上冒泡(当事件向下冒泡时，我们叫事件捕获)。 每次调用return false 的时候，实际上做了三件事件: event.preventDefault(); event.stopPropagation(); 停止回调函数执行并立即返回。 三件事件中用来阻止浏览器继续执行默认行为只有preventDefault，**除非你想要停止事件冒泡，否则使用return false 会为代码埋下很大隐患。 具体比较 event.stopPropagation() 这个阻止事件的冒泡方法，不让事件向Document上蔓延，但是默认事件仍然会只想，例如当你调用这个方法的时候，如果点击一个链接，这个链接仍然会被打开。 event.preventDefault() 这是阻止默认事件的方法，调用这个方法，链接不会被打开。但是会发生冒泡，冒泡会传递到上一层的父元素。 return false 会同时阻止事件冒泡也会阻止默认事件。、 网上的一些例子 123&lt;div class = "box1"&gt; &lt;a href = "www.baidu.com"&gt;&lt;/a&gt;&lt;/div&gt; js代码: 1234//不阻止事件冒泡和默认事件$('.box1').click(function()&#123; console.log("1")//不阻止事件冒泡会打印，页面跳转&#125;) 1234567//阻止冒泡$('.box a').click(function(event)&#123; event.stopPropagation();//不会打印1，但是页面会跳转&#125;);$('.box').click(function()&#123; console.log("1");&#125;) 1234567$('.box a').click(function(event)&#123;//阻止默认事件 event.preventDefault();//页面不会跳转，但是会打印出1&#125;)；$('.box').click(function()&#123; console.log("1");&#125;) 12345678910$('.box1').click(function()&#123; console.log("1")&#125;);//阻止冒泡$('.bix1 a').click(function(event)&#123; event.stopPropagation(); //阻止默认事件 event.preventDefault();//页面不会跳转，也不会打印出1 //等同于 return false&#125;)]]></content>
       <categories>
         <category>note</category>
       </categories>
@@ -87,8 +87,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>CSS3</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
