@@ -104,7 +104,7 @@
 <meta property="og:description" content="看了一本《Git学习指南》的书，所以写了这个note，多多学习Git操作，也好装B，以前只会简单几个操作。">
 <meta property="og:image" content="http://yoursite.com/2017/06/24/Git学习指南/QQ图片20170624131238.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/24/Git学习指南/QQ图片20170624131328.png">
-<meta property="og:updated_time" content="2017-06-25T12:08:31.950Z">
+<meta property="og:updated_time" content="2017-09-16T06:10:47.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习指南">
 <meta name="twitter:description" content="看了一本《Git学习指南》的书，所以写了这个note，多多学习Git操作，也好装B，以前只会简单几个操作。">
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-06-25T20:08:31+08:00">
-                2017-06-25
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-16T14:10:47+08:00">
+                2017-09-16
               </time>
             
           </span>
@@ -560,7 +560,84 @@
 <li>Tree对象：目录会被存储在相应tree对象中。一个tree对象中通常会包含一份文件名列表，包含这些文件名和存储在blob或tree对象中内容的SHA1散列值</li>
 <li>重命名检测：文件的重命名和移动操作在提交之前无需报备。Git可以自动根据文件内容的相似度来识别操作</li>
 </ul>
-<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1>
+<hr>
+<p>2017/9/16 </p>
+<p>最近有点忙，今天周末抽空把这本书看看完，写完笔记就换回去。</p>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><blockquote>
+<p>当有多个开发者用git处理同一软件开发项目时，他们就会在版本库的提交图中创建各自的分支，</p>
+</blockquote>
+<p>在一个Git版本库中，总是唯一存在着一个活动分支，我们可以用branch命令来列出当前所有的分支。其中用*凸显的就是当前活跃分支。</p>
+<p>一般情况下，活动分支将会被继续用于接受所有新的提交，并将分支指针移动至最近的那次提交。当然，我们也可以用checkout命令来改变当前的活跃分支</p>
+<ul>
+<li><p>创建一个分支</p>
+<blockquote>
+<p>git branch xx</p>
+</blockquote>
+</li>
+<li><p>切换到新分支</p>
+<p>branch命令只能用于创建新的分支，但并不会自动切换到该新的分支</p>
+<blockquote>
+<p>git checkout a-branch</p>
+</blockquote>
+<p>快捷方式: 创建并切换到新的分支</p>
+<blockquote>
+<p>git checkout -b a-branch</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="重置分支指针"><a href="#重置分支指针" class="headerlink" title="重置分支指针"></a>重置分支指针</h2><p>分支指针主要用于指向活动分支，它每次提交时移动到最新提交上，因此在通常情况下，我们几乎不太需要去直接设置分支指针，但偶尔我们也会因为一些偶发事件而失去该指针的跟踪，想将其恢复到之前的状态，在这种情况下，我们可以用reset命令来重置分支指针</p>
+<blockquote>
+<p>git reset –hard 39ea21</p>
+</blockquote>
+<p>这样一来，该指针就被重置到提交39ea21所在活动分支上了。其中–hard选项用于确保工作区和缓存区也都会被设置都提交39ea21的状态</p>
+<p><strong>reset –hard 命令会覆盖当前工作区和暂存区中的所有修改。所以最好在执行重置之前先用git stash 命令来存储一下这些修改</strong></p>
+<blockquote>
+<p>git stash 可以将修改储存起来，然后再进行切换。之后用stash pop 命令来恢复它们</p>
+</blockquote>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><blockquote>
+<p>git branch -d b-branch</p>
+</blockquote>
+<h3 id="恢复被删除的分支"><a href="#恢复被删除的分支" class="headerlink" title="恢复被删除的分支"></a>恢复被删除的分支</h3><p>Git会自行负责分支的管理，所以当我们删除一个分支时，Git只会删除了指向相关提交的指针，但该提交对象依然会留在版本库中。因此，如果我们知道删除分支时的散列信息，就可以将某个已删除的分支恢复过来</p>
+<h1 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h1><p>使用merge命令来进行分支合并是Git的重要操作之一。我们可以通过指定分支名称来选择待合并修改的分支，然后Git会基于合并的内容来创建一次新的提交。</p>
+<h2 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h2><p>Git 非常适合于几个开发者对同一软件做多处修改时，被用于合并他们对程序源代码中所做的修改。这些操作甚至常会涉及那些受移动或重命名操作影响的文件</p>
+<ul>
+<li><p>编辑冲突</p>
+<p>通常发生在两个开发者对同一行代码做了不同修改的时候，在这种情况下Git往往无法自行确定两种修改中的哪一种才是正确的。</p>
+</li>
+<li><p>内容冲突</p>
+<p>通常发生在两个开发者对某份代码的几个部分作出各自修改的时候。例如这种情况下就容易导致这类冲突：当一个开发者在修改某一函数的时候，另一个开发者也在同一时间修改同一函数</p>
+</li>
+</ul>
+<h2 id="pull-和-push"><a href="#pull-和-push" class="headerlink" title="pull 和 push"></a>pull 和 push</h2><ul>
+<li>写访问: push 只能用在我们对其他版本库有写访问权限时。</li>
+<li>只针对快进合并: push操作通常不会带来合并(不像pull命令)push操作只在快进提交模式下被允许，也就是远程版本没有比本地更多更新的提交</li>
+<li>无远程跟踪分支</li>
+<li>无参数调用push : 在无参数的情况下，push命令将只发送那些在其他版本库中有相同名字匹配的本地分支。与之不同的是，pull 和 fetch 所选取的都是全部分支。</li>
+</ul>
+<p>总结pull = fetch + merge</p>
+<p>pull命令是两种操作的组合。它首先执行的是获取操作。</p>
+<h1 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h1><h2 id="忽略临时性的本地提交"><a href="#忽略临时性的本地提交" class="headerlink" title="忽略临时性的本地提交"></a>忽略临时性的本地提交</h2><ul>
+<li>gitignore 文件中的那些条目在这里可起不了作用，因此它们只针对那些不受Git管理的文件</li>
+</ul>
+<h2 id="检查对文本文件的修改"><a href="#检查对文本文件的修改" class="headerlink" title="检查对文本文件的修改"></a>检查对文本文件的修改</h2><p>一般情况下，Git的diff算法会去逐行比较两个文件。因为在源代码中，我们往往修改的都是单行内容，其邻近、行通常不会被涉及，所以diff算法很容易就能察觉到其中的不同。但在文本文件中，事情就不一样了。因为其修改往往是整体性的，例如我们可能会将某些单词整体从一行移动另一行。所以从diff的输出中，我们往往很难看出一个文本文件究竟修改那些内容</p>
+<p>对于连续性的文本，–word-diff选项会很用,它可以按单词显示我们所做的修改</p>
+<blockquote>
+<p>git diff –word-diff</p>
+</blockquote>
+<p>–word-diff=color 不同颜色显示</p>
+<h2 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h2><blockquote>
+<p>git config –global alias.ci commit</p>
+</blockquote>
+<p>上面就将commit命令简写为ci</p>
+<h1 id="项目设置"><a href="#项目设置" class="headerlink" title="项目设置"></a>项目设置</h1><h2 id="工作流简介"><a href="#工作流简介" class="headerlink" title="工作流简介"></a>工作流简介</h2><h3 id="基于项目目录创建一个新的版本库"><a href="#基于项目目录创建一个新的版本库" class="headerlink" title="基于项目目录创建一个新的版本库"></a>基于项目目录创建一个新的版本库</h3><ul>
+<li>准备空目录</li>
+<li>忽略不需要的文件和目录</li>
+<li>创建一个版本库</li>
+<li>定义行尾终止符</li>
+<li>导入终止符</li>
+<li>创建一个裸版本库</li>
+</ul>
+
       
     </div>
 
@@ -781,7 +858,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式版本控制、有何过人之处"><span class="nav-number">1.1.</span> <span class="nav-text">分布式版本控制、有何过人之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本库，分布式工作的基础所在"><span class="nav-number">1.2.</span> <span class="nav-text">版本库，分布式工作的基础所在</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入门"><span class="nav-number">2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备Git环境"><span class="nav-number">2.1.</span> <span class="nav-text">准备Git环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个Git项目"><span class="nav-number">2.2.</span> <span class="nav-text">第一个Git项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首次提交"><span class="nav-number">2.2.2.</span> <span class="nav-text">首次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查状态"><span class="nav-number">2.2.3.</span> <span class="nav-text">检查状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交修改"><span class="nav-number">2.2.4.</span> <span class="nav-text">提交修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示历史"><span class="nav-number">2.2.5.</span> <span class="nav-text">显示历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-的协作功能"><span class="nav-number">2.3.</span> <span class="nav-text">Git 的协作功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆版本库"><span class="nav-number">2.3.1.</span> <span class="nav-text">克隆版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建共享版本库"><span class="nav-number">2.3.2.</span> <span class="nav-text">创建共享版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull命令：取回修改"><span class="nav-number">2.3.3.</span> <span class="nav-text">Pull命令：取回修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送和拉回"><span class="nav-number">2.3.4.</span> <span class="nav-text">推送和拉回</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交究竟是什么"><span class="nav-number">3.</span> <span class="nav-text">提交究竟是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#add命令与commit命令"><span class="nav-number">3.1.</span> <span class="nav-text">add命令与commit命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在谈提交散列值"><span class="nav-number">3.2.</span> <span class="nav-text">在谈提交散列值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交历史"><span class="nav-number">3.3.</span> <span class="nav-text">提交历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交之间的差异的比较"><span class="nav-number">3.4.</span> <span class="nav-text">提交之间的差异的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同一项目的多部不同历史"><span class="nav-number">3.5.</span> <span class="nav-text">同一项目的多部不同历史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部分输出：-n"><span class="nav-number">3.5.1.</span> <span class="nav-text">部分输出：-n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化输出：–format、–oneline"><span class="nav-number">3.5.2.</span> <span class="nav-text">格式化输出：–format、–oneline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计修改信息：–stat、–shortstat"><span class="nav-number">3.5.3.</span> <span class="nav-text">统计修改信息：–stat、–shortstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志选项：–graph"><span class="nav-number">3.5.4.</span> <span class="nav-text">日志选项：–graph</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多次提交"><span class="nav-number">4.</span> <span class="nav-text">多次提交</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#status命令"><span class="nav-number">4.1.</span> <span class="nav-text">status命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样的修改不该被提交"><span class="nav-number">4.2.</span> <span class="nav-text">怎样的修改不该被提交</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从暂存区撤回修改"><span class="nav-number">4.2.1.</span> <span class="nav-text">从暂存区撤回修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-gitignore忽略非版本控制文件"><span class="nav-number">4.3.</span> <span class="nav-text">用.gitignore忽略非版本控制文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储"><span class="nav-number">4.4.</span> <span class="nav-text">存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本库"><span class="nav-number">5.</span> <span class="nav-text">版本库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">6.</span> <span class="nav-text">分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式版本控制、有何过人之处"><span class="nav-number">1.1.</span> <span class="nav-text">分布式版本控制、有何过人之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本库，分布式工作的基础所在"><span class="nav-number">1.2.</span> <span class="nav-text">版本库，分布式工作的基础所在</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入门"><span class="nav-number">2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备Git环境"><span class="nav-number">2.1.</span> <span class="nav-text">准备Git环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个Git项目"><span class="nav-number">2.2.</span> <span class="nav-text">第一个Git项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首次提交"><span class="nav-number">2.2.2.</span> <span class="nav-text">首次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查状态"><span class="nav-number">2.2.3.</span> <span class="nav-text">检查状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交修改"><span class="nav-number">2.2.4.</span> <span class="nav-text">提交修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示历史"><span class="nav-number">2.2.5.</span> <span class="nav-text">显示历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-的协作功能"><span class="nav-number">2.3.</span> <span class="nav-text">Git 的协作功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆版本库"><span class="nav-number">2.3.1.</span> <span class="nav-text">克隆版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建共享版本库"><span class="nav-number">2.3.2.</span> <span class="nav-text">创建共享版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull命令：取回修改"><span class="nav-number">2.3.3.</span> <span class="nav-text">Pull命令：取回修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送和拉回"><span class="nav-number">2.3.4.</span> <span class="nav-text">推送和拉回</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交究竟是什么"><span class="nav-number">3.</span> <span class="nav-text">提交究竟是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#add命令与commit命令"><span class="nav-number">3.1.</span> <span class="nav-text">add命令与commit命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在谈提交散列值"><span class="nav-number">3.2.</span> <span class="nav-text">在谈提交散列值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交历史"><span class="nav-number">3.3.</span> <span class="nav-text">提交历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交之间的差异的比较"><span class="nav-number">3.4.</span> <span class="nav-text">提交之间的差异的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同一项目的多部不同历史"><span class="nav-number">3.5.</span> <span class="nav-text">同一项目的多部不同历史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部分输出：-n"><span class="nav-number">3.5.1.</span> <span class="nav-text">部分输出：-n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化输出：–format、–oneline"><span class="nav-number">3.5.2.</span> <span class="nav-text">格式化输出：–format、–oneline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计修改信息：–stat、–shortstat"><span class="nav-number">3.5.3.</span> <span class="nav-text">统计修改信息：–stat、–shortstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志选项：–graph"><span class="nav-number">3.5.4.</span> <span class="nav-text">日志选项：–graph</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多次提交"><span class="nav-number">4.</span> <span class="nav-text">多次提交</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#status命令"><span class="nav-number">4.1.</span> <span class="nav-text">status命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样的修改不该被提交"><span class="nav-number">4.2.</span> <span class="nav-text">怎样的修改不该被提交</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从暂存区撤回修改"><span class="nav-number">4.2.1.</span> <span class="nav-text">从暂存区撤回修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-gitignore忽略非版本控制文件"><span class="nav-number">4.3.</span> <span class="nav-text">用.gitignore忽略非版本控制文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储"><span class="nav-number">4.4.</span> <span class="nav-text">存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本库"><span class="nav-number">5.</span> <span class="nav-text">版本库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">6.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重置分支指针"><span class="nav-number">6.1.</span> <span class="nav-text">重置分支指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除分支"><span class="nav-number">6.2.</span> <span class="nav-text">删除分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#恢复被删除的分支"><span class="nav-number">6.2.1.</span> <span class="nav-text">恢复被删除的分支</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合并分支"><span class="nav-number">7.</span> <span class="nav-text">合并分支</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冲突"><span class="nav-number">7.1.</span> <span class="nav-text">冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull-和-push"><span class="nav-number">7.2.</span> <span class="nav-text">pull 和 push</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用技巧"><span class="nav-number">8.</span> <span class="nav-text">常用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略临时性的本地提交"><span class="nav-number">8.1.</span> <span class="nav-text">忽略临时性的本地提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查对文本文件的修改"><span class="nav-number">8.2.</span> <span class="nav-text">检查对文本文件的修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#别名"><span class="nav-number">8.3.</span> <span class="nav-text">别名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目设置"><span class="nav-number">9.</span> <span class="nav-text">项目设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作流简介"><span class="nav-number">9.1.</span> <span class="nav-text">工作流简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于项目目录创建一个新的版本库"><span class="nav-number">9.1.1.</span> <span class="nav-text">基于项目目录创建一个新的版本库</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
