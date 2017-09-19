@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS3,CSS," />
+  <meta name="keywords" content="note," />
 
 
 
@@ -95,17 +95,20 @@
 
 
 
-<meta name="description" content="CSS3初步认识CSS3简介CSS3模块一些重要的CSS3模块  选择器 盒模型 背景和边框 文字特效 2D/3D转换 动画 多列布局 用户界面">
-<meta name="keywords" content="CSS3,CSS">
+<meta name="description" content="跨域问题和jsonp了解浏览器跨域的相关知识和jsonp与json的不同">
+<meta name="keywords" content="note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3">
-<meta property="og:url" content="http://yoursite.com/2017/06/08/CSS3/index.html">
+<meta property="og:title" content="跨域问题和jsonp">
+<meta property="og:url" content="http://yoursite.com/2017/09/19/跨域问题和jsonp/index.html">
 <meta property="og:site_name" content="bai3">
-<meta property="og:description" content="CSS3初步认识CSS3简介CSS3模块一些重要的CSS3模块  选择器 盒模型 背景和边框 文字特效 2D/3D转换 动画 多列布局 用户界面">
-<meta property="og:updated_time" content="2017-06-10T10:34:39.746Z">
+<meta property="og:description" content="跨域问题和jsonp了解浏览器跨域的相关知识和jsonp与json的不同">
+<meta property="og:image" content="http://yoursite.com/2017/09/19/跨域问题和jsonp/跨域.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/19/跨域问题和jsonp/CSRF.png">
+<meta property="og:updated_time" content="2017-09-19T14:43:10.788Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3">
-<meta name="twitter:description" content="CSS3初步认识CSS3简介CSS3模块一些重要的CSS3模块  选择器 盒模型 背景和边框 文字特效 2D/3D转换 动画 多列布局 用户界面">
+<meta name="twitter:title" content="跨域问题和jsonp">
+<meta name="twitter:description" content="跨域问题和jsonp了解浏览器跨域的相关知识和jsonp与json的不同">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/19/跨域问题和jsonp/跨域.png">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/08/CSS3/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/19/跨域问题和jsonp/"/>
 
 
 
 
 
-  <title>CSS3 | bai3</title>
+  <title>跨域问题和jsonp | bai3</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -321,7 +324,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/08/CSS3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/跨域问题和jsonp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="白三">
@@ -338,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS3</h1>
+          <h1 class="post-title" itemprop="name headline">跨域问题和jsonp</h1>
         
 
         <div class="post-meta">
@@ -350,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-08T18:44:31+08:00">
-                2017-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T19:01:04+08:00">
+                2017-09-19
               </time>
             
 
@@ -366,8 +369,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-06-10T18:34:39+08:00">
-                2017-06-10
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-19T22:43:10+08:00">
+                2017-09-19
               </time>
             
           </span>
@@ -385,8 +388,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
+                  <a href="/categories/浏览器/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器</span>
                   </a>
                 </span>
 
@@ -419,119 +422,76 @@
       
 
       
-        <h1 id="CSS3初步认识"><a href="#CSS3初步认识" class="headerlink" title="CSS3初步认识"></a>CSS3初步认识</h1><h2 id="CSS3简介"><a href="#CSS3简介" class="headerlink" title="CSS3简介"></a>CSS3简介</h2><h3 id="CSS3模块"><a href="#CSS3模块" class="headerlink" title="CSS3模块"></a>CSS3模块</h3><p>一些重要的CSS3模块</p>
+        <h1 id="跨域问题和jsonp"><a href="#跨域问题和jsonp" class="headerlink" title="跨域问题和jsonp"></a>跨域问题和jsonp</h1><p>了解浏览器跨域的相关知识和jsonp与json的不同</p>
+<a id="more"></a>
+<h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>概念:只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
+<p>简单的说，只有当协议，域名，端口相同的时候才算是同一域名，否则认为需要做跨域的处理<br><img src="/2017/09/19/跨域问题和jsonp/跨域.png" alt="跨域"></p>
+<p>跨域问题指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器对javascript施加的施加的安全政策。</p>
 <ul>
-<li>选择器</li>
-<li>盒模型</li>
-<li>背景和边框</li>
-<li>文字特效</li>
-<li>2D/3D转换</li>
-<li>动画</li>
-<li>多列布局</li>
-<li>用户界面<a id="more"></a></li>
+<li>主域名不同  跨域</li>
+<li>子域名不同 跨域</li>
+<li>端口不同 跨域</li>
+<li>协议不同跨域</li>
+<li>localhost 和 127.0.0.1虽然都是本机地址，也算跨域</li>
 </ul>
-<h2 id="CSS3边框"><a href="#CSS3边框" class="headerlink" title="CSS3边框"></a>CSS3边框</h2><h3 id="CSS3圆角"><a href="#CSS3圆角" class="headerlink" title="CSS3圆角"></a>CSS3圆角</h3><p>在CSS3中border-radius属性被创建圆角</p>
-<h3 id="CSS3盒阴影"><a href="#CSS3盒阴影" class="headerlink" title="CSS3盒阴影"></a>CSS3盒阴影</h3><p>在CSS3中添加box-shadow属性</p>
-<p>实例</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">5px</span> <span class="number">#888888</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="CSS3边界图片"><a href="#CSS3边界图片" class="headerlink" title="CSS3边界图片"></a>CSS3边界图片</h3><p>你可以使用图像创建一个边框</p>
-<h2 id="CSS3-圆角"><a href="#CSS3-圆角" class="headerlink" title="CSS3 圆角"></a>CSS3 圆角</h2><h3 id="CSS3-border-radius-指定每个圆角"><a href="#CSS3-border-radius-指定每个圆角" class="headerlink" title="CSS3 border-radius -指定每个圆角"></a>CSS3 border-radius -指定每个圆角</h3><h2 id="CSS33背景"><a href="#CSS33背景" class="headerlink" title="CSS33背景"></a>CSS33背景</h2><p>CSS3背景属性：</p>
+<h2 id="为什么浏览器要限制跨域访问"><a href="#为什么浏览器要限制跨域访问" class="headerlink" title="为什么浏览器要限制跨域访问"></a>为什么浏览器要限制跨域访问</h2><h3 id="防止CSRF等攻击，防止恶意网站窃取数据，比如读取Cookie"><a href="#防止CSRF等攻击，防止恶意网站窃取数据，比如读取Cookie" class="headerlink" title="防止CSRF等攻击，防止恶意网站窃取数据，比如读取Cookie"></a>防止CSRF等攻击，防止恶意网站窃取数据，比如读取Cookie</h3><h3 id="限制范围"><a href="#限制范围" class="headerlink" title="限制范围"></a>限制范围</h3><ul>
+<li>Cookie、LocalStorage和IndexDB 无法读取</li>
+<li>DOM 无法获得</li>
+<li>AJAX请求不能发送</li>
+</ul>
+<h3 id="CSRF只是普及"><a href="#CSRF只是普及" class="headerlink" title="CSRF只是普及"></a>CSRF只是普及</h3><ul>
+<li><p>什么是CSRF？</p>
+<p>CSRF，中文名称:跨站请求伪造</p>
+</li>
+<li><p>CSRF可以什么做什么</p>
+<p>可以这样理解，攻击者盗用你的身份，以你的名义发送恶意请求，个人隐私的泄露以及财产安全。</p>
+<p>原理图</p>
+<p><img src="/2017/09/19/跨域问题和jsonp/CSRF.png" alt="CSRF"></p>
+</li>
+</ul>
+<h3 id="XSS攻击"><a href="#XSS攻击" class="headerlink" title="XSS攻击"></a>XSS攻击</h3><ul>
+<li><p>什么是XSS</p>
+<p>XSS攻击全称跨站脚本攻击，是web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其他用户使用的页面中</p>
+</li>
+</ul>
+<h2 id="跨域的解决方法"><a href="#跨域的解决方法" class="headerlink" title="跨域的解决方法"></a>跨域的解决方法</h2><ul>
+<li>Jsonp</li>
+<li>CORS</li>
+<li>Server Proxy(服务器代理)</li>
+<li>location.hash</li>
+<li>通过修改document.domian 跨域</li>
+<li>使用window.name 进行跨域</li>
+<li>使用HTML5的window.postMessage方法跨域</li>
+<li>WebSocket</li>
+</ul>
 <ul>
-<li>background-image</li>
-<li>background-size</li>
-<li>background-origin</li>
-<li>background-clip</li>
+<li>CORS</li>
 </ul>
-<h3 id="CSS3-background-image属性"><a href="#CSS3-background-image属性" class="headerlink" title="CSS3 background-image属性"></a>CSS3 background-image属性</h3><p>CSS3中可以通过background-image属性添加背景图片。</p>
-<p>不同的背景图像用逗号隔开，所有图片中显示在最顶端(最顶层)的为第一张。</p>
-<p>实例：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#example</span>&#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(img_flwr.gif),<span class="built_in">url</span>(paper.gif);</div><div class="line">  <span class="attribute">background-position</span>: right bottom,left top;</div><div class="line">  <span class="attribute">backgrond-repeat</span>: no-repeat, repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="CSS3-background-size属性"><a href="#CSS3-background-size属性" class="headerlink" title="CSS3 background-size属性"></a>CSS3 background-size属性</h3><p>background-size指定背景图像的大小</p>
-<blockquote>
-<p>你也可以指定像素或百分比大小，指定的大小是相对于父元素的宽度和高度的百分比的大小</p>
-</blockquote>
-<h3 id="CSS3-background-Origin属性"><a href="#CSS3-background-Origin属性" class="headerlink" title="CSS3  background-Origin属性"></a>CSS3  background-Origin属性</h3><p>background-Origin属性指定了背景图像的位置区域</p>
-<p>content-box，padding-box和border-box区域内可以放置背景图片</p>
-<h3 id="CSS3-background-clip属性"><a href="#CSS3-background-clip属性" class="headerlink" title="CSS3 background-clip属性"></a>CSS3 background-clip属性</h3><p> CSS3中background-clip背景剪裁属性是从指定位置开始绘制的</p>
-<p>content-box，padding-box和border-box三个可选参数</p>
-<h2 id="CSS3渐变"><a href="#CSS3渐变" class="headerlink" title="CSS3渐变"></a>CSS3渐变</h2><p>CSS3定义了两种类型的渐变</p>
-<ul>
-<li>线性渐变-向下/向上/向左/向右/对角方向</li>
-<li>径向渐变-由它们的中心定义</li>
+<h3 id="jsonp跨域"><a href="#jsonp跨域" class="headerlink" title="jsonp跨域"></a>jsonp跨域</h3><ul>
+<li><p>什么是Jsonp</p>
+<p>jsonp也叫做填充式JSON，是应用JSON的一种新方法，只不过是被包含在函数调用中的JSON</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">callback(&#123;<span class="string">"name"</span>,<span class="string">"trigkit4"</span>&#125;)</div></pre></td></tr></table></figure>
+<p>JSONP由两部分组成:回调函数和数据，回调函数式当响应到来时应该在页面中调用的函数，而数据就是传入回调函数中的JSON数据。</p>
+<p>在js中，我们直接用XMLHttpRequest请求不同域上的数据时，是不可以的。但是，在页面上引入不同域上的js脚本文件是可以的，jsonp正是利用这个特性实现的</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</div><div class="line">  <span class="comment">//处理获取的json数据</span></div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://example.com/data.php?callback=dosomething"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="使用透明度"><a href="#使用透明度" class="headerlink" title="使用透明度"></a>使用透明度</h3><p>CSS3渐变也支持透明度，可以创建减弱变淡的效果。</p>
-<h2 id="CSS3文本效果"><a href="#CSS3文本效果" class="headerlink" title="CSS3文本效果"></a>CSS3文本效果</h2><ul>
-<li>text-shadow</li>
-<li>box-shadow</li>
-<li>text-overflow（文本溢出）</li>
-<li>word-wrap(单词换行)</li>
-<li>word-break（文本拆分换行）</li>
-</ul>
-<h2 id="CSS3字体"><a href="#CSS3字体" class="headerlink" title="CSS3字体"></a>CSS3字体</h2><h3 id="使用你需要的字体"><a href="#使用你需要的字体" class="headerlink" title="使用你需要的字体"></a>使用你需要的字体</h3><p>在新的@font-face规则中，你必须首先定义字体的名称，然后指向该字体文件。</p>
-<p>如需为HTML元素使用字体，请通过font-family属性来引用字体的名称</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">@font-face&#123;</div><div class="line">  font-family: myFirstFont;</div><div class="line">  src: url(sansation_light.woff);</div><div class="line">&#125;</div><div class="line">div&#123;</div><div class="line">  font-family: myFirstFont;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<h2 id="CSS3-2D转换"><a href="#CSS3-2D转换" class="headerlink" title="CSS3 2D转换"></a>CSS3 2D转换</h2><ul>
-<li>translate()移动</li>
-<li>rotate()旋转</li>
-<li>scale()元素的增减</li>
-<li>skew()坐标轴的倾斜角度</li>
-<li>matrix()包含上面所有功能</li>
-</ul>
-<h2 id="CSS3-3D转换"><a href="#CSS3-3D转换" class="headerlink" title="CSS3 3D转换"></a>CSS3 3D转换</h2><ul>
-<li>rotateX()</li>
-<li>rotateY()</li>
-</ul>
-<h2 id="CSS3过渡"><a href="#CSS3过渡" class="headerlink" title="CSS3过渡"></a>CSS3过渡</h2><h3 id="它是如何工作？"><a href="#它是如何工作？" class="headerlink" title="它是如何工作？"></a>它是如何工作？</h3><p>CSS3过渡是元素从一种样式改变为另一种的效果。</p>
-<p>要实现这一点，必须规定两项内容：</p>
-<ul>
-<li>指定要添加效果的CSS属性</li>
-<li>指定效果的持续时间</li>
-</ul>
-<p>实例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">  transition-property: width;</div><div class="line">  transition-duration: 1s;//过渡效果花费的时间1s</div><div class="line">  transition-timing-function: linear;//规定过渡效果的时间曲线</div><div class="line">  transition_delay: 2;//延迟2秒执行</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h2><h3 id="CSS3-keyframes规则"><a href="#CSS3-keyframes规则" class="headerlink" title="CSS3@keyframes规则"></a>CSS3@keyframes规则</h3><p>@keyframes规则是创建动画。@keyframes规则内指定一个CSS样式和动画将逐步从目前的样式更改为新的样式。</p>
-<h3 id="CSS3动画-1"><a href="#CSS3动画-1" class="headerlink" title="CSS3动画"></a>CSS3动画</h3><p>当在@keyframes创建动画，把它绑定到一个选择器，否则动画不会有任何效果。指定至少这两个CSS3的动画属性绑定向一个选择器：</p>
-<ul>
-<li>规定动画的名称</li>
-<li>规定动画的时长</li>
-</ul>
-<h3 id="CSS3动画是什么？"><a href="#CSS3动画是什么？" class="headerlink" title="CSS3动画是什么？"></a>CSS3动画是什么？</h3><p>动画是使元素从一种样式逐渐变化为另一种的效果。</p>
-<p>你可以改变任意多的样式任意多的次数，</p>
-<p>请用百分比来规定变化发生的时间，或用关键词“from”和“to“，等同于0%和100%。</p>
-<p>0%是动画开始，100%是动画的完成</p>
-<h2 id="CSS3多列"><a href="#CSS3多列" class="headerlink" title="CSS3多列"></a>CSS3多列</h2><h3 id="CSS3多列属性"><a href="#CSS3多列属性" class="headerlink" title="CSS3多列属性"></a>CSS3多列属性</h3><ul>
-<li>column-count</li>
-<li>column-gap</li>
-<li>column-rule-style</li>
-<li>column-rule-width</li>
-<li>column-rule-color</li>
-<li>column-rule</li>
-<li>column-span</li>
-<li>column-width</li>
-</ul>
-<h3 id="CSS3-创建多列"><a href="#CSS3-创建多列" class="headerlink" title="CSS3 创建多列"></a>CSS3 创建多列</h3><p>column-count属性指定了需要分割的列数。</p>
-<h3 id="CSS3列与列的间隙"><a href="#CSS3列与列的间隙" class="headerlink" title="CSS3列与列的间隙"></a>CSS3列与列的间隙</h3><p>column-gap属性指定了列与列间的间隙</p>
-<h3 id="CSS3列边框"><a href="#CSS3列边框" class="headerlink" title="CSS3列边框"></a>CSS3列边框</h3><p>column-rule-style 属性指定了列与列间的边框样式。</p>
-<p>column-rule-width属性指定了两列的边框厚度</p>
-<p>column-rule-color属性指定两列的边框颜色</p>
-<h2 id="指定元素跨越多少列"><a href="#指定元素跨越多少列" class="headerlink" title="指定元素跨越多少列"></a>指定元素跨越多少列</h2><h3 id="指定列的宽度"><a href="#指定列的宽度" class="headerlink" title="指定列的宽度"></a>指定列的宽度</h3><p>column-width属性指定了列的宽度</p>
-<h2 id="CSS3用户界面"><a href="#CSS3用户界面" class="headerlink" title="CSS3用户界面"></a>CSS3用户界面</h2><ul>
-<li>resize</li>
-<li>box-sizing</li>
-<li>outline-offset</li>
-</ul>
-<h3 id="CSS3-调整尺寸"><a href="#CSS3-调整尺寸" class="headerlink" title="CSS3 调整尺寸"></a>CSS3 调整尺寸</h3><p>CSS3中，resize属性指定一个元素是否应该由用户去调整大小</p>
-<h3 id="CSS3-方框大小调整"><a href="#CSS3-方框大小调整" class="headerlink" title="CSS3 方框大小调整"></a>CSS3 方框大小调整</h3><p>box-sizing属性允许你以确切的方式定义适应某个区域的具体内容</p>
-<h3 id="CSS3外形修饰"><a href="#CSS3外形修饰" class="headerlink" title="CSS3外形修饰"></a>CSS3外形修饰</h3><p>outline-offset属性对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓。</p>
-<p>轮廓与边框有两点不同：</p>
-<ul>
-<li>轮廓不占用空间</li>
-<li>轮廓可能是非矩形</li>
-</ul>
-<h2 id="CSS3图片"><a href="#CSS3图片" class="headerlink" title="CSS3图片"></a>CSS3图片</h2><h3 id="响应式图片"><a href="#响应式图片" class="headerlink" title="响应式图片"></a>响应式图片</h3><p>响应式图片会自动适配各种尺寸的屏幕</p>
-<p>实例：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="图片滤镜"><a href="#图片滤镜" class="headerlink" title="图片滤镜"></a>图片滤镜</h3><p>CSS filter属性可为元素添加可是效果（例如模糊或饱和度）</p>
+<p>js文件载入成功后执行我们在url参数后指定的函数，并且会把我们需要的json数据作为参数传入。所以jsonp是需要服务器端的页面进行配合相应的配合的。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$callback = $_GET[<span class="string">'callback'</span>];<span class="comment">//获得回调函数名</span></div><div class="line">$data = <span class="keyword">array</span>(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>);<span class="comment">//要返回的数据</span></div><div class="line"><span class="keyword">echo</span> $callback.<span class="string">'('</span><span class="string">'json_encode($data)'</span>)<span class="string">'</span></div></pre></td></tr></table></figure>
+<p>jquery 封装jsonp</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.getJSON(<span class="string">'http://example.com/data.php?callback=?,function(jsondata)'</span>)&#123;</div><div class="line">    <span class="comment">//处理获得的JSON数据</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>jquery的$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数</p>
+<h4 id="JSONP的缺点"><a href="#JSONP的缺点" class="headerlink" title="JSONP的缺点"></a>JSONP的缺点</h4><p>JSONP的缺点它只支持GET请求而不支持POST等其他HTTP请求。它只支持跨域HTTP请求这种情况，不能解决不同域的两个页面之间如何进行javascript调用的问题</p>
+<h3 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h3><p>window.name的不是一个普通的全局变量，而是当前窗口的名字，这里要注意的是每个iframe都有包裹它的window，而这个window是top window的子窗口，而它自然也有window.name 的属性，window.name属性的神奇之处在于name值在同的页面，加载依旧存在。并且可以支持非常长的name值(2M)</p>
+<h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><p>postMessage是HTML5新增的一项功能,跨文档消息传输。</p>
+<h3 id="document-domian"><a href="#document-domian" class="headerlink" title="document.domian"></a>document.domian</h3><p>对于主域相同而子域不同的情况下，可以通过设置document.domain的办法来解决。</p>
+<h3 id="Server-Proxy"><a href="#Server-Proxy" class="headerlink" title="Server Proxy"></a>Server Proxy</h3><p>服务器代理。当你需要有跨域的请求操作时发送请求给后端，让后端帮你代为请求，然后将获取的结果发送你</p>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>WebSocket是一种通信协议，该协议不实行同源政策，只要服务器支持，就可以通过它进行跨域通信</p>
+<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>CORS是跨域资源分享的缩写。它是W3C标准，是跨源AJAX请求根本方法，相比JSONP只能发送GET请求，CORS允许任何类型的请求</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>它允许浏览器像跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源的使用的限制。</p>
+<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。</p>
+<p>整个CORS通信过程中，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，又是还会多出一次附加的请求。</p>
+<p>因此，实现CORS通信的关键是服务器。只有服务器实现了CORS接口，就可以跨源通信。</p>
 
       
     </div>
@@ -561,9 +521,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
-          
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/note/" rel="tag"># note</a>
           
         </div>
       
@@ -576,8 +534,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/03/html5-初步认识/" rel="next" title="html5 初步认识">
-                <i class="fa fa-chevron-left"></i> html5 初步认识
+              <a href="/2017/09/08/JavaScript阻止气泡/" rel="next" title="JavaScript阻止气泡">
+                <i class="fa fa-chevron-left"></i> JavaScript阻止气泡
               </a>
             
           </div>
@@ -585,10 +543,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/10/CSS3实战笔记/" rel="prev" title="CSS3实战笔记">
-                CSS3实战笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -755,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3初步认识"><span class="nav-number">1.</span> <span class="nav-text">CSS3初步认识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3简介"><span class="nav-number">1.1.</span> <span class="nav-text">CSS3简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3模块"><span class="nav-number">1.1.1.</span> <span class="nav-text">CSS3模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3边框"><span class="nav-number">1.2.</span> <span class="nav-text">CSS3边框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3圆角"><span class="nav-number">1.2.1.</span> <span class="nav-text">CSS3圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3盒阴影"><span class="nav-number">1.2.2.</span> <span class="nav-text">CSS3盒阴影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3边界图片"><span class="nav-number">1.2.3.</span> <span class="nav-text">CSS3边界图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3-圆角"><span class="nav-number">1.3.</span> <span class="nav-text">CSS3 圆角</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-border-radius-指定每个圆角"><span class="nav-number">1.3.1.</span> <span class="nav-text">CSS3 border-radius -指定每个圆角</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS33背景"><span class="nav-number">1.4.</span> <span class="nav-text">CSS33背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-background-image属性"><span class="nav-number">1.4.1.</span> <span class="nav-text">CSS3 background-image属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-background-size属性"><span class="nav-number">1.4.2.</span> <span class="nav-text">CSS3 background-size属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-background-Origin属性"><span class="nav-number">1.4.3.</span> <span class="nav-text">CSS3  background-Origin属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-background-clip属性"><span class="nav-number">1.4.4.</span> <span class="nav-text">CSS3 background-clip属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3渐变"><span class="nav-number">1.5.</span> <span class="nav-text">CSS3渐变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用透明度"><span class="nav-number">1.5.1.</span> <span class="nav-text">使用透明度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3文本效果"><span class="nav-number">1.6.</span> <span class="nav-text">CSS3文本效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3字体"><span class="nav-number">1.7.</span> <span class="nav-text">CSS3字体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用你需要的字体"><span class="nav-number">1.7.1.</span> <span class="nav-text">使用你需要的字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3-2D转换"><span class="nav-number">1.8.</span> <span class="nav-text">CSS3 2D转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3-3D转换"><span class="nav-number">1.9.</span> <span class="nav-text">CSS3 3D转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3过渡"><span class="nav-number">1.10.</span> <span class="nav-text">CSS3过渡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#它是如何工作？"><span class="nav-number">1.10.1.</span> <span class="nav-text">它是如何工作？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3动画"><span class="nav-number">1.11.</span> <span class="nav-text">CSS3动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-keyframes规则"><span class="nav-number">1.11.1.</span> <span class="nav-text">CSS3@keyframes规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3动画-1"><span class="nav-number">1.11.2.</span> <span class="nav-text">CSS3动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3动画是什么？"><span class="nav-number">1.11.3.</span> <span class="nav-text">CSS3动画是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3多列"><span class="nav-number">1.12.</span> <span class="nav-text">CSS3多列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3多列属性"><span class="nav-number">1.12.1.</span> <span class="nav-text">CSS3多列属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-创建多列"><span class="nav-number">1.12.2.</span> <span class="nav-text">CSS3 创建多列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3列与列的间隙"><span class="nav-number">1.12.3.</span> <span class="nav-text">CSS3列与列的间隙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3列边框"><span class="nav-number">1.12.4.</span> <span class="nav-text">CSS3列边框</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定元素跨越多少列"><span class="nav-number">1.13.</span> <span class="nav-text">指定元素跨越多少列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指定列的宽度"><span class="nav-number">1.13.1.</span> <span class="nav-text">指定列的宽度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3用户界面"><span class="nav-number">1.14.</span> <span class="nav-text">CSS3用户界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-调整尺寸"><span class="nav-number">1.14.1.</span> <span class="nav-text">CSS3 调整尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-方框大小调整"><span class="nav-number">1.14.2.</span> <span class="nav-text">CSS3 方框大小调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3外形修饰"><span class="nav-number">1.14.3.</span> <span class="nav-text">CSS3外形修饰</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3图片"><span class="nav-number">1.15.</span> <span class="nav-text">CSS3图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式图片"><span class="nav-number">1.15.1.</span> <span class="nav-text">响应式图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片滤镜"><span class="nav-number">1.15.2.</span> <span class="nav-text">图片滤镜</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域问题和jsonp"><span class="nav-number">1.</span> <span class="nav-text">跨域问题和jsonp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨域"><span class="nav-number">1.1.</span> <span class="nav-text">什么是跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么浏览器要限制跨域访问"><span class="nav-number">1.2.</span> <span class="nav-text">为什么浏览器要限制跨域访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#防止CSRF等攻击，防止恶意网站窃取数据，比如读取Cookie"><span class="nav-number">1.2.1.</span> <span class="nav-text">防止CSRF等攻击，防止恶意网站窃取数据，比如读取Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制范围"><span class="nav-number">1.2.2.</span> <span class="nav-text">限制范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF只是普及"><span class="nav-number">1.2.3.</span> <span class="nav-text">CSRF只是普及</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS攻击"><span class="nav-number">1.2.4.</span> <span class="nav-text">XSS攻击</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域的解决方法"><span class="nav-number">1.3.</span> <span class="nav-text">跨域的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsonp跨域"><span class="nav-number">1.3.1.</span> <span class="nav-text">jsonp跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSONP的缺点"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">JSONP的缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-name"><span class="nav-number">1.3.2.</span> <span class="nav-text">window.name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage"><span class="nav-number">1.3.3.</span> <span class="nav-text">postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-domian"><span class="nav-number">1.3.4.</span> <span class="nav-text">document.domian</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server-Proxy"><span class="nav-number">1.3.5.</span> <span class="nav-text">Server Proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket"><span class="nav-number">1.3.6.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">1.3.7.</span> <span class="nav-text">CORS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.3.7.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">1.3.7.2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.3.7.3.</span> <span class="nav-text">简介</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
