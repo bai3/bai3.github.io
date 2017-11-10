@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JS RegExp 对象]]></title>
+    <url>%2F2017%2F11%2F10%2FJS-RegExp-%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[什么是RegExpRegExp是正则表达式的缩写、 RegExp对象RegExp对象用于存储检索模式。 通过new 关键词来定义RegExp对象 方法Javascript RegExp对象有3个方法 test test()方法用来检测一个字符串是否匹配某个正则表达式，如果匹配成功，返回true,否则返回false exec exec()方法用来检索字符串中与正则表达式匹配的值。exec()方法返回一个数组，其中存放匹配的结果。如果未找到匹配的值，则返回null compile compile()方法可以再脚本执行过程中编译正则表达式，也可以改变已有表达式。 test()方法语法 RegExpObject.test(string) 例子 12//检测一个字符串是否以abc开头/^acv/i.test("abcdr") 12//检测一个字符串是否全是数字/^\d&#123;1,&#125;$/.test("12345678") exec()方法语法 RegExpObject.exec(string) compile()方法语法 RegExpObject.compile(regexp,modifier) regexp 正则表达式 modifier 规定匹配的类型 matchmatch方法可以在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。 注意:match()方法将检索字符串String Object，以找到一个或多个regexp匹配的文本。属于字符串对象的方法而不是RegExp对象的方法。]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[link的rel属属性解析]]></title>
     <url>%2F2017%2F11%2F01%2Flink%E7%9A%84rel%E5%B1%9E%E5%B1%9E%E6%80%A7%E8%A7%A3%E6%9E%90%2F</url>
     <content type="text"><![CDATA[link标签的rel作用解析 一般情况 stylesheet 调用外部样式表 1&lt;link rel="stylesheet" href="" type="text/css" media="screen" /&gt; 其中href是目标文档的URL，type则规定了目标URL的MIME类型，而media规定了文档将显示在什么设备上 meida： screen 显示器设备 print 打印设备 icon 定义网站收藏夹图标 12&lt;link rel="shortcut icon" href="http://blog.yunlives.com/images/favicon.ico" type="images/x-icon"/&gt;//IE &lt;link rel="icon" href="http://blog.yunlives.com/images/favicon.png" type="images/png"/&gt; icon属性指定标题栏，地址栏，收藏栏小图标 IE只支持ico格式的favicon；rel属性必须包含shortcut，才会才IE下显示 canonical 指明网址的规范版本 1&lt;link rel="canonical" href="/"/&gt; canonical属性用于让搜索引擎知道当前网站中的重复或相似网页中，哪一个页面才是站长想让其抓取与收录的。 author 申明文档作者 home 连接到站点的主页 search 连接到文档的搜索工具 sidebar 链接到应该在浏览器边栏显示的文档 friend 友情链接 link的预加载什么是预加载: 利用浏览器空闲的时间先去下载用户指定内容，然后缓存起来，这样用户下次加载时，就可以直接从缓存取出来，效率就高了 1&lt;link rel="prefetch" href="http://www.example.com/"&gt; &lt;!-- Firefox -&gt; 1&lt;link rel="prerender" href="http://www.example.com/"&gt; &lt;!-- Chrome -&gt; dns-prefetch dns-prefetch 分析这个页面需要的资源所在的域名，浏览器空闲时提前将这些域名转化IP，真正请求资源时就避免了上述这个过程的时间。 1&lt;link rel='dns-prefetch' href='/'&gt; 应用场景 我们的资源存在不同的CDN，那么提前声明好这些资源的域名，就可以节省请求发生时产生的域名解析的时间 如果我们知道用户接下来的操作一定会发起一起资源的请求，那就可以将这个资源进行dns-prefetch，加强用户体验。 rel=”subresource“表示当前页面必须加装的资源，必须放在页面最顶端先加载，有最高的优先级。 rel=”prefetch“表示当subresource所有资源都加载完开始预加载这里指定的资源，有最低的优先级。 注意:只有可缓存的资源才进行预加载，否则浪费资源 prerender(预渲染)rel=”prerender“表示浏览器会帮我们渲染可以隐藏指定的页面，一旦访问这个页面，就秒开了。 在Firefox中用rel=‘next’来声明 不是所有的资源都可以预渲染当资源位一下列表中的资源时，将阻止预渲染操作 URL中包含下载资源 页面中包含音频、视频 POST、PUT和DELETE操作的ajax请求 HTTP认证 HTTPS页面 含恶意软件的页面 弹窗页面 占用资源很多的页面 打开了 chrome developer tools 开发工具 preload浏览器必须请求preload标记的资源 1&lt;link rel="preload" &gt;]]></content>
@@ -109,8 +120,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>CSS3</tag>
         <tag>CSS</tag>
+        <tag>CSS3</tag>
       </tags>
   </entry>
   <entry>
