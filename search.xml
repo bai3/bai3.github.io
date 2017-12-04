@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[css样式优先级]]></title>
+    <url>%2F2017%2F12%2F04%2Fcss%E6%A0%B7%E5%BC%8F%E4%BC%98%E5%85%88%E7%BA%A7%2F</url>
+    <content type="text"><![CDATA[CSS样式导入与样式优先级 前言：再过几天就要网页设计考试了。虽然对我来说没什么大的难度。可是很久没看css样式一些知识点（会用是会用），趁着快考试，复习一下 CSS导入的方式 行内样式(内联样式) 在标签内直接编写行内样式 内部样式 在style标签内书写css 外部样式 HTML文件引用扩展名为.css的样式表，有两种方式 链接式 link标签 导入式 import导入 123&lt;style type=“text/css&gt; @import url("")&lt;/style&gt; 样式优先级行内样式&gt;内部样式&gt;外部样式（就近原则） 选择器的优先级 内联样式表的权值最高1000 id选择器权值为100 class类选择器权值为10 html标签选择权值为1 加起来谁大就继承谁 CSS优先级法则 当选择器都有一个权值，权值越大越优先 当权值相等时，后出现的样式表设置要优于先出现的样式表设置 继承的CSS样式不如后来指定的CSS样式 在同一组属性设置中标有”!important“规则的优先级最大]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[prototype和和_proto_的关系是什么]]></title>
     <url>%2F2017%2F12%2F04%2Fprototype%E5%92%8C%E5%92%8C-proto-%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88%2F</url>
     <content type="text"><![CDATA[prototype和_proto的关系 prototype 显式原型 _proto_ 隐式原型 prototype,每一个函数对象都有一个显式的prototype属性，它代表了对象的原型（Function.prototype函数对象是个例外，没有prototype属性）。_proto_:每个对象都有一个名为_proto_的内部隐藏属性，指向于它所对应的与原型对象。原型链正是基于_proto_才得以形成的 显式原型每一个函数在创建之后都会拥有一个名为prototype的属性，这个属性指向函数的原型对象。 隐式原型JavaScript中任意对象都有一个内置属性[[prototype]],在ES5之前没有标准的方法来访问这个内置属性，但大多数浏览器都支持通过_proto_来访问。ES5中有了对于这个内置属性标准的Get方法: Object.getPrototypeOf() 二者的关系隐式原型指向创建这个对象的函数（constructor）的prototype 二者的作用 显式原型的作用 用来实现基于原型的继承与属性的共享 隐式原型的作用 构成原型链，同样用于实现基于原型的继承。举个例子，当我们访问obj这个对象中的x属性时，如果在obj中找不到，那么就会沿着_proto_依次查找。 构造函数的显示原型和隐式原型内建对象：比如数组 Array.prototype也是一个对象，对象就是由Object()这个构造函数来创建的。因此Array.prototype._proro_ == Object.prototype //true，或者可以这么理解，所有的内建函数都是由Object()创建而来的]]></content>
