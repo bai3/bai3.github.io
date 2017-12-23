@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python range和round函数使用]]></title>
+    <url>%2F2017%2F12%2F23%2Fpython-range%E5%92%8Cround%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[Python range 和 round函数使用 今天帮同学写python题目，看到有关这两个函数的题目，发现自己还是有点没吃透。 range函数语法 range(start, stop[, step]) 特别注意range()的步长不能是小数，其实三个值都不能是小数 range和xrange的区别 range多用作循环，range（0,10）返回一个range对象，如果想返回一个list，前面加上list转换 1234a = range(0,10)print(a)// =&gt;range(1, 10)b = list(range(0, 10))print(b)//=&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9] xrange()也是用作循环，只是xrange（0,10）不返回list，返回xrange对象。每次调用返回其中的一个值。返回很大的数的时候或者频繁的需要break时候，xrange性能更好。python3已经把xrange()取消了 round主要是区别一个py2和py3的区别 在python2中 四舍五入保留值将保留到离上一位更近的一端，如果距离两端一样远，则保留到离0远的一遍。所以round(0.5)会近似到1，而round(-0.5)会近似到-1 在python3中 如果距离两边一样远，会保留到偶数的一边。比如round(0.5)和round(-0.5)都会保留到0，而round(1.5)会保留到2]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[eval解析]]></title>
     <url>%2F2017%2F12%2F16%2Feval%E8%A7%A3%E6%9E%90%2F</url>
     <content type="text"><![CDATA[eval解析 内容来源 MDN，我只是搬运工 eval()函数会将传入的字符串当做JavaScript代码进行执行 语法 eval(string) 描述eval()是全局对象的一个函数属性 eval()的参数是一个字符串。如果字符串表示的是表达式，eval()会对表达式进行求值。如果参数表示一个或多个Javascript语句，那么eval()就会执行这些语句。注意不要用eval（）来执行一个四则运算表达式；因为Javascript会自动为四则运算符求值并不需要eval来包裹 如果eval()的参数不是字符串，eval()将会将参数原封不动的返回。在下面例子中，字符串构造器被指定，eval（）返回字符串对象而不是对字符串求值。 12eval(new String("2+2"))//=&gt;返回“2+2”的字符串对象eval("2+2")//=&gt;return 4 你可以使用通用的方法来绕过这个限制，如使用toString() 12var expression = new String("2+2");eval(expression.toString()) 重点如果你间接的使用eval（），如通过一个引用来调用它而不是直接调用eval。从ES5起它工作在全局作用域而不是局部作用域；这意味着，例如,下面代码: 123456function test() &#123; var x = 2, y = 4; console.log(eval("x + y")); // 直接调用，使用本地作用域，结果是 6 var geval = eval; console.log(geval("x + y")); // 间接调用，使用全局作用域，throws ReferenceError 因为`x`未定义&#125; 1234567var a = 1;function f() &#123; var a = 2; var e = eval; e('console.log(a)')&#125;f(); //=&gt; 1访问全局作用域]]></content>
