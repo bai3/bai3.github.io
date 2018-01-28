@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="!== 与 != 的区别这次笔记主要是理清JavaScript中的 != 和 !==的区别在JavaScript中“===”叫做严格运算符，而“==”叫做相等运算符。">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="itertools模块使用">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript!==和!=">
-<meta property="og:url" content="http://yoursite.com/2017/09/06/JavaScript!=和!==/index.html">
+<meta property="og:title" content="python itertools模块使用">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/python-itertools模块使用/index.html">
 <meta property="og:site_name" content="bai3">
-<meta property="og:description" content="!== 与 != 的区别这次笔记主要是理清JavaScript中的 != 和 !==的区别在JavaScript中“===”叫做严格运算符，而“==”叫做相等运算符。">
-<meta property="og:updated_time" content="2017-09-08T07:31:45.060Z">
+<meta property="og:description" content="itertools模块使用">
+<meta property="og:updated_time" content="2018-01-28T14:36:48.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript!==和!=">
-<meta name="twitter:description" content="!== 与 != 的区别这次笔记主要是理清JavaScript中的 != 和 !==的区别在JavaScript中“===”叫做严格运算符，而“==”叫做相等运算符。">
+<meta name="twitter:title" content="python itertools模块使用">
+<meta name="twitter:description" content="itertools模块使用">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/06/JavaScript!=和!==/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/28/python-itertools模块使用/"/>
 
 
 
 
 
-  <title>JavaScript!==和!= | bai3</title>
+  <title>python itertools模块使用 | bai3</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -321,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/JavaScript!=和!==/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/python-itertools模块使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="白三">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript!==和!=</h1>
+          <h1 class="post-title" itemprop="name headline">python itertools模块使用</h1>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T23:28:55+08:00">
-                2017-09-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T22:36:48+08:00">
+                2018-01-28
               </time>
             
 
@@ -366,8 +366,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-08T15:31:45+08:00">
-                2017-09-08
+              <time title="更新于" itemprop="dateModified" datetime="2018-01-28T22:36:48+08:00">
+                2018-01-28
               </time>
             
           </span>
@@ -419,33 +419,25 @@
       
 
       
-        <h1 id="与-的区别"><a href="#与-的区别" class="headerlink" title="!== 与 != 的区别"></a>!== 与 != 的区别</h1><p>这次笔记主要是理清JavaScript中的 != 和 !==的区别<br>在JavaScript中“===”叫做严格运算符，而“==”叫做相等运算符。</p>
-<a id="more"></a>
-<p>严格运算符的运算规格如下(抄录知乎某兄弟)</p>
-<ul>
-<li><p>不同类型值</p>
-<p>如果两个值得类型不同，直接返回false。</p>
-</li>
-<li><p>同一类的原始类型值</p>
-<p>同一类型的原始类型的值(数值、字符串、布尔值)比较值，如果值相同就返回true，值不同就返回false。</p>
-</li>
-<li><p>同一类的复合类型值(重点)</p>
-<p>两个复合类型(对象、数组、函数)的数据比较时，不是比较他们的植是否相等，而是比较它们<strong>是否指向同一对象</strong>。</p>
-</li>
-<li><p>undefined和null</p>
-<p>nuderfined 和 null与自身严格相等</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="literal">null</span> === <span class="literal">null</span> <span class="comment">//=&gt;true</span></div><div class="line"><span class="literal">undefined</span> === <span class="literal">undefined</span> <span class="comment">// =&gt;true</span></div><div class="line"><span class="literal">null</span> === <span class="literal">undefined</span> <span class="comment">// =&gt;false </span></div><div class="line"><span class="literal">null</span> == <span class="literal">undefined</span> <span class="comment">//=&gt;true</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>相等运算符在比较相同类型的数据时，与严格相等运算符一样。</p>
-<p>在比较不同类型的数据时，相等运算符会先将数据进行类型转换，然后再用严格相等运算符进行比较</p>
-<ul>
-<li><p>原始类型的值</p>
-<p>原始类型的数据会转换数值类型再进行比较。字符串和布尔值都会转换成数值</p>
-</li>
-</ul>
-<p>对高级的类型，比如函数，对象，数组，===与==没有区别。</p>
-<p>最后总结，最好用严格运算符。</p>
+        <h1 id="itertools模块使用"><a href="#itertools模块使用" class="headerlink" title="itertools模块使用"></a>itertools模块使用</h1><a id="more"></a>
+<h2 id="itertools-简介"><a href="#itertools-简介" class="headerlink" title="itertools 简介"></a>itertools 简介</h2><blockquote>
+<p>简单来说itertools是python提供的一个模块用于创建自定义的迭代器</p>
+</blockquote>
+<h2 id="itertools提供的功能"><a href="#itertools提供的功能" class="headerlink" title="itertools提供的功能"></a>itertools提供的功能</h2><h3 id="chain"><a href="#chain" class="headerlink" title="chain"></a>chain</h3><p>与其名称意义一样，给它一个列表如lists/tiples/iterables，链接在一起；返回iterables对象</p>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</div><div class="line">b = [1, 2, 3]</div><div class="line">print(list(itertools.chain(a,b))) // =&gt; [&apos;a&apos; ,&apos;b&apos;, &apos;c&apos;, 1, 2, 3]</div><div class="line">print(tuple(itertools.chain(a,b))) // =&gt; (&apos;a&apos; ,&apos;b&apos;, &apos;c&apos;, 1, 2, 3)&#125;</div></pre></td></tr></table></figure>
+<h3 id="count"><a href="#count" class="headerlink" title="count"></a>count</h3><p>生成无界序列 count(a,b) a是起始数，b是步长</p>
+<h3 id="filterfalse"><a href="#filterfalse" class="headerlink" title="filterfalse"></a>filterfalse</h3><p>filterfalse(contintion,data)迭代过滤条件为false的数据，如果条件为空，返回data中为false的想</p>
+<h3 id="compress"><a href="#compress" class="headerlink" title="compress"></a>compress</h3><p>返回我们需要使用的元素</p>
+<h3 id="starmap"><a href="#starmap" class="headerlink" title="starmap"></a>starmap</h3><p>针对list的每一项，调用函数的功能</p>
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h3><p>repeat(object,time) 重复time次</p>
+<h3 id="dropwhile"><a href="#dropwhile" class="headerlink" title="dropwhile"></a>dropwhile</h3><p>dropwhile(func,sep);当函数func执行返回假时，开始迭代序列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dropwhile(lambda x: x&lt;5, [1,4,6,4,1]) =&gt; 6 4 1</div></pre></td></tr></table></figure>
+<h3 id="takewhile"><a href="#takewhile" class="headerlink" title="takewhile"></a>takewhile</h3><p>takewhile(predicate, iterable);返回序列，当predicate为true时截止</p>
+<h3 id="product"><a href="#product" class="headerlink" title="product"></a>product</h3><p>product(iter1,iter2, …iterN,[repect=1])创建一个迭代器，生成表示iter1，iter2等组成的笛卡尔积的元组</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">product('ab','cd')// =&gt; ac ad bc bd</div></pre></td></tr></table></figure>
+<h3 id="permutations"><a href="#permutations" class="headerlink" title="permutations()"></a>permutations()</h3><p>permutations(p[,r]);返回p中任意取r个元素做排列的元组的迭代器</p>
+<h3 id="combinations"><a href="#combinations" class="headerlink" title="combinations()"></a>combinations()</h3><p>combinations(iterable,r);创建一个迭代器，返回iterable中所有长度为r的子序列，返回的子序列中的项按输入iterable中的顺序排序</p>
+<p>不重复输出相同值</p>
 
       
     </div>
@@ -475,7 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -488,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/21/载流函数的使用/" rel="next" title="载流函数的使用">
-                <i class="fa fa-chevron-left"></i> 载流函数的使用
+              <a href="/2017/12/23/python-range和round函数使用/" rel="next" title="python range和round函数使用">
+                <i class="fa fa-chevron-left"></i> python range和round函数使用
               </a>
             
           </div>
@@ -497,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/08/JavaScript阻止气泡/" rel="prev" title="JavaScript阻止气泡">
-                JavaScript阻止气泡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -667,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#与-的区别"><span class="nav-number">1.</span> <span class="nav-text">!== 与 != 的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#itertools模块使用"><span class="nav-number">1.</span> <span class="nav-text">itertools模块使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#itertools-简介"><span class="nav-number">1.1.</span> <span class="nav-text">itertools 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itertools提供的功能"><span class="nav-number">1.2.</span> <span class="nav-text">itertools提供的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chain"><span class="nav-number">1.2.1.</span> <span class="nav-text">chain</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例子"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#count"><span class="nav-number">1.2.2.</span> <span class="nav-text">count</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filterfalse"><span class="nav-number">1.2.3.</span> <span class="nav-text">filterfalse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compress"><span class="nav-number">1.2.4.</span> <span class="nav-text">compress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#starmap"><span class="nav-number">1.2.5.</span> <span class="nav-text">starmap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repeat"><span class="nav-number">1.2.6.</span> <span class="nav-text">repeat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dropwhile"><span class="nav-number">1.2.7.</span> <span class="nav-text">dropwhile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#takewhile"><span class="nav-number">1.2.8.</span> <span class="nav-text">takewhile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#product"><span class="nav-number">1.2.9.</span> <span class="nav-text">product</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#permutations"><span class="nav-number">1.2.10.</span> <span class="nav-text">permutations()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#combinations"><span class="nav-number">1.2.11.</span> <span class="nav-text">combinations()</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

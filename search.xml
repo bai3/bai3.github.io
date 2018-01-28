@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python itertools模块使用]]></title>
+    <url>%2F2018%2F01%2F28%2Fpython-itertools%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[itertools模块使用 itertools 简介 简单来说itertools是python提供的一个模块用于创建自定义的迭代器 itertools提供的功能chain与其名称意义一样，给它一个列表如lists/tiples/iterables，链接在一起；返回iterables对象 例子1234a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]b = [1, 2, 3]print(list(itertools.chain(a,b))) // =&gt; [&apos;a&apos; ,&apos;b&apos;, &apos;c&apos;, 1, 2, 3]print(tuple(itertools.chain(a,b))) // =&gt; (&apos;a&apos; ,&apos;b&apos;, &apos;c&apos;, 1, 2, 3)&#125; count生成无界序列 count(a,b) a是起始数，b是步长 filterfalsefilterfalse(contintion,data)迭代过滤条件为false的数据，如果条件为空，返回data中为false的想 compress返回我们需要使用的元素 starmap针对list的每一项，调用函数的功能 repeatrepeat(object,time) 重复time次 dropwhiledropwhile(func,sep);当函数func执行返回假时，开始迭代序列 1dropwhile(lambda x: x&lt;5, [1,4,6,4,1]) =&gt; 6 4 1 takewhiletakewhile(predicate, iterable);返回序列，当predicate为true时截止 productproduct(iter1,iter2, …iterN,[repect=1])创建一个迭代器，生成表示iter1，iter2等组成的笛卡尔积的元组 1product('ab','cd')// =&gt; ac ad bc bd permutations()permutations(p[,r]);返回p中任意取r个元素做排列的元组的迭代器 combinations()combinations(iterable,r);创建一个迭代器，返回iterable中所有长度为r的子序列，返回的子序列中的项按输入iterable中的顺序排序 不重复输出相同值]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python range和round函数使用]]></title>
     <url>%2F2017%2F12%2F23%2Fpython-range%E5%92%8Cround%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[Python range 和 round函数使用 今天帮同学写python题目，看到有关这两个函数的题目，发现自己还是有点没吃透。 range函数语法 range(start, stop[, step]) 特别注意range()的步长不能是小数，其实三个值都不能是小数 range和xrange的区别 range多用作循环，range（0,10）返回一个range对象，如果想返回一个list，前面加上list转换 1234a = range(0,10)print(a)// =&gt;range(1, 10)b = list(range(0, 10))print(b)//=&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9] xrange()也是用作循环，只是xrange（0,10）不返回list，返回xrange对象。每次调用返回其中的一个值。返回很大的数的时候或者频繁的需要break时候，xrange性能更好。python3已经把xrange()取消了 round主要是区别一个py2和py3的区别 在python2中 四舍五入保留值将保留到离上一位更近的一端，如果距离两端一样远，则保留到离0远的一遍。所以round(0.5)会近似到1，而round(-0.5)会近似到-1 在python3中 如果距离两边一样远，会保留到偶数的一边。比如round(0.5)和round(-0.5)都会保留到0，而round(1.5)会保留到2]]></content>
@@ -233,8 +244,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>ajax</tag>
         <tag>js</tag>
+        <tag>ajax</tag>
       </tags>
   </entry>
   <entry>
